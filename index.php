@@ -20,7 +20,7 @@
        include "inc/about.html";
        include "inc/count.html";
        include 'inc/about2.html';
-      // include 'inc/price.html';
+       include 'inc/price.html';
        include 'inc/feature.html';
        include 'inc/footer.html';
        ?>
