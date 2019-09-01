@@ -2013,9 +2013,9 @@ E. Template Specific Elements
     background-size: contain;
     top: 0;
     z-index: -1;
-    height: 40%;
+    height: 100%;
     position: absolute;
-    width: 40%;
+    width: 100%;
     left: 0;
     margin: auto;
 }
@@ -2023,12 +2023,12 @@ E. Template Specific Elements
 .ts-shape-mask__nw-element {
     position: absolute;
     height: 11.25rem;
-    width: 40%;
+    width: 100%;
 }
 
 [class*="ts-mask-"] {
-    width: 40%;
-    height: 40%;
+    width: 100%;
+    height: 100%;
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
