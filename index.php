@@ -35,6 +35,7 @@
         }
     </script>
 	<script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
   <script src="assets/js/firebase.js"></script>
 	<script src="assets/js/popper.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>

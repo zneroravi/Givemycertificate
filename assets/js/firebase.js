@@ -1,19 +1,23 @@
-// Initialize Firebase (ADD YOUR OWN DATA)
-var config = {
-  apiKey: "xxxxx",
-  authDomain: "xxxxx",
-  databaseURL: "xxxxx",
-  projectId: "xxxxx",
-  storageBucket: "xxxxx",
-  messagingSenderId: "xxxxx"
-};
-firebase.initializeApp(config);
+// Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAcnC0SbPvd-7F0zoxJzbRBMGg7aWaY908",
+    authDomain: "give-my-certificate-form.firebaseapp.com",
+    databaseURL: "https://give-my-certificate-form.firebaseio.com",
+    projectId: "give-my-certificate-form",
+    storageBucket: "give-my-certificate-form.appspot.com",
+    messagingSenderId: "1026962259952",
+    appId: "1:1026962259952:web:84cf083350fc1d794e6735",
+    measurementId: "G-5HXP5RGN87"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 
 // Reference messages collection
 var messagesRef = firebase.database().ref('messages');
 
 // Listen for form submit
-document.getElementById('contactForm').addEventListener('submit', submitForm);
+document.getElementById('contactForm').addEventListener('submit', submitForm); 
 
 // Submit form
 function submitForm(e){
