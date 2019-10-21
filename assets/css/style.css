@@ -2095,6 +2095,15 @@ E. Template Specific Elements
     height: 100% !important;
 }
 
+.alert{
+  text-align: center;
+  padding:10px;
+  background:#79c879;
+  color:#fff;
+  margin-bottom:10px;
+  display:none;
+}
+
 @media (min-width: 36rem) and (max-width: 47.9375rem) {
     html {
         font-size: 85%;
