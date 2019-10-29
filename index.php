@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-  <meta name="description" content="digital certificate plateform, give my certificate">
+  <meta name="description" content="certificate generator">
   <meta name="keywords" content="digital certificate, certificate, digital india">
   <meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
 
