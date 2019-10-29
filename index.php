@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+  <meta name="description" content="give my certificate">
+  <meta name="description" content="digital certificate">
+  <meta name="og:title" property="og:title" content="give my certificate">
+  <link href="givemycertificate.com" rel="canonical">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css">
