@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-  <meta name="description" content="give my certificate">
-  <meta name="description" content="digital certificate">
-  <meta name="og:title" property="og:title" content="give my certificate">
+  <meta name="description" content="digital certificate plateform, give my certificate">
+  <meta name="keywords" content="digital certificate, certificate, digital india">
+  <meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
+
+
+
   <link href="givemycertificate.com" rel="canonical">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600">
