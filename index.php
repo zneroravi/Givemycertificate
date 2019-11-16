@@ -26,7 +26,7 @@
        <?php
        include "inc/header.html";
        include "inc/about.html";
-       include "inc/count.html";
+       include "inc/count.php";
        include 'inc/about2.html';
        include 'inc/price.html';
        include 'inc/feature.html';
