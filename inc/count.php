@@ -5,7 +5,7 @@
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="ts-promo-number text-center">
-                                    <h2 data-animate="ts-zoomIn">20+</h2>
+                                    <h2 data-animate="ts-zoomIn">50+</h2>
                                     <h3 class="mb-0 ts-opacity__50">Clients</h3>
                                     <span class="ts-promo-number-divider"></span>
                                 </div>
