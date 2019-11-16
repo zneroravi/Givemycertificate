@@ -12,11 +12,13 @@
                                 <!--end ts-promo-number-->
                             </div>
                             <!--end col-sm-4-->
+                            <?php 
+                                $cert_count = 410216;
+                                $tree_count = ($cert_count/2021);
+                            ?>
                             <div class="col-sm-4">
                                 <div class="ts-promo-number text-center">
-                                    <?php 
-                                        $cert_count = '410216';
-                                    ?>
+                                    
                                     <h2 data-animate="ts-zoomIn" data-delay="0.2s"><?php echo $cert_count ?> </h2>
                                     <h3 class="mb-0 ts-opacity__50">certificate sent</h3>
                                     <span class="ts-promo-number-divider"></span>
@@ -26,7 +28,7 @@
                             <!--end col-sm-4-->
                             <div class="col-sm-4">
                                 <div class="ts-promo-number text-center">
-                                    <h2 data-animate="ts-zoomIn" data-delay="0.2s">17</h2>
+                                    <h2 data-animate="ts-zoomIn" data-delay="0.2s"><?php echo $tree_count ?></h2>
                                     <h3 class="mb-0 ts-opacity__50">Trees Saved</h3>
                                 </div>
                                 <!--end ts-promo-number-->
