@@ -13,8 +13,9 @@
                             </div>
                             <!--end col-sm-4-->
                             <?php 
-                                $cert_count = 410216;
-                                $tree_count = ($cert_count/2021);
+                                $cert_count = 41216;
+                                $tree_count = ($cert_count/2400);
+                                $tree_count = (int)$tree_count;
                             ?>
                             <div class="col-sm-4">
                                 <div class="ts-promo-number text-center">
