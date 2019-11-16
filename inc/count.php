@@ -17,7 +17,7 @@
                                     <?php 
                                         $cert_count = '410216';
                                     ?>
-                                    <h2 data-animate="ts-zoomIn" data-delay="0.2s"><?php $cert_count = '410216';?> </h2>
+                                    <h2 data-animate="ts-zoomIn" data-delay="0.2s"><?php echo $cert_count ?> </h2>
                                     <h3 class="mb-0 ts-opacity__50">certificate sent</h3>
                                     <span class="ts-promo-number-divider"></span>
                                 </div>
