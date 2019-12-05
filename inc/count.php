@@ -13,7 +13,7 @@
                             </div>
                             <!--end col-sm-4-->
                             <?php 
-                                $cert_count = 50427;
+                                $cert_count = 51982;
                                 $tree_count = ($cert_count/2400);
                                 $tree_count = (int)$tree_count;
                             ?>
@@ -21,7 +21,7 @@
                                 <div class="ts-promo-number text-center">
                                     
                                     <h2 data-animate="ts-zoomIn" data-delay="0.2s"><?php echo $cert_count ?> </h2>
-                                    <h3 class="mb-0 ts-opacity__50">certificate sent</h3>
+                                    <h3 class="mb-0 ts-opacity__50">Certificate sent</h3>
                                     <span class="ts-promo-number-divider"></span>
                                 </div>
                                 <!--end ts-promo-number-->
