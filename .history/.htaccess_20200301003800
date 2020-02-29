@@ -1,0 +1,10 @@
+ErrorDocument 404 https://givemycertificate.com/verify/404/
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_URI} ^/404/$
+RewriteRule ^(.*)$ <https://givemycertificate.com/index.php [L]
+
+RedirectMatch 301 (.*)\.html$ http://www.domain.com$1.php
+RewriteRule https://givemycertificate.com/verify/(.*)$ http://www.example.com/index.php [L,R=301]
