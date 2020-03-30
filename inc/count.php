@@ -21,7 +21,7 @@
                                 <div class="ts-promo-number text-center">
                                     
                                     <h2 data-animate="ts-zoomIn" data-delay="0.2s"><?php echo $cert_count ?> </h2>
-                                    <h3 class="mb-0 ts-opacity__50">Certificate sent</h3>
+                                    <h3 class="mb-0 ts-opacity__50">Documents sent</h3>
                                     <span class="ts-promo-number-divider"></span>
                                 </div>
                                 <!--end ts-promo-number-->
