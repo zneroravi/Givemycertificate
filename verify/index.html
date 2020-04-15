@@ -35,6 +35,15 @@
     color: #aaa;
 }
     </style>
+    <script type="text/javascript">
+      function funsearch() {
+        // body...
+        var certid = document.getElementById("searchtext").value;
+        
+        window.location = "https://verify.givemycertificate.com/verify/"+certid;
+
+      }
+    </script>
   </head>
   <body bgcolor="#b4cde4">
   <!-- Image and text -->
@@ -49,15 +58,15 @@
   
   <!-- Another variation with a button -->
   <div class="input-group">
-    <input type="text" class="form-control" placeholder="certificate ID">
+    <input type="text" class="form-control" id="searchtext" placeholder="Enter Certificate ID">
     <div class="input-group-append">
-      <button class="btn btn-secondary" type="button">
+      <button class="btn btn-secondary" onclick="funsearch()" type="button"> Search
         <i class="fa fa-search"></i>
       </button>
     </div>
   </div>
   
-  <p class="mt-4 text-center">See how it's done on my blog</p>
+  <p class="mt-4 text-center">See how it work</p>
   
 </div>
 
