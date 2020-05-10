@@ -31,7 +31,6 @@
 					const field = formFields[i];
 					const fieldName = field.name;
 					const value = field.value;
-
 				}
 				return false;
 			}
