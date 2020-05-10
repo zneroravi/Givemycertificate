@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Become a corona warrior - save your country - we are one</title>
+	<link rel="stylesheet" href="../../assets/css/corona-warrior.css">
+</head>
+<body>
+	<div class="main-container">
+		<header id="header" class="header-main">
+			<div class="heading">
+				<h1>Heading main</h1>
+				<p class="content">some related heading</p>
+			</div>
+		</header><!-- /header -->
+		<section class="container">
+			<div class="left-container">
+				<div class="img-container">
+					<img src="" alt="" />
+				</div>
+			</div>
+			<div class="right-container">
+				<div class="form-container">
+					<form id="userDetailForm">
+						<div class="field-group">
+							<label>Full Name</label>
+							<input type="text/submit/hidden/button/etc" name="fullname" value="">
+						</div>
+						<div class="field-group">
+							<label>Email ID</label>
+							<input type="text/submit/hidden/button/etc" name="email" value="">
+						</div>
+						<div class="field-group">
+							<label>Phone No.</label>
+							<input type="text/submit/hidden/button/etc" name="phone" value="">
+						</div>
+						<div class="field-group">
+							<label>What you do?</label>
+							<select name="profession">
+								<option selected value="-1">Please select your profession</option>
+								<option value=""></option>
+								<option value=""></option>
+							</select>
+						</div>
+						<div class="field-group">
+							<div class="row flex">
+								<label>Your lockdown experience so far!</label>
+								<div class="rating">
+									<input type="hidden" name="lockdownExpRating" value="0" />
+									<span class="starBox relative" id="ratingBox"></span>
+									<script>
+										const targetNode = document.querySelector('#ratingBox');
+										const ratingInput = document.querySelector('input[name=lockdownExpRating]');
+										const ratingToStrArray = [
+										  "Poor",
+										  "Below Average",
+										  "Average",
+										  "Above Average",
+										  "Excellent"
+										];
+
+										const fillRating = function(id) {
+											const ratingNodes = targetNode.childNodes;
+											for(let i=1; i<=5; i++){
+												if (i-1 <= id) {
+													ratingNodes[i-1].classList.add('filled');
+												} else {
+													ratingNodes[i-1].classList.remove('filled');
+												}
+											}
+											ratingInput && (ratingInput.value = id+1);
+										}
+
+										for (let i=1;i<=5;i++) {
+											const el = document.createElement('i');
+											el.className = 'ratingI blank';
+											el.onclick = fillRating.bind(null, i-1);
+											const tooltip = document.createElement('span');
+											tooltip.className = 'ratingToolTip';
+											tooltip.innerText = ratingToStrArray[i-1];
+											el.append(tooltip);
+											targetNode.append(el);
+										}
+									</script>
+								</div>
+							</div>
+							<textarea name="lockdownExpDesc"></textarea>
+						</div>
+
+						<div class="field-group">
+							<input type="submit" value="GENERATE CERTIFICATE" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+		<footer id="footer">
+			
+		</footer>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script src="../../assets/js/corona-warrior.js"></script>
+</body>
+</html>

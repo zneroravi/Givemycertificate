@@ -1,0 +1,62 @@
+.starBox.relative {
+    position: relative;
+    /*top: 6px;*/
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.starBox i.blank {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    font-style: normal;
+    color: #666;
+    cursor: pointer;
+    margin: 0px 4px 0px 0px;
+    position: relative;
+}
+
+.starBox i:before {
+    background: url('../../images/reviewicons.svg') no-repeat 0 0;
+    display: inline-block;
+    padding-top: 0;
+    font-size: 12px;
+    color: #666;
+    content: "";
+    width: 26px;
+    height: 26px;
+    position: relative;
+    background-position: -212px -142px;
+}
+
+.starBox i.filled:before {
+    background-position: -180px -142px;
+}
+
+span.ratingToolTip {
+    position: absolute;
+    padding: 10px 20px;
+    background: #ef902f;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 4px;
+    top: 0px;
+    transform: translate(0, -130%);
+    display: none;
+    white-space: nowrap;
+}
+
+span.ratingToolTip:after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border: 10px solid transparent;
+    border-top-color: #ef902f;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%,90%);
+}
+.ratingI:hover span.ratingToolTip{
+    display: block;
+}
