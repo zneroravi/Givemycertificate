@@ -10,14 +10,14 @@
 	<div class="main-container">
 		<header id="header" class="header-main">
 			<div class="heading">
-				<h1>Heading main</h1>
-				<p class="content">some related heading</p>
+				<h1>Get your own corona warrior certificate</h1>
+				<p class="content">Be a part of a corona warrior league and show the world that you have the power to change the world and save the world</p>
 			</div>
 		</header><!-- /header -->
-		<section class="container">
+		<section class="container flex">
 			<div class="left-container">
 				<div class="img-container">
-					<img src="" alt="" />
+					<img src="../../images/cw-image-1.webp" alt="" />
 				</div>
 			</div>
 			<div class="right-container">
@@ -25,29 +25,32 @@
 					<form id="userDetailForm">
 						<div class="field-group">
 							<label>Full Name</label>
-							<input type="text/submit/hidden/button/etc" name="fullname" value="">
+							<input type="text/submit/hidden/button/etc" name="fullname" id="fullname" value="">
 						</div>
 						<div class="field-group">
 							<label>Email ID</label>
-							<input type="text/submit/hidden/button/etc" name="email" value="">
+							<input type="text/submit/hidden/button/etc" name="email" id="email" value="">
 						</div>
 						<div class="field-group">
 							<label>Phone No.</label>
-							<input type="text/submit/hidden/button/etc" name="phone" value="">
+							<input type="text/submit/hidden/button/etc" name="phone" id="phone" value="">
 						</div>
 						<div class="field-group">
 							<label>What you do?</label>
-							<select name="profession">
+							<select name="profession" id="profession">
 								<option selected value="-1">Please select your profession</option>
-								<option value=""></option>
-								<option value=""></option>
+								<option value="student">student</option>
+								<option value="Salaried Professional">Salaried Professional</option>
+								<option value="online services">online services</option>
+								<option value="self employed">self employed</option>
+								<option value="essential service provider">essential service provider</option>
 							</select>
 						</div>
 						<div class="field-group">
-							<div class="row flex">
+							<div class="row">
 								<label>Your lockdown experience so far!</label>
 								<div class="rating">
-									<input type="hidden" name="lockdownExpRating" value="0" />
+									<input type="hidden" name="lockdownExpRating" id="lockdownExpRating" value="0" />
 									<span class="starBox relative" id="ratingBox"></span>
 									<script>
 										const targetNode = document.querySelector('#ratingBox');
@@ -85,7 +88,7 @@
 									</script>
 								</div>
 							</div>
-							<textarea name="lockdownExpDesc"></textarea>
+							<textarea name="lockdownExpDesc" id="lockdownExpDesc"></textarea>
 						</div>
 
 						<div class="field-group">
