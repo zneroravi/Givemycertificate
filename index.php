@@ -24,9 +24,8 @@
 
 
 #social-platforms {
-  position:relative;
-  top:100px;
-  top:25vh;
+  position:top;
+  
   font-size:1rem;
   text-align:center;
   height:250px;
