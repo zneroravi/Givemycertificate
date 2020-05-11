@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="description" content="certificate generator">
   <meta name="keywords" content="digital certificate, certificate, digital india">
   <meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/img/favicon.ico" />
-	<title>Give My Certificate</title>
+  <title>Give My Certificate</title>
 
 </head>
 <body data-spy="scroll" data-target=".navbar" class="has-loading-screen">
@@ -41,17 +41,17 @@
             document.getElementsByClassName("ts-full-screen")[0].style.height = window.innerHeight + "px";
         }
     </script>
-	<script src="assets/js/jquery-3.3.1.min.js"></script>
-	<script src="assets/js/popper.min.js"></script>
-	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/imagesloaded.pkgd.min.js"></script>
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyBEDfNcQRmKQEyulDN8nGWjLYPm8s4YB58"></script>
-	<script src="assets/js/isInViewport.jquery.js"></script>
-	<script src="assets/js/jquery.magnific-popup.min.js"></script>
-	<script src="assets/js/owl.carousel.min.js"></script>
-	<script src="assets/js/scrolla.jquery.min.js"></script>
-	<script src="assets/js/jquery.validate.min.js"></script>
-	<script src="assets/js/jquery-validate.bootstrap-tooltip.min.js"></script>
+  <script src="assets/js/isInViewport.jquery.js"></script>
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/owl.carousel.min.js"></script>
+  <script src="assets/js/scrolla.jquery.min.js"></script>
+  <script src="assets/js/jquery.validate.min.js"></script>
+  <script src="assets/js/jquery-validate.bootstrap-tooltip.min.js"></script>
   <script src="assets/js/custom.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
   <script src="assets/js/firebase.js"></script>
