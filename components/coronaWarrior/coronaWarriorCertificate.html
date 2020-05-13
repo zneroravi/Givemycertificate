@@ -5,39 +5,35 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Become a corona warrior - save your country - we are one</title>
 	<link rel="stylesheet" href="../../assets/css/corona-warrior.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-	<div class="main-container">
-		<header id="header" class="header-main">
+	<div class="container-fluid main-container py-3">
+		<!-- <header id="header" class="header-main">
 			<div class="heading">
 				<h1>Get your own corona warrior certificate</h1>
 				<p class="content">Be a part of a corona warrior league and show the world that you have the power to change the world and save the world</p>
 			</div>
-		</header><!-- /header -->
-		<section class="container flex">
-			<div class="left-container">
-				<div class="img-container">
-					<img src="../../images/cw-image-1.webp" alt="" />
-				</div>
-			</div>
-			<div class="right-container">
-				<div class="form-container">
+		</header> --><!-- /header -->
+		<section class="container--v1">
+			<div class="container container--v2 d-flex justify-content-start align-items-center">
+				<div class="form-container p-4 border border-white rounded-lg">
 					<form id="userDetailForm">
-						<div class="field-group">
+						<div class="field-group form-group label-collapse">
 							<label>Full Name</label>
-							<input type="text/submit/hidden/button/etc" name="fullname" id="fullname" value="">
+							<input type="text/submit/hidden/button/etc" name="fullname" id="fullname" class="form-control" autocomplete="off">
 						</div>
-						<div class="field-group">
+						<div class="field-group form-group label-collapse">
 							<label>Email ID</label>
-							<input type="text/submit/hidden/button/etc" name="email" id="email" value="">
+							<input type="text/submit/hidden/button/etc" name="email" id="email" class="form-control" autocomplete="off">
 						</div>
-						<div class="field-group">
+						<div class="field-group form-group label-collapse">
 							<label>Phone No.</label>
-							<input type="text/submit/hidden/button/etc" name="phone" id="phone" value="">
+							<input type="text/submit/hidden/button/etc" name="phone" id="phone" class="form-control" autocomplete="off">
 						</div>
-						<div class="field-group">
+						<div class="field-group form-group">
 							<label>What you do?</label>
-							<select name="profession" id="profession">
+							<select name="profession" id="profession" class="form-control">
 								<option selected value="-1">Please select your profession</option>
 								<option value="student">student</option>
 								<option value="Salaried Professional">Salaried Professional</option>
@@ -46,7 +42,7 @@
 								<option value="essential service provider">essential service provider</option>
 							</select>
 						</div>
-						<div class="field-group">
+						<div class="field-group d-none form-group">
 							<div class="row">
 								<label>Your lockdown experience so far!</label>
 								<div class="rating">
@@ -88,11 +84,11 @@
 									</script>
 								</div>
 							</div>
-							<textarea name="lockdownExpDesc" id="lockdownExpDesc"></textarea>
+							<textarea name="lockdownExpDesc" id="lockdownExpDesc" class="form-control"></textarea>
 						</div>
 
 						<div class="field-group">
-							<input type="submit" value="GENERATE CERTIFICATE" />
+							<input type="submit" value="GENERATE CERTIFICATE" class="btn btn-primary btn-block"/>
 						</div>
 					</form>
 				</div>
@@ -104,6 +100,7 @@
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	<script src="../../assets/js/corona-warrior.js"></script>
 </body>
 </html>

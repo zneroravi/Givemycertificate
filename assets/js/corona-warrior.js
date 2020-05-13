@@ -34,6 +34,9 @@
 				this.userDetailForm.on('submit', this.handleFormSubmit.bind(this));
 				this.form = this.userDetailForm;
 				this.attachErrResetEvent();
+
+				/* Handling form bindings */
+				
 			}
 
 			this.handleFormSubmit = function(e) {

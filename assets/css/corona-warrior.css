@@ -4,6 +4,45 @@
     box-sizing: border-box;;
 }
 
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #8E2DE2;  /* fallback for old browsers */
+    background: linear-gradient(to left, #4A00E0, #8E2DE2) no-repeat fixed;
+    background-size: cover;
+}
+.container-fluid {
+    /*border: 1px solid white;*/
+}
+.main-container {
+    height: 100%;
+}
+.container--v1 {
+    /*border: 1px solid red;*/
+    width: 100%;
+    height: 100%;
+}
+.container--v2 {
+    height: 100%;
+}
+.form-container {
+    background: var(--white);
+    height: 460px;
+    width: 333px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+
+
+
+
+
+
+
+
+
 .header-main {
     margin: 0 0 10px 0;
     font-family: sans-serif;
@@ -74,78 +113,50 @@ span.ratingToolTip:after {
 
 
 .field-group .error {
-    border: 1px solid red;
+    border-bottom: 2px solid red;
 }
 
-
-.flex {
-    display: flex;
-}
-
-.verticle-center {
-    justify-content: center;
-}
-
-.horizontal-center {
-    align-items: center;
-}
-
-.left-container {
-    position: relative;
-    flex: 2;
-    max-height: 556px;
-    z-index: 1;
-}
-
-.left-container .img-container{
-    width: 100%;
-    height: 100%;
-    /*box-shadow: 0px 10px 8px -4px #E5E5E5;*/
-}
-
-.left-container .img-container img{
-    width: 100%;
-    height: 100%;
-}
-
-.right-container {
-    position: relative;
-    flex: 1;
-    /*box-shadow: 20px 20px 25px -8px #E5E5E5;*/
-    /*border: 1px solid #F5F5F5;*/
-    z-index: 100;
-}
-
-.main-container{
-    margin: 20px auto;
-    width: 1200px;
-}
-.container {
-    position: relative;
-    margin: 0 auto;
-    border-radius: 3px;
-    border: 1px solid #F5F5F5;
-    box-shadow: 17px 17px 27px -10px #E5E5E5;
-    width: 100%;
-}
-
-.form-container{
-    height: 100%;
-    width: 100%;
-    padding: 30px 35px;
-}
-
-.field-group {
-    margin: 0 0 15px 0;
-}
 
 .field-group label {
-    font-family: sans-serif;
+    font-family: var(--font-family-sans-serif);
     color: #666;
     display: block;
 }
 
-.field-group input, .field-group select, .field-group textarea {
+input.form-control {
+    border: none;
+    border-bottom: 2px solid #ced4da;
+    border-radius: 0;
+    z-index: 2;
+    background-color: transparent;
+}
+
+input.form-control:focus {
+    border: none;
+    box-shadow: none;
+    border-bottom: 2px solid var(--primary);
+    background-color: transparent;
+}
+
+.field-group {
+    position: relative;
+    z-index: 2;
+}
+
+.field-group.label-collapse label {
+    position: absolute;
+    bottom: 0;
+    font-size: 1rem;
+    z-index: -1;
+}
+
+.field-group.label-collapse.label-expand label {
+    color: var(--primary);
+    font-size: 0.65rem;
+    font-weight: 600;
+    top: -10px;
+}
+/*.field-group input, .field-group select, .field-group textarea {
     border: 1px solid #CFCFCF;
     outline: none;
     font-size: 1.025rem;
@@ -155,16 +166,16 @@ span.ratingToolTip:after {
     border-radius: 3px;
     color: #333;
 }
-
-.field-group textarea {
+*/
+/*.field-group textarea {
     max-width: 340px;
     min-width: 100%;
     min-height: 100px;
     max-height: 300px;
-}
+}*/
 
-#userDetailForm input[type=submit] {
+/*#userDetailForm input[type=submit] {
     padding:  8px 10px;
     background: darkorange;
     color: #fff;
-}
+}*/
