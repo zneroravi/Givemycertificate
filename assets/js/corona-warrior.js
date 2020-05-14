@@ -7,6 +7,11 @@
 		const getNode = function(selector) {
 			return $(selector);
 		}
+		function getRandomInt(min, max) {
+		    min = Math.ceil(min);
+		    max = Math.floor(max);
+		    return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
 
 		const fieldMapping = {
 			fullname: { isRequired: true, testFunc: val => fullnameRegEx.test(val) },
@@ -36,7 +41,18 @@
 				this.attachErrResetEvent();
 
 				/* Handling form bindings */
-				
+				const inputNodes = getNode('.field-group.label-collapse input');
+				inputNodes.focusin(function(e) {
+					$(this).parent().addClass('label-expand');
+				}).focusout(function(e) {
+					if ($(this).val().trim().length === 0) {
+						$(this).parent().removeClass('label-expand');
+					}
+				});
+
+				getNode('.round-icon').addClass('animate__animated animate__zoomIn');
+				// getNode('.form-container').addClass('animate__animated animate__fadeIn');
+				getNode('.form-container').addClass('animate__animated animate__pulse');
 			}
 
 			this.handleFormSubmit = function(e) {
@@ -69,8 +85,75 @@
 				})
 			}
 
+			this.registerBGAnimation = function(discNodes, _refNode) {
+				const refNode = typeof _refNode !== 'undefined' ? _refNode : null;
+
+				if (discNodes && discNodes.length === 0) return;
+
+				$.each(discNodes, (id, node) => {
+					const className = node.className;
+					const classList = className.split(' ');
+					const sizeClass = classList.filter(c => c.indexOf('size-') !== -1)[0];
+					if (!sizeClass) return true;
+					const [, s1, s2] = sizeClass.split('-');
+					if (s1 && s2) {
+						/* size ranges u-l */
+						const randSize = getRandomInt(parseInt(s1), parseInt(s2));
+						const $node = $(node);
+						$node.css({
+							height: randSize+'px',
+							width: randSize+'px'
+						});
+
+						if ($node.hasClass('random-loc')) {
+							const h = $(window).outerHeight(true);
+							const w = $(window).outerWidth(true);
+							const randX = getRandomInt(0, w);
+							const randY = getRandomInt(0, h);
+							$node.css({
+								transform: `translate(${randX}px, ${randY}px)`
+							});
+							// $node.css({
+							// 	top: randY+'px',
+							// 	left: randX+'px'
+							// });
+						}
+
+						$node.addClass('animate__animated animate__zoomIn');
+
+						if (refNode && $(refNode)) {
+							// $(refNode).after($node);
+							$node.insertAfter(refNode);
+						}
+
+						if ($node.data().repeat > 0) {
+							/* recursively calling registerBGAnimation for cloned nodes*/
+							const n = [];
+							for (let i=0; i<=$node.data().repeat; i++) {
+								const pn = $node.clone().get(0);
+								pn.removeAttribute('data-repeat')
+								n.push(pn);
+							}
+
+							setTimeout(() => {
+								this.registerBGAnimation(n, $node);
+							}, 0);
+						}
+
+					} else if (s1) {
+						/* fixed size */
+					}
+				});
+
+				return true;
+			}
+
 			// invoking constructor
 			this.init();
+			setTimeout(() => {
+				const discNodes = getNode('.bg-anim-disc');
+				this.registerBGAnimation(discNodes);
+			}, 0);
 		}
 	}
 

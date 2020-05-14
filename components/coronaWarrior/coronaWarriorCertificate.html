@@ -6,6 +6,7 @@
 	<title>Become a corona warrior - save your country - we are one</title>
 	<link rel="stylesheet" href="../../assets/css/corona-warrior.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
 </head>
 <body>
 	<div class="container-fluid main-container py-3">
@@ -15,82 +16,114 @@
 				<p class="content">Be a part of a corona warrior league and show the world that you have the power to change the world and save the world</p>
 			</div>
 		</header> --><!-- /header -->
+		<!-- <div class="bg-anim-disc top-right b1"></div> -->
+		<!-- <div class="bg-anim-disc top-right b2"></div> -->
+		<!-- <div class="bg-anim-disc top-right b3"></div> -->
+		<div class="bg-anim-disc random-loc   size-250-320" data-repeat="1"></div>
+		<div class="bg-anim-disc random-loc   size-20-50" data-repeat="2"></div>
+		<div class="bg-anim-disc random-loc   size-120-150" data-repeat="2"></div>
+		<div class="bg-anim-disc random-loc   size-40-80" data-repeat="2"></div>
+		<div class="bg-anim-disc random-loc   size-100-150" data-repeat="1"></div>
 		<section class="container--v1">
 			<div class="container container--v2 d-flex justify-content-start align-items-center">
 				<div class="form-container p-4 border border-white rounded-lg">
+					<div class="floating-div profession-selection-div p-4 border border-white rounded-lg d-none" id="professionSelectionDiv">
+						<h5>What you do?</h5>
+						<div class="radios">
+							<div class="custom-control custom-radio">
+								<input type="radio" name="profession" class="form-control custom-control-input" id="pr1"/>
+								<label for="pr1" class="custom-control-label" >I'm a Student</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" name="profession" class="form-control custom-control-input" id="pr2"/>
+								<label for="pr2" class="custom-control-label" ><span>Salaried Professional</span></label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" name="profession" class="form-control custom-control-input" id="pr3"/>
+								<label for="pr3" class="custom-control-label" ><span>Online Services</span></label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" name="profession" class="form-control custom-control-input" id="pr4"/>
+								<label for="pr4" class="custom-control-label" ><span>Self Employed</span></label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" name="profession" class="form-control custom-control-input" id="pr5"/>
+								<label for="pr5" class="custom-control-label" ><span>Essential Service Provider</span></label>
+							</div>
+						</div>
+					</div>
+					<div class="anim-start anim-end floating-div rating-div p-4 border border-white rounded-lg d-none" id="ratingDiv">
+						<h5>Please tell us more!</h5>
+						<textarea name="lockdownExpDesc" id="lockdownExpDesc" class="form-control"></textarea>
+					</div>
+					<div class="form-head">
+				        <div class="round-icon">
+				            <img src="../../images/warrior-helmet.svg" draggable="false"/>
+				        </div>
+				    </div>
 					<form id="userDetailForm">
 						<div class="field-group form-group label-collapse">
-							<label>Full Name</label>
+							<label><span>Full Name</span></label>
 							<input type="text/submit/hidden/button/etc" name="fullname" id="fullname" class="form-control" autocomplete="off">
 						</div>
 						<div class="field-group form-group label-collapse">
-							<label>Email ID</label>
+							<label><span>Email ID</span></label>
 							<input type="text/submit/hidden/button/etc" name="email" id="email" class="form-control" autocomplete="off">
 						</div>
 						<div class="field-group form-group label-collapse">
-							<label>Phone No.</label>
+							<label><span>Phone No.</span></label>
 							<input type="text/submit/hidden/button/etc" name="phone" id="phone" class="form-control" autocomplete="off">
 						</div>
-						<div class="field-group form-group">
-							<label>What you do?</label>
-							<select name="profession" id="profession" class="form-control">
-								<option selected value="-1">Please select your profession</option>
-								<option value="student">student</option>
-								<option value="Salaried Professional">Salaried Professional</option>
-								<option value="online services">online services</option>
-								<option value="self employed">self employed</option>
-								<option value="essential service provider">essential service provider</option>
-							</select>
-						</div>
-						<div class="field-group d-none form-group">
-							<div class="row">
-								<label>Your lockdown experience so far!</label>
-								<div class="rating">
-									<input type="hidden" name="lockdownExpRating" id="lockdownExpRating" value="0" />
-									<span class="starBox relative" id="ratingBox"></span>
-									<script>
-										const targetNode = document.querySelector('#ratingBox');
-										const ratingInput = document.querySelector('input[name=lockdownExpRating]');
-										const ratingToStrArray = [
-										  "Poor",
-										  "Below Average",
-										  "Average",
-										  "Above Average",
-										  "Excellent"
-										];
+						<div class="field-group d-non e form-group">
+							<label>Your lockdown experience so far!</label>
+							<div class="rating">
+								<input type="hidden" name="lockdownExpRating" id="lockdownExpRating" value="0" />
+								<span class="starBox relative" id="ratingBox"></span>
+								<script>
+									const targetNode = document.querySelector('#ratingBox');
+									const ratingInput = document.querySelector('input[name=lockdownExpRating]');
+									const ratingToStrArray = [
+									  "Poor",
+									  "Below Average",
+									  "Average",
+									  "Above Average",
+									  "Excellent"
+									];
 
-										const fillRating = function(id) {
-											const ratingNodes = targetNode.childNodes;
-											for(let i=1; i<=5; i++){
-												if (i-1 <= id) {
-													ratingNodes[i-1].classList.add('filled');
-												} else {
-													ratingNodes[i-1].classList.remove('filled');
-												}
+									const fillRating = function(id) {
+										const ratingNodes = targetNode.childNodes;
+										for(let i=1; i<=5; i++){
+											if (i-1 <= id) {
+												ratingNodes[i-1].classList.add('filled');
+											} else {
+												ratingNodes[i-1].classList.remove('filled');
 											}
-											ratingInput && (ratingInput.value = id+1);
 										}
+										ratingInput && (ratingInput.value = id+1);
+									}
 
-										for (let i=1;i<=5;i++) {
-											const el = document.createElement('i');
-											el.className = 'ratingI blank';
-											el.onclick = fillRating.bind(null, i-1);
-											const tooltip = document.createElement('span');
-											tooltip.className = 'ratingToolTip';
-											tooltip.innerText = ratingToStrArray[i-1];
-											el.append(tooltip);
-											targetNode.append(el);
-										}
-									</script>
-								</div>
+									for (let i=1;i<=5;i++) {
+										const el = document.createElement('i');
+										el.className = 'ratingI blank';
+										el.onclick = fillRating.bind(null, i-1);
+										const tooltip = document.createElement('span');
+										tooltip.className = 'ratingToolTip';
+										tooltip.innerText = ratingToStrArray[i-1];
+										el.append(tooltip);
+										targetNode.append(el);
+									}
+								</script>
 							</div>
-							<textarea name="lockdownExpDesc" id="lockdownExpDesc" class="form-control"></textarea>
 						</div>
 
 						<div class="field-group">
-							<input type="submit" value="GENERATE CERTIFICATE" class="btn btn-primary btn-block"/>
+							<input type="submit" value="GENERATE CERTIFICATE" class="btn btn-primary btn-block custom-btn"/>
 						</div>
 					</form>
+					<div class="social-links">
+						<div class="seperator"></div>
+						<div class="social-icons"></div>
+					</div>
 				</div>
 			</div>
 		</section>
