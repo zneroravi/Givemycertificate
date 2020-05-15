@@ -41,8 +41,7 @@
 				  })(i+1,text[i]);
 				}
 			}, 2000);
-		}
-
+		};
 
 		const fieldMapping = {
 			fullname: { isRequired: true, testFunc: val => fullnameRegEx.test(val) },
