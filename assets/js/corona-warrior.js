@@ -16,6 +16,34 @@
 		    return Math.random() * (max - min) + min;
 		}
 
+		function autoType(elementClass, typingSpeed){
+			let $this = $(elementClass);
+			$this.css({
+				"position": "relative",
+				"display": "inline-block"
+			});
+			$this.prepend('<div class="cursor" style="right: initial; left:0;"></div>');
+			$this = $this.find(".text-js");
+			let text = $this.text().trim().split('');
+			let amntOfChars = text.length;
+			let newString = "";
+			$this.text("|");
+			setTimeout(function(){
+				$this.css("opacity",1);
+				$this.prev().removeAttr("style");
+				$this.text("");
+				for(let i = 0; i < amntOfChars; i++){
+				  (function(i,char){
+				    setTimeout(function() {        
+				      newString += char;
+				      $this.text(newString);
+				    },i*typingSpeed);
+				  })(i+1,text[i]);
+				}
+			}, 2000);
+		}
+
+
 		const fieldMapping = {
 			fullname: { isRequired: true, testFunc: val => fullnameRegEx.test(val) },
 			email: { isRequired: true, testFunc: val => emailRegEx.test(val) },
@@ -37,7 +65,7 @@
 			this.form = null;
 
 			this.init = function() {
-				console.log('warrior init');
+				console.log('warrior active!');
 				this.userDetailForm = getNode('#userDetailForm');
 				this.userDetailForm.on('submit', this.handleFormSubmit.bind(this));
 				this.form = this.userDetailForm;
@@ -56,6 +84,9 @@
 				getNode('.round-icon').addClass('animate__animated animate__zoomIn');
 				// getNode('.form-container').addClass('animate__animated animate__fadeIn');
 				getNode('.form-container').addClass('animate__animated animate__pulse');
+				// getNode('.content-box').addClass('animate__animated animate__fadeInBottomRight');
+				getNode('.content-box').addClass('animate__animated animate__fadeInRight');
+				autoType(".type-js", 150);
 			}
 
 			this.handleFormSubmit = function(e) {
@@ -117,10 +148,10 @@
 								transform: `translate(${randX}px, ${randY}px)`,
 								opacity: getRandomArbitrary(0.5, 0.9)
 							});
-							// $node.css({
-							// 	top: randY+'px',
-							// 	left: randX+'px'
-							// });
+							/* $node.css({
+							 		top: randY+'px',
+							 		left: randX+'px'
+							   }); */
 						}
 
 						$node.addClass('animate__animated animate__zoomIn');
