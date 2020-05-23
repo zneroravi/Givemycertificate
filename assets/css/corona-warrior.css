@@ -55,7 +55,6 @@ body {
 .container--v3 {
     flex: 1.5 !important;
     /*margin-bottom: 110px !important;*/
-    padding: 0 25px 0 0 !important;
     margin-top: 35px !important;
 }
 .container--v2 {
@@ -559,11 +558,11 @@ h1.anim-h1:after {
         position: absolute;
     }
     .container--v1 {
-        /* height: 100%; */
     }
     .container--v3 {
         margin-bottom: initial;
         margin-top: 5px;
+        padding: 0 35px 0 0 !important;
     }
     .container--v2 {
         height: inherit;
