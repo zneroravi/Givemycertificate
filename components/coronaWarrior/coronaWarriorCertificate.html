@@ -26,7 +26,7 @@
 		<div class="bg-anim-disc random-loc   size-40-80" data-repeat="2"></div>
 		<div class="bg-anim-disc random-loc   size-100-150" data-repeat="1"></div>
 		<section class="container--v1 d-flex flex-lg-row-reverse">
-			<div class="container container--v2 container--v3 d-flex justify-content-center align-items-center">
+			<div class="container container--v3 d-flex justify-content-center align-items-start">
 				<div class="content-box p-3">
 					<div class="h1-wrapper">
 						<div class="h1-wrap">
@@ -45,41 +45,13 @@
 											participate in the Corona Warrior league and get 
 											your warrior certificate and show it to the world 
 											that - 
-												<span class="type-js"><span class="text-js">Yes! we have the power to change the world!</span></span>
+												<p class="type-js"><span class="text-js">Yes! we have the power to save the world!</span></p>
 										</p>
 				</div>
 			</div>
-			<div class="container container--v2 d-flex justify-content-center align-items-center">
+			<div class="container container--v2 d-flex justify-content-center  align-items-center">
 				<div class="form-container p-4 border border-white rounded-lg">
-					<div class="floating-div profession-selection-div p-4 border border-white rounded-lg d-none" id="professionSelectionDiv">
-						<h5>What you do?</h5>
-						<div class="radios">
-							<div class="custom-control custom-radio">
-								<input type="radio" name="profession" class="form-control custom-control-input" id="pr1"/>
-								<label for="pr1" class="custom-control-label" >I'm a Student</label>
-							</div>
-							<div class="custom-control custom-radio">
-								<input type="radio" name="profession" class="form-control custom-control-input" id="pr2"/>
-								<label for="pr2" class="custom-control-label" ><span>Salaried Professional</span></label>
-							</div>
-							<div class="custom-control custom-radio">
-								<input type="radio" name="profession" class="form-control custom-control-input" id="pr3"/>
-								<label for="pr3" class="custom-control-label" ><span>Online Services</span></label>
-							</div>
-							<div class="custom-control custom-radio">
-								<input type="radio" name="profession" class="form-control custom-control-input" id="pr4"/>
-								<label for="pr4" class="custom-control-label" ><span>Self Employed</span></label>
-							</div>
-							<div class="custom-control custom-radio">
-								<input type="radio" name="profession" class="form-control custom-control-input" id="pr5"/>
-								<label for="pr5" class="custom-control-label" ><span>Essential Service Provider</span></label>
-							</div>
-						</div>
-					</div>
-					<div class="anim-start anim-end floating-div rating-div p-4 border border-white rounded-lg d-none" id="ratingDiv">
-						<h5>Please tell us more!</h5>
-						<textarea name="lockdownExpDesc" id="lockdownExpDesc" class="form-control"></textarea>
-					</div>
+					
 					<div class="form-head">
 				        <div class="round-icon">
 				            <img src="../../images/warrior-helmet.svg" draggable="false"/>
@@ -98,7 +70,32 @@
 							<label><span>Phone No.</span></label>
 							<input type="text/submit/hidden/button/etc" name="phone" id="phone" class="form-control" autocomplete="off">
 						</div>
-						<div class="field-group d-non e form-group">
+						<div class="floating-div profession-selection-div p- 4 border border-white rounded-lg" id="professio nSelectionDiv">
+							<label>What you do?</label>
+							<div class="radios">
+								<div class="custom-control custom-radio">
+									<input type="radio" name="profession" class="form-control custom-control-input" id="pr1"/>
+									<label for="pr1" class="custom-control-label" >I'm a Student</label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="profession" class="form-control custom-control-input" id="pr2"/>
+									<label for="pr2" class="custom-control-label" ><span>Salaried Professional</span></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="profession" class="form-control custom-control-input" id="pr3"/>
+									<label for="pr3" class="custom-control-label" ><span>Online Services</span></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="profession" class="form-control custom-control-input" id="pr4"/>
+									<label for="pr4" class="custom-control-label" ><span>Self Employed</span></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="profession" class="form-control custom-control-input" id="pr5"/>
+									<label for="pr5" class="custom-control-label" ><span>Essential Service Provider</span></label>
+								</div>
+							</div>
+						</div>
+						<div class="field-group d-non e form-group rating-stars-div">
 							<label>Your lockdown experience so far!</label>
 							<div class="rating">
 								<input type="hidden" name="lockdownExpRating" id="lockdownExpRating" value="0" />
@@ -138,6 +135,10 @@
 									}
 								</script>
 							</div>
+						</div>
+						<div class="anim-start anim-end floating-div rating-div border border-white rounded-lg" id="rating Div">
+							<label>Please tell us more!</label>
+							<textarea name="lockdownExpDesc" id="lockdownExpDesc" class="form-control"></textarea>
 						</div>
 
 						<div class="field-group">

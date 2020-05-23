@@ -86,6 +86,11 @@
 				// getNode('.content-box').addClass('animate__animated animate__fadeInBottomRight');
 				getNode('.content-box').addClass('animate__animated animate__fadeInRight');
 				autoType(".type-js", 150);
+				// setTimeout(() => {
+				// 	getNode('#professionSelectionDiv, #ratingDiv').show(function() {
+				// 		setTimeout(() => $(this).addClass('visible').removeClass('anim-start'), 200)
+				// 	});
+				// }, 2500)
 			}
 
 			this.handleFormSubmit = function(e) {
