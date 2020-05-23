@@ -344,7 +344,7 @@ input.form-control:focus {
 }
 
 .bg-anim-disc {
-    position: absolute;
+    position: fixed;
     background: rgba(255, 255, 255, 0.07123);
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.002);

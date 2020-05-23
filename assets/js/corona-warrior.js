@@ -146,11 +146,11 @@
 						if ($node.hasClass('random-loc')) {
 							const h = $(window).outerHeight(true);
 							const w = $(window).outerWidth(true);
-							const randX = getRandomInt(0, w);
-							const randY = getRandomInt(0, h);
+							const randX = getRandomInt(0, w-50);
+							const randY = getRandomInt(0, h-50);
 							$node.css({
 								transform: `translate(${randX}px, ${randY}px)`,
-								opacity: getRandomArbitrary(0.5, 0.9)
+								opacity: getRandomArbitrary(0.35, 0.9)
 							});
 							/* $node.css({
 							 		top: randY+'px',
