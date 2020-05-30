@@ -228,25 +228,31 @@ div#con1.hide, div#con2.hide {
     display: none !important;
 }
 
-.download-certificate {
+.certi-action-btns {
     position: fixed;
     left: 100px;
     top: 65px;
 }
 
-.download-certificate button {
+.download-certificate button, .new-certificate button {
     width: 100px;
     text-align: center;
     font-family: var(--font-family-sans-serif);
 }
 
-.download-certificate button img {
+.download-certificate button img, .new-certificate button img {
     width: 100%;
     height: auto;
     text-align: center;
     margin: 5px;
 }
 
+.new-certificate {
+  margin-top: 20px;
+}
+.new-certificate button img {
+  margin-left: 0;
+}
 /*div#ratingDiv textarea#lockdownExpDesc {
     max-height: calc(205px - (2rem + 24px));
     min-height: calc(171px - (2rem + 24px*3));

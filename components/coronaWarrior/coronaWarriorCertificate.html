@@ -103,7 +103,7 @@
 						</div>
 						<div class="field-group form-group label-collapse">
 							<label><span>Phone No.(optional)</span></label>
-							<input type="text/submit/hidden/button/etc" name="phone" id="phone" class="form-control" autocomplete="off">
+							<input type="text/submit/hidden/button/etc" name="phone" id="phone" class="form-control" autocomplete="off" maxlength="10">
 						</div>
 						<div class="floating-div profession-selection-div p- 4 border border-white" id="professionBox">
 							<label>What you do?</label>
@@ -195,11 +195,19 @@
 				</div>
 			</div>
 			<div class="container d-none justify-content-center align-items-center" id="con3">
-				<div class="download-certificate">
-					<button type="button" class="btn btn-primary" id="certiDownloadBtn">
-						<img src="../../images/download-icon.svg">
-						Download Certificate
-					</button>
+				<div class="certi-action-btns">
+					<div class="download-certificate">
+						<button type="button" class="btn btn-primary" id="certiDownloadBtn">
+							<img src="../../images/download-icon.svg">
+							Download Certificate
+						</button>
+					</div>
+					<div class="new-certificate">
+						<button type="button" class="btn btn-primary" id="newCertiGenBtn">
+							<img src="../../images/edit.svg">
+							Generate new Certificate
+						</button>
+					</div>
 				</div>
 				<div class="certificate-con">
 					<div class="certificate">

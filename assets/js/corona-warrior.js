@@ -100,6 +100,13 @@
 			}
 		}
 
+		function clearStorage() {
+			if (window && window.localStorage) {
+				window.localStorage.clear();
+				document.location.reload();
+			}
+		}
+
 		function isCertificateAvailable() {
 			if (window && window.localStorage) {
 				const certiData = window.localStorage.getItem('certi');
@@ -130,6 +137,7 @@
 			getNode('#certificateImg').attr('src', certificateImage);
 			scrollToTop();
 			getNode('#certiDownloadBtn').click(() => downloadCertificate(certificateImage));
+			getNode('#newCertiGenBtn').click(clearStorage);
 		}
 		
 		return function() {
