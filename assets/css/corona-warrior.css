@@ -22,8 +22,8 @@
 }
 
 
-html {
-    /* height: 100%; */
+html, body {
+     /*height: 100%; */
 }
 
 body {
@@ -106,13 +106,18 @@ input[type=submit].custom-btn {
 }
 
 .rating-stars-div {
-    margin-bottom: 0.1rem !important;
+    margin-bottom: 0.5rem !important;
+    padding-bottom: 5px;
 }
-.profession-selection-div {
-    margin-bottom: 1rem;
+.profession-selection-div, .rating-div {
+    margin-bottom: 0.5rem;
+    padding-bottom: 12px;
 }
 .profession-selection-div > label {
     margin-bottom: 0.1rem;
+}
+.profession-selection-div.error, .rating-stars-div.error, .rating-div.error {
+    border-bottom: 2px solid red !important;
 }
 
 div#professionSelectionDiv, div#ratingDiv {
@@ -169,6 +174,77 @@ div#ratingDiv.visible {
 div#ratingDiv.anim-start {
     height: 95px;
     min-height: inherit;
+}
+
+
+.form-overlay {
+  display: none;
+}
+
+.form-container.submitting .form-overlay {
+  position: absolute;
+  z-index: 100;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: table;
+}
+
+.loader {
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+p.loader-text {
+    padding: 40px 15px;
+    text-align: center;
+    font-family: 'Righteous', sans-serif, serif;
+}
+
+.form-container.submitting #userDetailForm {
+  filter: blur(4px);
+  user-select: none;
+}
+
+.certificate-con {
+    width: 90%;
+    height: 100%;
+}
+
+img#certificateImg {
+    width: 100%;
+    height: auto;
+}
+
+div#con3 {
+    flex: 1;
+    height: 100%;
+    padding: 50px 0;
+}
+div#con1.hide, div#con2.hide {
+    display: none !important;
+}
+
+.download-certificate {
+    position: fixed;
+    left: 100px;
+    top: 65px;
+}
+
+.download-certificate button {
+    width: 100px;
+    text-align: center;
+    font-family: var(--font-family-sans-serif);
+}
+
+.download-certificate button img {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin: 5px;
 }
 
 /*div#ratingDiv textarea#lockdownExpDesc {
@@ -482,6 +558,10 @@ h1.anim-h1:after {
 
 .text-js{
   opacity: 0;
+  height: 41px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 38px;
 }
 .cursor{
   display: block;
@@ -535,6 +615,13 @@ h1.anim-h1:after {
         bottom: 24px;
         top: initial !important;
         position: initial;
+    }
+    .certificate-con {
+        width: 70%;
+        /*height: 80%;*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 

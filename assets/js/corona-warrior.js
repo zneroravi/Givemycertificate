@@ -47,9 +47,9 @@
 			fullname: { isRequired: true, testFunc: val => fullnameRegEx.test(val) },
 			email: { isRequired: true, testFunc: val => emailRegEx.test(val) },
 			phone: { isRequired: false, testFunc: val => phoneRegEx.test(val) },
-			profession: { isRequired: true, testFunc: (i) => parseInt(i) !== -1},
-			lockdownExpRating: { isRequired: true, testFunc: (i) => parseInt(i) > 0 },
-			lockdownExpDesc: { isRequired: false, testFunc: (s) => s.trim().length > 50 }
+			profession: { isRequired: true, testFunc: (i) => parseInt(i) !== -10, selector: "#professionBox"},
+			lockdownExpRating: { isRequired: true, testFunc: (i) => parseInt(i) > 0, selector: "#ratingSelectionBox" },
+			lockdownExpDesc: { isRequired: false, testFunc: (s) => s.trim().length > 10, selector: "#lockdownExperienceBox"}
 		}
 
 		const resetErr = function(e) {
@@ -59,53 +59,147 @@
 				field.classList.remove('error');
 			}
 		}
+
+		const dataMap = {
+			fullname: "name",
+			email: "email",
+			phone: "phoneNo",
+			profession: "profession",
+			lockdownExpRating: "rating",
+			lockdownExpDesc: "lockdownExperience"
+		};
+
+		const loaderTextList = [
+			'Please wait... Generating your certificate',
+			'Hey, warrior %s! your certificate is on the way...',
+			'Congratulations! your certificate generated successfully...\n You can share you certificate to social media or download it.'
+		];
+
+		function prepareSubmitData(formData) {
+			const data = [];
+			for (let i = 0; i < formData.length; i++ ) {
+				const obj = {};
+				obj.name = dataMap[formData[i].name];
+				obj.value = formData[i].value;
+				data.push(obj);
+			}
+			return data;
+		}
+
+		function scrollToTop() {
+			getNode('html, body').animate({ scrollTop: 0 }, "slow");
+		}
+
+		function storeCertificate(certData) {
+			if (window && window.localStorage && certData) {
+				const certi = {
+					certificateId: certData.certificateId,
+					image: certData.image
+				};
+				window.localStorage.setItem('certi', JSON.stringify(certi));
+			}
+		}
+
+		function isCertificateAvailable() {
+			if (window && window.localStorage) {
+				const certiData = window.localStorage.getItem('certi');
+				if (certiData) {
+					return JSON.parse(certiData);
+				}
+				return null;
+			}
+			return null;
+		}
+
+		function downloadCertificate(certificateImage) {
+			const a = document.createElement('a');
+			a.href = certificateImage;
+			a.download = "Corona Warrior.webp";
+			document.body.appendChild(a);
+			a.click();
+			document.body.removeChild(a);
+		}
+
+		function displayCertificate(certificateImage, d) {
+			const delay = typeof d !== "undefined" ? d : 0;
+			setTimeout(() => {
+				getNode('#con1').addClass('hide');
+				getNode('#con2').addClass('hide');
+				getNode('#con3').addClass('d-flex animate__animated animate__fadeIn');
+			}, delay)
+			getNode('#certificateImg').attr('src', certificateImage);
+			scrollToTop();
+			getNode('#certiDownloadBtn').click(() => downloadCertificate(certificateImage));
+		}
 		
 		return function() {
 			this.form = null;
 
 			this.init = function() {
-				console.log('warrior active!');
-				this.userDetailForm = getNode('#userDetailForm');
-				this.userDetailForm.on('submit', this.handleFormSubmit.bind(this));
-				this.form = this.userDetailForm;
-				this.attachErrResetEvent();
+				const certiData = isCertificateAvailable();
+				if (certiData) {
+					displayCertificate(certiData.image);
+				} else {
+					getNode('#con1').removeClass('hide');
+					getNode('#con2').removeClass('hide');
+					console.log('warrior active!');
+					this.userDetailForm = getNode('#userDetailForm');
+					this.userDetailForm.on('submit', this.handleFormSubmit.bind(this));
+					this.form = this.userDetailForm;
+					this.attachErrResetEvent();
 
-				/* Handling form bindings */
-				const inputNodes = getNode('.field-group.label-collapse input');
-				inputNodes.focusin(function(e) {
-					$(this).parent().addClass('label-expand');
-				}).focusout(function(e) {
-					if ($(this).val().trim().length === 0) {
-						$(this).parent().removeClass('label-expand');
-					}
-				});
+					/* Handling form bindings */
+					const inputNodes = getNode('.field-group.label-collapse input');
+					inputNodes.focusin(function(e) {
+						$(this).parent().addClass('label-expand');
+					}).focusout(function(e) {
+						if ($(this).val().trim().length === 0) {
+							$(this).parent().removeClass('label-expand');
+						}
+					});
 
-				getNode('.round-icon').addClass('animate__animated animate__zoomIn');
-				// getNode('.form-container').addClass('animate__animated animate__fadeIn');
-				getNode('.form-container').addClass('animate__animated animate__pulse');
-				// getNode('.content-box').addClass('animate__animated animate__fadeInBottomRight');
-				getNode('.content-box').addClass('animate__animated animate__fadeInRight');
-				autoType(".type-js", 150);
-				// setTimeout(() => {
-				// 	getNode('#professionSelectionDiv, #ratingDiv').show(function() {
-				// 		setTimeout(() => $(this).addClass('visible').removeClass('anim-start'), 200)
-				// 	});
-				// }, 2500)
+					const radioNodes = getNode('input[type=radio]');
+					radioNodes.click(function(e) {
+						$(this).parent().parent().parent().removeClass('error');
+					});
+
+					const ratingBox = getNode('#ratingBox');
+					ratingBox.click(function(e) {
+						$(this).parent().parent().removeClass('error');
+					});
+
+					const textBox = getNode('#lockdownExpDesc');
+					textBox.keyup(function(e) {
+						$(this).parent().removeClass('error');
+					});
+
+					getNode('.round-icon').addClass('animate__animated animate__zoomIn');
+					// getNode('.form-container').addClass('animate__animated animate__fadeIn');
+					getNode('.form-container').addClass('animate__animated animate__pulse');
+					// getNode('.content-box').addClass('animate__animated animate__fadeInBottomRight');
+					getNode('.content-box').addClass('animate__animated animate__fadeInRight');
+					autoType(".type-js", 150);
+				}
 			}
 
-			this.handleFormSubmit = function(e) {
-				e.preventDefault();
-				const formFields = this.form.serializeArray()
-				console.log('form submitted', formFields);
-				for(let i=0;i<formFields.length; i++){
-					const field = formFields[i];
+			this.validateForm = function(formData) {
+				let isValid = true;
+				for(let i=0;i<formData.length; i++){
+					const field = formData[i];
 					const fieldName = field.name;
 					const value = field.value;
 					const fieldMap = fieldMapping[fieldName];
 					if(fieldMap.isRequired || value.trim().length > 0) {
 						if(!fieldMap.testFunc(value)) {
-							const node = getNode('#'+fieldName);
-							node.addClass('error');
+							let node = null;
+							if (fieldMap.selector) {
+								node = getNode(fieldMap.selector);
+							} else {
+								node = getNode('#'+fieldName);
+							}
+
+							node && node.addClass('error');
+							isValid = false;
 							// const parentNode = node.parent();
 							// if(!parentNode.hasCalss('error-msg')) {
 							// 	const errMsg = '<span class="err">field is required</span>'
@@ -114,6 +208,58 @@
 						}
 					}
 				}
+
+				return isValid;
+			}
+
+			this.generateCertificate = function(formData) {
+				const loaderNode = getNode('.loader-text');
+				loaderNode.html(loaderTextList[0]);
+				getNode('.form-container').addClass('submitting');
+				let c = 0;
+				const l = loaderTextList.length;
+				const name = formData.filter(o => o.name === 'name')[0].value;
+				console.log({name, formData})
+				const t = setInterval(() => {
+					c = c < l - 1 ? (++c) : 2;
+					console.log({c});
+					loaderNode.html(loaderTextList[c].replace('%s', name));
+				}, 1700);
+				$.ajax({
+					url: 'https://verify.givemycertificate.com/covid/generateCertificate',
+					type: 'POST',
+					data: formData
+				}).done(res => {
+					console.log('res ', res);
+					if (res && res.code && res.code === 200) {
+						getNode('#con1').addClass('animate__animated animate__fadeOutRight');
+						getNode('#con2').addClass('animate__animated animate__fadeOutLeft');
+						displayCertificate(res.image, 500);
+						storeCertificate(res);
+					}
+				}).fail(err => {
+					console.log('error ', err);
+				}).always(() => {
+					getNode('.form-container').removeClass('submitting');
+					clearInterval(t);
+				});
+			}
+
+			this.handleFormSubmit = function(e) {
+				e.preventDefault();
+				let formFields = this.form.serializeArray();
+				const objTodel = formFields.filter(o => o.name === "profession");
+				if (objTodel.length > 1) {
+					formFields = formFields.filter(o => parseInt(o.value) !== -10);
+				}
+
+				console.log('form submitted', formFields);
+				const isFormSubmit = this.validateForm(formFields);
+				if (isFormSubmit) {
+					const reqData = prepareSubmitData(formFields);
+					this.generateCertificate(reqData);
+				}
+				
 				return false;
 			}
 
