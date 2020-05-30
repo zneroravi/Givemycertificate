@@ -133,6 +133,7 @@
 				getNode('#con1').addClass('hide');
 				getNode('#con2').addClass('hide');
 				getNode('#con3').addClass('d-flex animate__animated animate__fadeIn');
+				getNode('body').css({height: '100vh'});
 			}, delay)
 			getNode('#certificateImg').attr('src', certificateImage);
 			scrollToTop();
@@ -227,10 +228,8 @@
 				let c = 0;
 				const l = loaderTextList.length;
 				const name = formData.filter(o => o.name === 'name')[0].value;
-				console.log({name, formData})
 				const t = setInterval(() => {
 					c = c < l - 1 ? (++c) : 2;
-					console.log({c});
 					loaderNode.html(loaderTextList[c].replace('%s', name));
 				}, 1700);
 				$.ajax({
@@ -238,7 +237,6 @@
 					type: 'POST',
 					data: formData
 				}).done(res => {
-					console.log('res ', res);
 					if (res && res.code && res.code === 200) {
 						getNode('#con1').addClass('animate__animated animate__fadeOutRight');
 						getNode('#con2').addClass('animate__animated animate__fadeOutLeft');
@@ -261,7 +259,7 @@
 					formFields = formFields.filter(o => parseInt(o.value) !== -10);
 				}
 
-				console.log('form submitted', formFields);
+				/* console.log('form submitted', formFields); */
 				const isFormSubmit = this.validateForm(formFields);
 				if (isFormSubmit) {
 					const reqData = prepareSubmitData(formFields);

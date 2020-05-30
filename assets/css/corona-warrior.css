@@ -223,15 +223,16 @@ div#con3 {
     flex: 1;
     height: 100%;
     padding: 50px 0;
+    flex-direction: column;
 }
 div#con1.hide, div#con2.hide {
     display: none !important;
 }
 
 .certi-action-btns {
-    position: fixed;
-    left: 100px;
-    top: 65px;
+    position: initial;
+    display: inline-flex;
+    margin-bottom: 20px;
 }
 
 .download-certificate button, .new-certificate button {
@@ -248,8 +249,9 @@ div#con1.hide, div#con2.hide {
 }
 
 .new-certificate {
-  margin-top: 20px;
+  margin-left: 20px;
 }
+
 .new-certificate button img {
   margin-left: 0;
 }
@@ -628,6 +630,20 @@ h1.anim-h1:after {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    div#con3 {
+      flex-direction: initial;
+    }
+    .certi-action-btns {
+      position: fixed;
+      left: 100px;
+      top: 65px;
+      display: initial;
+    }
+    .new-certificate {
+      margin-top: 20px;
+      margin-left: 0;
     }
 }
 
