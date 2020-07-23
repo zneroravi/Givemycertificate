@@ -44,21 +44,8 @@ Yes! we have the power to save the world!" />
 
     <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f19e56a8aa12700134b0c27&product=inline-share-buttons&cms=sop' async='async'></script>
 
-    <script type="text/javascript">
-      function createCanvas(){
-        var canvas = document.getElementById("certImage");
-        var context = canvas.getContext("2d");
-
-        var myImg = new Image();
-        img.onload = function() {
-          context.drawImage(myImg, 0, 0);
-        };
-        img.src = 'https://storage.googleapis.com/gmc-covid19/covid19/<?php echo $certId; ?>.webp';
-      }
-    </script>
-
   </head>
-  <body onload="createCanvas">
+  <body>
     <!-- Start your project here-->
     <!--Navbar -->
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color">
@@ -163,7 +150,6 @@ Yes! we have the power to save the world!" />
                                 class="img-fluid  rounded z-depth-4 qr"
                               />
                             </div>
-                            <canvas id="certImage"> </canvas>
                           </div>
                         </div>
                       </div>
@@ -219,10 +205,13 @@ Yes! we have the power to save the world!" />
                           type="button" 
                           class="btn btn-primary"
                           onclick="
-                            var link = document.createElement('a'); 
-                            link.download = 'coronaWarrior.png';
-                            link.href = document.getElementById('certImage').toDataURL();
-                            link.click();"
+                            const a = document.createElement('a');
+                            a.href = 'https://storage.googleapis.com/gmc-covid19/covid19/<?php echo $certId; ?>.webp';
+                            a.download = 'Corona Warrior.webp';
+                            document.body.appendChild(a);
+                            a.click();
+                            document.body.removeChild(a);
+                          "
                         >
                           <p class="p-0 m-0 download">
                             Download
