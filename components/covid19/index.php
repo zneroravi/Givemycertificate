@@ -5,6 +5,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta property="og:title" content="I am a corona warrior, Are you?" />
+    <meta property="og:image" content="https://storage.googleapis.com/gmc-covid19/covid19/<?php echo $certId; ?>.webp" />
+    <meta property="og:url" content="https://givemycertificate.com/components/covid19/?certificateId=<?php echo $certId; ?>" />
+    <meta property="og:description" content="Are you ready to show the world that you've got what it takes to save your country and your loved once.
+
+So you have powers? Right! we all have powers like controling our mind to stay inside and keep our surrounding safe.
+
+You know there is more you can do staying inside like showing the world the champion in you. To do so participate in the Corona Warrior league and get your warrior certificate and show it to the world that -
+
+Yes! we have the power to save the world!" />
+
     <meta charset="UTF-8" />
     <meta
       name="viewport"
@@ -103,7 +114,7 @@
                     data-size="1600x1067"
                   >
                     <img
-                      src="img/Corona Warrior.webp"
+                      src="https://storage.googleapis.com/gmc-covid19/covid19/<?php echo $certId; ?>.webp"
                       data-size="1600x1067"
                       alt="placeholder"
                       class="img-fluid image-certificate view overlay rounded z-depth-4 swing-in-top-fwd"
