@@ -201,7 +201,11 @@ Yes! we have the power to save the world!" />
                       </div>
 
                       <div class="container d-flex buttons">
-                        <button type="button" class="btn btn-primary">
+                        <button 
+                          type="button" 
+                          class="btn btn-primary"
+                          onclick="window.open('https://storage.googleapis.com/gmc-covid19/covid19/<?php echo $certId; ?>.webp')"
+                        >
                           <p class="p-0 m-0 download">
                             Download
                             <i class="fa fa-download" aria-hidden="true"></i>
@@ -211,12 +215,16 @@ Yes! we have the power to save the world!" />
                             <i class="fa fa-download" aria-hidden="true"></i>
                           </p>
                         </button>
-                        <a href="https://givemycertificate.com/components/coronaWarrior/coronaWarriorCertificate.html">
-                          <button type="button" class="btn btn-secondary">
+                        
+                          <button 
+                            type="button" 
+                            class="btn btn-secondary"
+                            onclick="location.href='https://givemycertificate.com/components/coronaWarrior/coronaWarriorCertificate.html'"
+                          >
                             Create New
                             <i class="fa fa-file-text" aria-hidden="true"></i>
                           </button>
-                        </a>
+                        
                       </div>
 
                       <div class="row">
