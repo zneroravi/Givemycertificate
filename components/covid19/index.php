@@ -114,6 +114,7 @@ Yes! we have the power to save the world!" />
                     data-size="1600x1067"
                   >
                     <img
+                      id = "certImage"
                       src="https://storage.googleapis.com/gmc-covid19/covid19/<?php echo $certId; ?>.webp"
                       data-size="1600x1067"
                       alt="placeholder"
@@ -204,7 +205,7 @@ Yes! we have the power to save the world!" />
                         <button 
                           type="button" 
                           class="btn btn-primary"
-                          onclick="window.open('https://storage.googleapis.com/gmc-covid19/covid19/<?php echo $certId; ?>.webp')"
+                          onclick="var link = document.createElement('a'); link.download = 'coronaWarrior.png'; link.href = document.getElementById('certImage').toDataURL(); link.click();"
                         >
                           <p class="p-0 m-0 download">
                             Download
