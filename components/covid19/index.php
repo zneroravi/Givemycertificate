@@ -45,18 +45,20 @@ Yes! we have the power to save the world!" />
     <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f19e56a8aa12700134b0c27&product=inline-share-buttons&cms=sop' async='async'></script>
 
     <script type="text/javascript">
-      var canvas = document.getElementById("certImage");
-      var context = canvas.getContext("2d");
+      function createCanvas(){
+        var canvas = document.getElementById("certImage");
+        var context = canvas.getContext("2d");
 
-      var myImg = new Image();
-      img.onload = function() {
-        context.drawImage(myImg, 0, 0);
-      };
-      img.src = 'https://storage.googleapis.com/gmc-covid19/covid19/<?php echo $certId; ?>.webp';
+        var myImg = new Image();
+        img.onload = function() {
+          context.drawImage(myImg, 0, 0);
+        };
+        img.src = 'https://storage.googleapis.com/gmc-covid19/covid19/<?php echo $certId; ?>.webp';
+      }
     </script>
 
   </head>
-  <body>
+  <body onload="createCanvas">
     <!-- Start your project here-->
     <!--Navbar -->
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color">
