@@ -155,27 +155,14 @@ Yes! we have the power to save the world!" />
                       </div>
                     </div>
                     <div class="container mt-3">
-                      <h3 class="font-weight-bold text-center dark-grey-text p">
-                        <span class="typing"
-                          >Explore
-                          <i class="fas fa-business-time text-warning"></i
-                        ></span>
-                      </h3>
-                      <script type="text/javascript">
-                        var typed = new Typed(".typing", {
-                          strings: [
-                            "Learn ",
-                            "Grow  <i class='fas fa-heart text-danger' ></i>",
-                            "Learn <i class='fas fa-check text-success'></i>"
-                          ],
-                          smartBackspace: true,
-                          typeSpeed: 50,
-                          loop: true,
-                          backSpeed: 60,
-                          backDelay: 1000,
-                          startDelay: 400
-                        });
-                      </script>
+
+					<div class="container">
+					<button type="button" class="btn btn-danger btn-lg" style="width: 100%;"><a href="https://givemycertificate.com/components/coronaWarrior/coronaWarriorCertificate.html" class="text-white">Create New Certificate
+                          <i class="fa fa-file-text" aria-hidden="true"></i>
+                        </a></button>
+                    </div>
+
+
                       <hr class="w-header my-2" />
                       <p class="lead text-center text-muted pt-2 ">
                         Share your Corona Warrior certificate with pride and
@@ -200,38 +187,13 @@ Yes! we have the power to save the world!" />
                         </a> -->
                       </div>
 
-                      <div class="container d-flex buttons">
-                        <button 
-                          type="button" 
-                          class="btn btn-primary"
-                          onclick="
-                            const a = document.createElement('a');
-                            a.href = 'https://storage.googleapis.com/gmc-covid19/covid19/<?php echo $certId; ?>.webp';
-                            a.download = 'Corona Warrior.webp';
-                            document.body.appendChild(a);
-                            a.click();
-                            document.body.removeChild(a);
-                          "
-                        >
-                          <p class="p-0 m-0 download">
-                            Download
-                            <i class="fa fa-download" aria-hidden="true"></i>
-                          </p>
-                          <p class="p-0 m-0 download-desk">
-                            Download
-                            <i class="fa fa-download" aria-hidden="true"></i>
-                          </p>
-                        </button>
-                        
-                          <button 
-                            type="button" 
-                            class="btn btn-secondary"
-                            onclick="location.href='https://givemycertificate.com/components/coronaWarrior/coronaWarriorCertificate.html'"
-                          >
-                            Create New
-                            <i class="fa fa-file-text" aria-hidden="true"></i>
-                          </button>
-                        
+
+                      <div class="container d-flex justify-content-center font-weight-bold">
+
+					  <u><a href="#">Download Certificate
+                         <i class="fa fa-download px-1" aria-hidden="true"></i>
+                        </a></u>
+
                       </div>
 
                       <div class="row">
