@@ -44,6 +44,17 @@ Yes! we have the power to save the world!" />
 
     <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f19e56a8aa12700134b0c27&product=inline-share-buttons&cms=sop' async='async'></script>
 
+    <script type='text/javascript'>
+      function downloadCertificate(certificateImage) {
+        const a = document.createElement('a');
+        a.href = certificateImage;
+        a.download = "Corona Warrior.webp";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+    </script>
+
   </head>
   <body>
     <!-- Start your project here-->
@@ -157,7 +168,7 @@ Yes! we have the power to save the world!" />
                     <div class="container mt-3">
 
 					<div class="container">
-					<button type="button" onclick="window.location='https://givemycertificate.com/components/coronaWarrior/coronaWarriorCertificate.html';" class="btn btn-danger btn-lg" style="width: 100%;"><a href="https://givemycertificate.com/components/coronaWarrior/coronaWarriorCertificate.html" class="text-white">Create New Certificate
+					<button type="button" onclick="window.location='https://givemycertificate.com/components/coronaWarrior/coronaWarriorCertificate.html';" class="btn btn-danger btn-lg" style="width: 100%;"><a href="https://givemycertificate.com/components/coronaWarrior/coronaWarriorCertificate.html" class="text-white">Generate Your Certificate
                           <i class="fa fa-file-text" aria-hidden="true"></i>
                         </a></button>
                     </div>
@@ -190,9 +201,16 @@ Yes! we have the power to save the world!" />
 
                       <div class="container d-flex justify-content-center font-weight-bold">
 
-					  <u><a href="https://storage.googleapis.com/gmc-covid19/covid19/<?php echo $certId; ?>.webp" download="coronaWarrior.webp">Download Certificate
-                         <i class="fa fa-download px-1" aria-hidden="true"></i>
-                        </a></u>
+                      <u>
+                        <a 
+                          href="https://storage.googleapis.com/gmc-covid19/covid19/<?php echo $certId; ?>.webp" 
+                          download="coronaWarrior.webp"
+                          onclick="downloadCertificate('https://storage.googleapis.com/gmc-covid19/covid19/<?php echo $certId; ?>.webp')"
+                        >
+                            Download Certificate
+                          <i class="fa fa-download px-1" aria-hidden="true"></i>
+                        </a>
+                      </u>
 
                       </div>
 
