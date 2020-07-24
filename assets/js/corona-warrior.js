@@ -238,10 +238,7 @@
 					data: formData
 				}).done(res => {
 					if (res && res.code && res.code === 200) {
-						getNode('#con1').addClass('animate__animated animate__fadeOutRight');
-						getNode('#con2').addClass('animate__animated animate__fadeOutLeft');
-						displayCertificate(res.image, 500);
-						storeCertificate(res);
+						window.location.href = "https://givemycertificate.com/components/covid19/?certificateId="+res.certificateId;
 					}
 				}).fail(err => {
 					console.log('error ', err);
