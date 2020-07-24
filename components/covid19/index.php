@@ -155,11 +155,14 @@ Yes! we have the power to save the world!" />
                       </div>
                     </div>
                     <div class="container mt-3">
+
 					<div class="container">
 					<button type="button" class="btn btn-danger btn-lg" style="width: 100%;"><a href="https://givemycertificate.com/components/coronaWarrior/coronaWarriorCertificate.html" class="text-white">Create New Certificate
                           <i class="fa fa-file-text" aria-hidden="true"></i>
                         </a></button>
                     </div>
+
+
                       <hr class="w-header my-2" />
                       <p class="lead text-center text-muted pt-2 ">
                         Share your Corona Warrior certificate with pride and
@@ -184,11 +187,13 @@ Yes! we have the power to save the world!" />
                         </a> -->
                       </div>
 
+
                       <div class="container d-flex justify-content-center font-weight-bold">
 
 					  <u><a href="#">Download Certificate
                          <i class="fa fa-download px-1" aria-hidden="true"></i>
                         </a></u>
+
                       </div>
 
                       <div class="row">
