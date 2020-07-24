@@ -202,14 +202,13 @@ Yes! we have the power to save the world!" />
                       <div class="container d-flex justify-content-center font-weight-bold">
 
                       <u>
-                        <a 
-                          href="https://storage.googleapis.com/gmc-covid19/covid19/<?php echo $certId; ?>.webp" 
-                          download="coronaWarrior.webp"
+                        <button 
+                          type="button"
                           onclick="downloadCertificate('https://storage.googleapis.com/gmc-covid19/covid19/<?php echo $certId; ?>.webp')"
                         >
                             Download Certificate
                           <i class="fa fa-download px-1" aria-hidden="true"></i>
-                        </a>
+                        </button>
                       </u>
 
                       </div>
