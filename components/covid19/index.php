@@ -156,14 +156,9 @@ Yes! we have the power to save the world!" />
                     </div>
                     <div class="container mt-3">
 					<div class="container">
-                        <button type="button" onclick="
-                            const a = document.createElement('a');
-                            a.href = 'https://storage.googleapis.com/gmc-covid19/covid19/<?php echo $certId; ?>.webp';
-                            a.download = 'Corona Warrior.webp';
-                            document.body.appendChild(a);
-                            a.click();
-                            document.body.removeChild(a);
-                          " class="btn btn-danger btn-lg" style="width: 100%;"> Donwload <i class="fa fa-download" aria-hidden="true"></i></button>
+					<button type="button" class="btn btn-danger btn-lg" style="width: 100%;"><a href="https://givemycertificate.com/components/coronaWarrior/coronaWarriorCertificate.html" class="text-white">Create New Certificate
+                          <i class="fa fa-file-text" aria-hidden="true"></i>
+                        </a></button>
                     </div>
                       <hr class="w-header my-2" />
                       <p class="lead text-center text-muted pt-2 ">
@@ -191,8 +186,8 @@ Yes! we have the power to save the world!" />
 
                       <div class="container d-flex justify-content-center font-weight-bold">
 
-					  <u><a href="https://givemycertificate.com/components/coronaWarrior/coronaWarriorCertificate.html">Create New Certificate
-                          <i class="fa fa-file-text" aria-hidden="true"></i>
+					  <u><a href="#">Download Certificate
+                         <i class="fa fa-download px-1" aria-hidden="true"></i>
                         </a></u>
                       </div>
 
