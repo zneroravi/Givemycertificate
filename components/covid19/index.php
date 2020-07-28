@@ -43,7 +43,7 @@ Yes! we have the power to save the world!" />
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
 
     <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f19e56a8aa12700134b0c27&product=inline-share-buttons&cms=sop' async='async'></script>
-
+    
     <script type='text/javascript'>
       function downloadCertificate(certificateImage) {
         const a = document.createElement('a');
@@ -54,6 +54,15 @@ Yes! we have the power to save the world!" />
         document.body.removeChild(a);
       }
     </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173970539-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-173970539-1');
+</script>
 
   </head>
   <body>
