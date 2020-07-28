@@ -54,15 +54,6 @@ Yes! we have the power to save the world!" />
         document.body.removeChild(a);
       }
     </script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173970539-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-173970539-1');
-</script>
 
   </head>
   <body>
