@@ -46,10 +46,10 @@
 		const fieldMapping = {
 			fullname: { isRequired: true, testFunc: val => fullnameRegEx.test(val) },
 			email: { isRequired: true, testFunc: val => emailRegEx.test(val) },
-			phone: { isRequired: false, testFunc: val => phoneRegEx.test(val) },
+			phone: { isRequired: false, testFunc: val => !0 || phoneRegEx.test(val) },
 			profession: { isRequired: true, testFunc: (i) => parseInt(i) !== -10, selector: "#professionBox"},
 			lockdownExpRating: { isRequired: true, testFunc: (i) => parseInt(i) > 0, selector: "#ratingSelectionBox" },
-			lockdownExpDesc: { isRequired: false, testFunc: (s) => s.trim().length > 10, selector: "#lockdownExperienceBox"}
+			lockdownExpDesc: { isRequired: false, testFunc: (s) => !0 || s.trim().length > 10, selector: "#lockdownExperienceBox"}
 		}
 
 		const resetErr = function(e) {
