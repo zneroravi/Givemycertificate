@@ -245,7 +245,7 @@ Yes! we have the power to save the world!" />
     </div>
 
 
-    <div id="loaderh1">
+    <div id="loaderbody">
       <h1 id="loaderh1">Cooking in progress..</h1>
       <div id="cooking">
         <div class="bubble"></div>
