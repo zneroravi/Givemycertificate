@@ -58,28 +58,6 @@ Yes! we have the power to save the world!" />
   </head>
   <body>
     <!-- Start your project here-->
-
-    <div id="loaderbody">
-      <h1 id="loaderh1">Cooking in progress..</h1>
-      <div id="cooking">
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div id="area">
-          <div id="sides">
-            <div id="pan"></div>
-            <div id="handle"></div>
-          </div>
-          <div id="pancake">
-            <div id="pastry"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
     <!--Navbar -->
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color">
       <a
