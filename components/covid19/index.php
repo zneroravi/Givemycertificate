@@ -204,7 +204,7 @@ Yes! we have the power to save the world!" />
                       <u>
                         <button 
                           type="button"
-                          onclick="downloadCertificate('https://verify.givemycertificate.com/covid/getCertificateImage/<?php echo $certId; ?>')"
+                          onclick="downloadCertificate('https://givemycertificate.com/covidcertimage/<?php echo $certId; ?>')"
                         >
                             Download Certificate
                           <i class="fa fa-download px-1" aria-hidden="true"></i>
