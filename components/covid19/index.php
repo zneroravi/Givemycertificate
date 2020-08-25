@@ -204,7 +204,7 @@ Yes! we have the power to save the world!" />
                       <u>
                         <button 
                           type="button"
-                          onclick="downloadCertificate('https://storage.googleapis.com/gmc-covid19/covid19/<?php echo $certId; ?>.webp')"
+                          onclick="downloadCertificate('https://verify.givemycertificate.com/covid/getCertificateImage/<?php echo $certId; ?>.webp')"
                         >
                             Download Certificate
                           <i class="fa fa-download px-1" aria-hidden="true"></i>
