@@ -232,7 +232,7 @@ Yes! we have the power to save the world!" />
                         <button 
                           type="button"
                           id="downloadCertificate"
-                          onclick="download('https://givemycertificate.com/covidcertimage/<?php echo $certId; ?>', function (file) { save(file, 'application/pdf', 'test.pdf');})"
+                          onclick="download('https://givemycertificate.com/covidcertimage/<?php echo $certId; ?>', function (file) { save(file, 'image/png', 'corona_warrior.png');})"
                         >
                             Download Certificate
                           <i class="fa fa-download px-1" aria-hidden="true"></i>
