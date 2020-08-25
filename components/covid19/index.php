@@ -46,14 +46,39 @@ Yes! we have the power to save the world!" />
     
     <script type='text/javascript'>
       function downloadCertificate(certificateImage) {
-        $('#downloadCertificate').html('Generating......');
         const a = document.createElement('a');
         a.href = certificateImage;
         a.download = "Corona Warrior.webp";
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
-        $('#downloadCertificate').html('Download Certificate<i class="fa fa-download px-1" aria-hidden="true"></i>');
+      }
+
+      function log(message) {
+        return function () {
+          console.log(message);
+        };
+      }
+
+      function download(file, callback) {
+        var request = new XMLHttpRequest();
+        request.responseType = 'blob';
+        request.open('GET', file);
+        request.addEventListener('load', log('load ' + file));
+        request.addEventListener('error', log('error ' + file));
+        request.addEventListener('progress', log('progress ' + file));
+        request.addEventListener('load', function () {
+          callback(request.response);
+        });
+        request.send();
+      }
+
+      function save(object, mime, name) {
+        var a = document.createElement('a');
+        var url = URL.createObjectURL(object);
+        a.href = url;
+        a.download = name;
+        a.click();
       }
     </script>
 
@@ -207,7 +232,7 @@ Yes! we have the power to save the world!" />
                         <button 
                           type="button"
                           id="downloadCertificate"
-                          onclick="downloadCertificate('https://givemycertificate.com/covidcertimage/<?php echo $certId; ?>')"
+                          onclick="download('https://givemycertificate.com/covidcertimage/<?php echo $certId; ?>', function (file) { save(file, 'application/pdf', 'test.pdf');})"
                         >
                             Download Certificate
                           <i class="fa fa-download px-1" aria-hidden="true"></i>
