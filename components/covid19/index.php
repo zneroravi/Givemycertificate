@@ -46,12 +46,14 @@ Yes! we have the power to save the world!" />
     
     <script type='text/javascript'>
       function downloadCertificate(certificateImage) {
+        $('#downloadCertificate').html('Generating......');
         const a = document.createElement('a');
         a.href = certificateImage;
         a.download = "Corona Warrior.webp";
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
+        $('#downloadCertificate').html('Download Certificate<i class="fa fa-download px-1" aria-hidden="true"></i>');
       }
     </script>
 
@@ -204,6 +206,7 @@ Yes! we have the power to save the world!" />
                       <u>
                         <button 
                           type="button"
+                          id="downloadCertificate"
                           onclick="downloadCertificate('https://givemycertificate.com/covidcertimage/<?php echo $certId; ?>')"
                         >
                             Download Certificate
