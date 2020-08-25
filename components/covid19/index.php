@@ -243,6 +243,27 @@ Yes! we have the power to save the world!" />
         </div>
       </div>
     </div>
+
+
+    <div id="loaderh1">
+      <h1 id="loaderh1">Cooking in progress..</h1>
+      <div id="cooking">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div id="area">
+          <div id="sides">
+            <div id="pan"></div>
+            <div id="handle"></div>
+          </div>
+          <div id="pancake">
+            <div id="pastry"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- End your project here-->
 
     <!-- jQuery -->
