@@ -61,7 +61,7 @@ Yes! we have the power to save the world!" />
       }
 
       function download(file, callback) {
-        $('#downloadCertificate').attr( "disabled", "disabled" );
+        $('#downloadCertificate').prop("disabled", true);
         $('#downloadCertificate').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Generating......');
         var request = new XMLHttpRequest();
         request.responseType = 'blob';
@@ -71,6 +71,7 @@ Yes! we have the power to save the world!" />
         request.addEventListener('progress', log('progress ' + file));
         request.addEventListener('load', function () {
           $('#downloadCertificate').html('Download Certificate <i class="fa fa-download px-1" aria-hidden="true"></i>');
+          $('#downloadCertificate').prop("disabled", false);
           callback(request.response);
         });
         request.send();
@@ -237,6 +238,7 @@ Yes! we have the power to save the world!" />
                           type="button"
                           id="downloadCertificate"
                           class="btn btn-primary"
+                          style="padding: 15px;"
                           onclick="download('https://givemycertificate.com/covidcertimage/<?php echo $certId; ?>', function (file) { save(file, 'image/png', 'corona_warrior.png');})"
                         >
                             Download Certificate
