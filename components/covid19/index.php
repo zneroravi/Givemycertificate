@@ -61,6 +61,7 @@ Yes! we have the power to save the world!" />
       }
 
       function download(file, callback) {
+        $('#downloadCertificate').html('Generating......');
         var request = new XMLHttpRequest();
         request.responseType = 'blob';
         request.open('GET', file);
@@ -68,12 +69,14 @@ Yes! we have the power to save the world!" />
         request.addEventListener('error', log('error ' + file));
         request.addEventListener('progress', log('progress ' + file));
         request.addEventListener('load', function () {
+          $('#downloadCertificate').html('Download Certificate <i class="fa fa-download px-1" aria-hidden="true"></i>');
           callback(request.response);
         });
         request.send();
       }
 
       function save(object, mime, name) {
+
         var a = document.createElement('a');
         var url = URL.createObjectURL(object);
         a.href = url;
