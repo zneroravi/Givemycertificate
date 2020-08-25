@@ -1,5 +1,4 @@
 <?php
-  //$certId = '17d248bc-9678-46ab-82a0-60a388c7f78a';
   $certId = $_REQUEST['certificateId'];
 ?>
 
@@ -46,32 +45,45 @@ Yes! we have the power to save the world!" />
     <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f19e56a8aa12700134b0c27&product=inline-share-buttons&cms=sop' async='async'></script>
     
     <script type='text/javascript'>
-
-      function loader(certificateImage){
-        console.log("1")
-        const rem= document.getElementById('temp');
-        const loader =document.getElementById('hideloader');
-        console.log(rem);
-        console.log(loader);
-        rem.classList.add('hide');
-        loader.classList.add('loader2')
-      //  $('#hideloader').show();
-      // $('#hideloader').toggleClass("loader2");
-        
-
-  setTimeout(function(){ const a = document.createElement('a');
+      function downloadCertificate(certificateImage) {
+        const a = document.createElement('a');
         a.href = certificateImage;
         a.download = "Corona Warrior.webp";
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
-        loader.classList.remove('loader2');
-        rem.classList.remove('hide'); 
-  },1200);
+      }
 
-      
+      function log(message) {
+        return function () {
+          console.log(message);
+        };
+      }
 
-       
+      function download(file, callback) {
+        $('#downloadCertificate').prop("disabled", true);
+        $('#downloadCertificate').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Generating......');
+        var request = new XMLHttpRequest();
+        request.responseType = 'blob';
+        request.open('GET', file);
+        request.addEventListener('load', log('load ' + file));
+        request.addEventListener('error', log('error ' + file));
+        request.addEventListener('progress', log('progress ' + file));
+        request.addEventListener('load', function () {
+          $('#downloadCertificate').html('Download Certificate <i class="fa fa-download px-1" aria-hidden="true"></i>');
+          $('#downloadCertificate').prop("disabled", false);
+          callback(request.response);
+        });
+        request.send();
+      }
+
+      function save(object, mime, name) {
+
+        var a = document.createElement('a');
+        var url = URL.createObjectURL(object);
+        a.href = url;
+        a.download = name;
+        a.click();
       }
     </script>
 
@@ -222,22 +234,19 @@ Yes! we have the power to save the world!" />
                       <div class="container d-flex justify-content-center font-weight-bold">
 
                       <u>
-                        <div 
-                        class="btn btn-info"
+                        <button 
+                          type="button"
                           id="downloadCertificate"
-                          onclick="loader()"
-                          style="min-width:170.083px !important;"
+                          class="btn btn-primary"
+                          style="padding: 15px;"
+                          onclick="download('https://givemycertificate.com/covidcertimage/<?php echo $certId; ?>', function (file) { save(file, 'image/png', 'corona_warrior.png');})"
                         >
-                      <span id="hideloader"></span>
-                         <span id="temp">Download Certificate<i class="fa fa-download px-1" aria-hidden="true"></i><span>
-                            
-                         
-                        </div>
-                       
+                            Download Certificate
+                          <i class="fa fa-download px-1" aria-hidden="true"></i>
+                        </button>
                       </u>
 
                       </div>
-                      
 
                       <div class="row">
                         <div class="col-md-8 mx-auto  pt-4">
@@ -247,7 +256,6 @@ Yes! we have the power to save the world!" />
                               src="img/websiteQRCode_noFrame.png"
                               alt="Video title"
                             /> -->
-                            
                             <div class="mask flex-center rgba-white-light">
                               <a
                                 id="play"
