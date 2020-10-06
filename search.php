@@ -206,7 +206,6 @@
 </script>
 </head>
 <body>
-  <div class="content-wrapper">
     <?php
     include 'inc/nav2.html';
     ?>
