@@ -3,3 +3,7 @@ RewriteBase /
 
 RewriteRule ^(.*)verify/(.*)$ https://verify.givemycertificate.com/verify/$2 [L,R=301]
 RewriteRule ^(.*)covidcertimage/(.*)$ https://verify.givemycertificate.com/covid/getCertificateImage/$2 [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
