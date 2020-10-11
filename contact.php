@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="give my certificate contact" />
+  <meta name="keywords" content="contact, givemycertificate, give my certificate, certificate" />
   <link rel="shortcut icon" href="style/images/favicon.ico">
   <title>Contact | Give My Certificate</title>
   <link rel="stylesheet" type="text/css" href="style/css/bootstrap.min.css">

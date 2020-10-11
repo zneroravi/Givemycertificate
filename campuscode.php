@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="give my certificate campus code" />
+  <meta name="keywords" content="campus code, givemycertificate, certificate" />
   <link rel="shortcut icon" href="style/images/favicon.ico">
   <title>Campus Code - Give My Certificate</title>
   <link rel="stylesheet" type="text/css" href="style/css/bootstrap.min.css">
