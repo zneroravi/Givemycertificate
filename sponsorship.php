@@ -537,11 +537,29 @@
   
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzVF4CTfcOPn05FOkBDlXsynJTJ0PyBAvd2iDuXW2grvkmbzW1w/exec'
-    const form = document.forms['google-sheet']
-  
+    const form = document.forms['google-sheet'];
+    const inputElements = document.getElementsByTagName('input');
+    const resetInputElement = () =>{
+      // inputElements.forEach(element => {
+      //   // element.value='';
+      //   //console.log(element);
+      // });
+      document.forms['google-sheet'].firstName.value = "";
+      document.forms['google-sheet'].lastname.value = "";
+      document.getElementById('selector').value ='Select';
+      document.forms['google-sheet'].role.value = "";
+      document.forms['google-sheet'].email.value = "";
+      document.forms['google-sheet'].phone.value = "";
+      document.forms['google-sheet'].chapteraddress.value = "";
+      document.forms['google-sheet'].linkedin.value = "";
+      document.forms['google-sheet'].facebook.value = "";
+      document.forms['google-sheet'].community_name.value = "";
+      document.forms['google-sheet'].suggestion.value = "";
+    }
+    const submitButton = document.getElementById('submit-button');
     form.addEventListener('submit', e => {
-
-      e.preventDefault()
+      e.preventDefault();
+        submitButton.value='Sending...'
       document.getElementById("dateElement").value=new Date().toLocaleString()
 
         if(document.forms['google-sheet'].firstName.value === ""|| document.forms['google-sheet'].lastname.value === ""|| document.forms['google-sheet'].selectionCommunity.value === ""|| document.forms['google-sheet'].role.value === ""|| document.forms['google-sheet'].email.value === ""|| document.forms['google-sheet'].phone.value === ""||  document.forms['google-sheet'].chapteraddress.value === ""){
@@ -549,11 +567,15 @@
 
         }else{
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+        .then(response =>  {
+          document.getElementById("modal-button").click();
+          submitButton.value='Send message';
+          resetInputElement();
+        })
         .catch(error => console.error('Error!', error.message))
         }
-     
     })
+
   </script>
 
   <script src="style/js/jquery.min.js"></script>
