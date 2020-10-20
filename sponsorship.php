@@ -369,7 +369,7 @@
                       <div class="form-group custom-select-wrapper">
                           <label for="select_down">Select the Community you are a part of *</label>
                             <select id="selector" class="form-control custom-select select_down" name="selectionCommunity"  required>
-                              <option selected name="Select" value="two">Select</option>
+                              <option selected name="Select" value="Select">Select</option>
                               <option value="Google Developer Groups (GDGs)" >Google Developer Groups (GDGs)</option>
                               <option value="Developer Student Club - Google" >Developer Student Club - Google</option>
                               <option value="Microsoft Student Partner Community" >Microsoft Student Partner Community</option>
@@ -459,7 +459,7 @@
                       </div>
                     </div>
                     <div class="col-md-12">
-                      <input name="submit" type="submit" class="btn" value="Send message">
+                      <input name="submit" type="submit" id="submit-button" class="btn" value="Send message">
                     </div>
                   </div>
                   <div class="form-row">
@@ -470,6 +470,51 @@
                 </div>
               </form>
               <!-- /form -->
+              <div class="text-center" style="display: none;"><a href="#" class="btn" data-toggle="modal" id="modal-button" data-target="#modal-01">Open Modal</a></div>
+              <div class="modal fade" id="modal-01" tabindex="-1" role="dialog" aria-labelledby="modal-01" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                  <div class="modal-content">
+                    <div class="container-fluid boxed p-0">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <div class="image-block-wrapper">
+                        <div class="image-block col-lg-6">
+                          <div class="image-block-bg bg-image" data-image-src="./style/images/message-sent.png"></div>
+                        </div>
+                        <!--/.image-block -->
+                        <div>
+                          <div class="row no-gutters">
+                            <div class="col-lg-6 offset-lg-6">
+                              <div class="box p-50 d-flex">
+                                <div class="align-self-center">
+                                  <h2 class="section-title">Yay! Request Recieved</h2>
+                                  <p>Thank You for showing your interest we will respond you as soon as possible!</p>
+                                  <div class="space10"></div>
+                                  <div class="newsletter-wrapper">
+                                    <div class="space10"></div>
+                                    <small class="text-muted">We hate spam and we respect your privacy.</small>
+                                  </div>
+                                  <!-- /.newsletter-wrapper -->
+                                </div>
+                                <!-- /div -->
+                              </div>
+                              <!-- /.box -->
+                            </div>
+                            <!--/column -->
+                          </div>
+                          <!--/.row -->
+                        </div>
+                        <!--/div -->
+                      </div>
+                      <!--/.image-block-wrapper -->
+                    </div>
+                    <!--/.boxed -->
+                  </div>
+                  <!--/.modal-content -->
+                </div>
+                <!--/.modal-dialog -->
+              </div>
             </div>
             <!--/column -->
             <div class="space30 d-none d-md-block d-lg-none"></div>
@@ -483,6 +528,7 @@
       <!-- /.wrapper -->
     </section>
     <!-- /section -->
+    
     <?php 
     include 'inc/footer.html';
     ?>
