@@ -33,12 +33,10 @@
 </style>
 <body>
   <div class="content-wrapper">
-    
     <?php
     include 'inc/nav2.html';
     ?>
-
-          <!-- /.offcanvas-info -->
+         <!-- /.offcanvas-info -->
       <div
         class="wrapper image-wrapper bg-image page-title-wrapper inverse-text"
         data-image-src="style/images/art/bg3.jpg"
@@ -286,7 +284,7 @@
       </div>
       <!-- /.wrapper -->
 
-    <!--/.google-map -->
+ <!--/.google-map -->
     <?php
     include 'inc/footer.html';
     ?>
