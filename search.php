@@ -209,8 +209,8 @@
     <?php
     include 'inc/nav2.html';
     ?>
-    <!-- /.offcanvas-info -->
-    <div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text" data-image-src="style/images/art/bg_1.jpg">
+    
+<div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text" data-image-src="style/images/art/bg1.jpg">
       <div class="container inner text-center">
         <div class="space90"></div>
         <h1 class="page-title">Verify Your Certificate</h1>
@@ -335,7 +335,6 @@
       </div>
       <!-- /.container -->
     </div>
-    <!-- /.wrapper -->
     </div>
     <?php
     include 'inc/footer.html';

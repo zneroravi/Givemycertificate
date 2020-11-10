@@ -38,105 +38,253 @@
     include 'inc/nav2.html';
     ?>
 
-    <!-- /.offcanvas-info -->
-    <div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text" data-image-src="style/images/art/bg3.jpg">
-      <div class="container inner text-center">
-        <div class="space90"></div>
-        <h1 class="page-title">Contact Us</h1>
-        <p class="lead">We are here to resolve your query</p>
+          <!-- /.offcanvas-info -->
+      <div
+        class="wrapper image-wrapper bg-image page-title-wrapper inverse-text"
+        data-image-src="style/images/art/bg3.jpg"
+      >
+        <div class="container inner text-center">
+          <div class="space90"></div>
+          <h1 class="page-title">Contact Us</h1>
+          <p class="lead">We are here to resolve your query</p>
+        </div>
+        <!-- /.container -->
       </div>
-      <!-- /.container -->
-    </div>
-    <!-- /.wrapper -->
-    <div class="wrapper light-wrapper">
-      <div class="container inner">
-        <div class="row">
-          <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-            <h2 class="section-title text-center">Drop Us a Line</h2>
-            <p class="text-center"></p>
-            <div class="space30"></div>
-            <form id="contact-form" method="post"  name="google-sheet">
-              <div class="messages"></div>
-              <div class="controls">
-                <div class="form-row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <input id="form_name" type="text" name="form_name" class="form-control" placeholder="First Name *" required="required" data-error="First Name is required.">
-                      <div class="help-block with-errors"></div>
+      <!-- /.wrapper -->
+      <div class="wrapper light-wrapper">
+        <div class="container inner">
+          <div class="row">
+            <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+              <h2 class="section-title text-center">Drop Us a Line</h2>
+              <p class="text-center"></p>
+              <div class="space30"></div>
+              <form id="contact-form" method="post" name="google-sheet">
+                <div class="messages"></div>
+                <div class="controls">
+                  <div class="form-row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input
+                          id="form_name"
+                          type="text"
+                          name="form_name"
+                          class="form-control"
+                          placeholder="First Name *"
+                          required="required"
+                          data-error="First Name is required."
+                        />
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input
+                          id="form_lastname"
+                          type="text"
+                          name="form_lastname"
+                          class="form-control"
+                          placeholder="Last Name *"
+                          required="required"
+                          data-error="Last Name is required."
+                        />
+                        <div class="help-block with-errors"></div>
+                      </div>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <input id="form_lastname" type="text" name="form_lastname" class="form-control" placeholder="Last Name *" required="required" data-error="Last Name is required.">
-                      <div class="help-block with-errors"></div>
+                  <div class="form-row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input
+                          id="form_email"
+                          type="email"
+                          name="form_email"
+                          class="form-control"
+                          placeholder="Email *"
+                          required="required"
+                          data-error="Valid email is required."
+                        />
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input
+                          id="form_phone"
+                          type="tel"
+                          name="form_phone"
+                          class="form-control"
+                          placeholder="Phone"
+                        />
+                        <div class="help-block with-errors"></div>
+                      </div>
+                      <div class="form-group" style="display: none">
+                        <input
+                          id="dateElement"
+                          type="text"
+                          name="submission_date"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <textarea
+                    
+                          name="form_message"
+                          class="form-control"
+                          placeholder="Message *"
+                          rows="4"
+                          required="required"
+                          data-error="Message is required."
+                        ></textarea>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <input
+                        name="submit"
+                        type="submit"
+                        class="btn btn-send"
+                        id="submit-button"
+                        value="Send message"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-12">
+                      <p class="text-muted">
+                        <strong>*</strong> These fields are required.
+                      </p>
                     </div>
                   </div>
                 </div>
-                <div class="form-row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <input id="form_email" type="email" name="form_email" class="form-control" placeholder="Email *" required="required" data-error="Valid email is required.">
-                      <div class="help-block with-errors"></div>
+              </form>
+              <!-- /form -->
+            </div>
+            <div class="text-center" style="display: none">
+              <a
+                href="#"
+                class="btn"
+                data-toggle="modal"
+                id="modal-button"
+                data-target="#modal-01"
+                >Open Modal</a
+              >
+            </div>
+            <div
+              class="modal fade"
+              id="modal-01"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="modal-01"
+              aria-hidden="true"
+            >
+              <div
+                class="modal-dialog modal-dialog-centered modal-md"
+                role="document"
+              >
+                <div class="modal-content">
+                  <div class="container-fluid boxed p-0">
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="image-block-wrapper">
+                      <div class="image-block col-lg-6">
+                        <div
+                          class="image-block-bg bg-image"
+                          data-image-src="./style/images/message-sent.png"
+                        ></div>
+                      </div>
+                      <!--/.image-block -->
+                      <div>
+                        <div class="row no-gutters">
+                          <div class="col-lg-6 offset-lg-6">
+                            <div class="box p-50 d-flex">
+                              <div class="align-self-center">
+                                <h2 class="section-title">
+                                  Yay! Query Recieved
+                                </h2>
+                                <p>
+                                  Thank You for showing your interest we will
+                                  respond you as soon as possible!
+                                </p>
+                                <div class="space10"></div>
+                                <div class="newsletter-wrapper">
+                                  <div class="space10"></div>
+                                  <small class="text-muted"
+                                    >We hate spam and we respect your
+                                    privacy.</small
+                                  >
+                                </div>
+                                <!-- /.newsletter-wrapper -->
+                              </div>
+                              <!-- /div -->
+                            </div>
+                            <!-- /.box -->
+                          </div>
+                          <!--/column -->
+                        </div>
+                        <!--/.row -->
+                      </div>
+                      <!--/div -->
                     </div>
+                    <!--/.image-block-wrapper -->
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <input id="form_phone" type="tel" name="form_phone" class="form-control" placeholder="Phone">
-                      <div class="help-block with-errors"></div>
-                    </div>
-                  </div>
+                  <!--/.boxed -->
                 </div>
-                <div class="form-row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <textarea id="form_message" name="form_message" class="form-control" placeholder="Message *" rows="4" required="required" data-error="Message is required."></textarea>
-                      <div class="help-block with-errors"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <input name="submit"  type="submit" class="btn btn-send" value="Send message">
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="col-md-12">
-                    <p class="text-muted"><strong>*</strong> These fields are required.</p>
-                  </div>
-                </div>
+                <!--/.modal-content -->
               </div>
-            </form>
-            <!-- /form -->
+              <!--/.modal-dialog -->
+            </div>
+            <!-- /column -->
           </div>
-          <!-- /column -->
+          <!-- /.row -->
         </div>
-        <!-- /.row -->
+        <!-- /.container -->
       </div>
-      <!-- /.container -->
-    </div>
-        <!-- /.wrapper -->
-    <div class="wrapper gray-wrapper">
-      <div class="container inner">
-        <div class="row text-center gutter-60">
-          <div class="col-md-4">
-            <div class="icon icon-svg mb-20"><img src="style/images/icons/ui-gps.png" alt="" /></div>
-            <p class="mb-0">Gurgoan, India</p>
+      <!-- /.wrapper -->
+      <div class="wrapper gray-wrapper">
+        <div class="container inner">
+          <div class="row text-center gutter-60">
+            <div class="col-md-4">
+              <div class="icon icon-svg mb-20">
+                <img src="style/images/icons/ui-gps.png" alt="" />
+              </div>
+              <p class="mb-0">Gurgoan, India</p>
+            </div>
+            <!--/column -->
+            <div class="col-md-4">
+              <div class="icon icon-svg mb-20">
+                <img src="style/images/icons/co-telephone.png" alt="" />
+              </div>
+              <p class="mb-0">+91 843-929-1909</p>
+            </div>
+            <!--/column -->
+            <div class="col-md-4">
+              <div class="icon icon-svg mb-20">
+                <img src="style/images/icons/co-email-5.png" alt="" />
+              </div>
+              <p class="mb-0">
+                <a class="nocolor" href="mailto:#"
+                  >support@givemycertificate.com</a
+                ><br />
+              </p>
+            </div>
+
+            <!--/column -->
           </div>
-          <!--/column -->
-          <div class="col-md-4">
-            <div class="icon icon-svg mb-20"><img src="style/images/icons/co-telephone.png" alt="" /></div>
-            <p class="mb-0">+91 843-929-1909</p>
-          </div>
-          <!--/column -->
-          <div class="col-md-4">
-            <div class="icon icon-svg mb-20"><img src="style/images/icons/co-email-5.png" alt="" /></div>
-            <p class="mb-0"><a class="nocolor" href="mailto:#">support@givemycertificate.com</a><br>
-          </div>
-          <!--/column -->
+          <!--/.row -->
         </div>
-        <!--/.row -->
+        <!-- /.container -->
       </div>
-      <!-- /.container -->
-    </div>
-    <!-- /.wrapper -->
+      <!-- /.wrapper -->
 
     <!--/.google-map -->
     <?php
