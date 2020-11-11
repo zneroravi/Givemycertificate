@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="verification" content="certificate verification, initial-scale=1.0">
   <link rel="shortcut icon" href="style/images/favicon.png">
   <title>Certificate Verification | GMC</title>
   <link
@@ -207,73 +207,12 @@
 </head>
 <body>
   <div class="content-wrapper">
-    <nav class="navbar absolute transparent inverse-text navbar-hover-opacity nav-uppercase navbar-expand-lg">
-      <div class="container-fluid flex-row justify-content-between">
-        <div class="navbar-brand">
-          <a href="index.html" style="color:#7dd5f2;">
-            <img src="#" srcset="style/images/GMC.png" style="width:50px;height:30;" class="logo-dark" alt="" />
-            <img src="#" srcset="style/images/GMC.png" style="width:50px;height:30px;" class="logo-light" alt="" /><b class="brand-title">Give My Certificate</b></a></div>
-        <div class="navbar-other ml-auto order-lg-3">
-          <ul class="navbar-nav flex-row align-items-center" data-sm-skip="true">
-            <li class="nav-item">
-              <div class="navbar-hamburger d-lg-none d-xl-none ml-auto"><button class="hamburger animate plain" data-toggle="offcanvas-nav"><span></span></button></div>
-            </li>
-          </ul>
-          <!-- /.navbar-nav -->
-        </div>
-        <!-- /.navbar- Start -->
-        <div class="navbar-collapse offcanvas-nav d-flex jusitfy-content-end" >
-          <ul class="navbar-nav  d-flex justify-content-end" style="width: 100% !important;">
-            <li class="nav-item"><a class="nav-link scroll" href="index.html">Home</a></li>
-            <li class="nav-item "><a class="nav-link scroll" href="#about">About Us</a></li>
-            <li class="nav-item "><a class="nav-link scroll" href="#pricing">Pricing</a></li> 
-            <li class="nav-item "><a class="nav-link scroll" href="#contact">Contact Us</a></li> 
-            <li class="nav-item "><a class="nav-link scroll" href="sponsorship.html">Sponsorship</a></li>  
-            <li class="nav-item "><a class="nav-link scroll" href="student.html">Student</a></li>  
-            <li class="nav-item "><a class="nav-link " style="color: #7dd5f2;" href="campuscode.html">Campus Code</a></li>
-            <li class="nav-item "><a href="#" style="color: red;" class="nav-link">Signup</a></li>
-          </ul>
-          
-        </div>
-      </div>
-    </nav>
-    <!-- /.navbar -->
-    <div class="offcanvas-info inverse-text">
-      <button class="plain offcanvas-close offcanvas-info-close"><i class="jam jam-close"></i></button>
-      <a href="index.html"><img src="#" srcset="style/images/logo-light.png 1x, style/images/logo-light@2x.png 2x" alt="" /></a>
-      <div class="space30"></div>
-      <p>Snowlake is a multi-concept and powerful site template contains rich layouts with possibility of unlimited combinations & beautiful elements.</p>
-      <div class="space20"></div>
-      <div class="widget">
-        <h5 class="widget-title">Contact Info</h5>
-        <address> Moonshine St. 14/05 <br /> Light City, London <div class="space20"></div>
-          <a href="mailto:first.last@email.com" class="nocolor">info@email.com</a><br /> +00 (123) 456 78 90 </address>
-      </div>
-      <!-- /.widget -->
-      <div class="widget">
-        <h3 class="widget-title">Learn More</h3>
-        <ul class="list-unstyled">
-          <li><a href="#" class="nocolor">Our Story</a></li>
-          <li><a href="#" class="nocolor">Terms of Use</a></li>
-          <li><a href="#" class="nocolor">Privacy Policy</a></li>
-          <li><a href="#" class="nocolor">Contact Us</a></li>
-        </ul>
-      </div>
-      <!-- /.widget -->
-      <div class="widget">
-        <h3 class="widget-title">Follow Us</h3>
-        <ul class="social social-mute social-s ml-auto">
-          <li><a href="#"><i class="jam jam-twitter"></i></a></li>
-          <li><a href="#"><i class="jam jam-facebook"></i></a></li>
-          <li><a href="#"><i class="jam jam-instagram"></i></a></li>
-          <li><a href="#"><i class="jam jam-vimeo"></i></a></li>
-          <li><a href="#"><i class="jam jam-youtube"></i></a></li>
-        </ul>
-      </div>
-      <!-- /.widget -->
-    </div>
+    <?php
+    include 'inc/nav2.html';
+    ?>
+    
     <!-- /.offcanvas-info -->
-    <div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text" data-image-src="style/images/art/bg1.jpg">
+    <div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text" data-image-src="style/images/art/bg_1.jpg">
       <div class="container inner text-center">
         <div class="space90"></div>
         <h1 class="page-title">Verify Your Certificate</h1>
@@ -399,68 +338,9 @@
       <!-- /.container -->
     </div>
     <!-- /.wrapper -->
-    <footer class="dark-wrapper inverse-text">
-      <div class="container inner">
-        <div class="row">
-          <div class="col-md-4 col-lg-3">
-            <div class="widget">
-                <h3 class="widget-title">Reconginized By</h3>
-              <img src="style/images/startupind.png" alt="startup-india" />
-              <div class="space40"></div>
-              <p>© 2020 Givemycertificate. <br class="d-none d-lg-block" />All rights reserved.</p>
-            </div>
-            <!-- /.widget -->
-          </div>
-          <!-- /column -->
-          <div class="col-md-4 col-lg-3">
-            <div class="widget">
-              <h3 class="widget-title">Get in Touch</h3>
-              <address>Gurgoan, <br class="d-none d-md-block" />Uttar Pradesh, India</address>
-              <a href="mailto:support@givemycertificate.com">support@givemycertificate.com</a><br /> +91 843-929-1909
-            </div>
-            <!-- /.widget -->
-          </div>
-          <!-- /column -->
-          <div class="col-md-4 col-lg-3">
-            <div class="widget">
-              <h3 class="widget-title">Quick Links</h3>
-              <ul class="list-unstyled">
-                <li><a href="#" class="nocolor">Apply For Sponsorship</a></li>
-                <li><a href="#" class="nocolor">Send a message</a></li>
-              </ul>
-            </div>
-            <!-- /.widget -->
-          </div>
-          <!-- /column -->
-          <div class="space30 d-none d-md-block d-lg-none"></div>
-          <div class="col-md-12 col-lg-3">
-            <div class="widget">
-              <h3 class="widget-title">My Newsletter</h3>
-              <p>Subscribe to get the latest news delivered to your inbox!</p>
-              <div class="space10"></div>
-              <div class="newsletter-wrapper">
-                <form action="https://elemisfreebies.us20.list-manage.com/subscribe/post?u=aa4947f70a475ce162057838d&amp;id=b49ef47a9a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                  <div id="mc_embed_signup_scroll" class="input-group">
-                    <input type="email" value="" name="EMAIL" class="email form-control mb-0 mr-2 mb-sm-0" id="mce-EMAIL" placeholder="Email Address" required>
-                    <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-rounded btn-default mr-0 mb-0 pull-right">Join</button>
-                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                      <input type="text" name="b_ddc180777a163e0f9f66ee014_056957de28" tabindex="-1" value="">
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
-                </form>
-              </div>
-              <!-- /.newsletter-wrapper -->
-            </div>
-            <!-- /.widget -->
-          </div>
-          <!-- /column -->
-        </div>
-        <!--/.row -->
-      </div>
-      <!-- /.container -->
-    </footer>
+    <?php
+    include 'inc/footer.html';
+    ?>
   </div>
   <!-- /.content-wrapper -->
   <script src="style/js/jquery.min.js"></script>
