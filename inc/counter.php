@@ -5,7 +5,7 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="row counter">
               <div class="col-md-4 text-center">
-                <h3 class="text">500+</h3>
+                <h3 class="text">900+</h3>
                 <p><strong>Clients</strong></p>
               </div>
               <!--/column -->
