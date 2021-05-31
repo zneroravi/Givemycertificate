@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="style/images/favicon.png">
-  <title>Snowlake</title>
+  <title>Give My Certificate | Policy</title>
   <link rel="stylesheet" type="text/css" href="style/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="style/css/plugins.css">
   <link rel="stylesheet" type="text/css" href="style/revolution/css/settings.css">
@@ -504,9 +504,9 @@ In accordance with applicable law, we are not obligated to provide or delete con
 
 
 
-
-<footer class="dark-wrapper inverse-text">
-    </footer>
+<?php 
+    include 'inc/footer.html';
+    ?>
   </div>
   <!-- /.content-wrapper -->
   <script src="style/js/jquery.min.js"></script>
