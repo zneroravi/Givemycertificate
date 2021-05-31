@@ -302,11 +302,10 @@ table, th, td {
 
 <p class="col-lg-10 offset-lg-1">We have collected the following categories of personal information in the past twelve (12) months:</p>
 
-
 <div class="row">
     <div class="col-md-10 offset-md-1">
       <table class="table">
-              <thead class="thead-light">
+      <thead class="thead-light">
 <tr>
     <th scope="col">Category</th>
     <th scope="col">Examples</th> 
@@ -376,18 +375,19 @@ table, th, td {
     <td>Inferences drawn from any of the collected personal information listed above to create a profile or summary about, for example, an individual’s preferences and characteristics</td>
     <td>NO</td>
   </tr>
+</thead>
 </table>
 </div>
           <!-- /column -->
         </div>
         <!-- /.row -->
 
-
 <p class="col-lg-10 offset-lg-1">We may also collect other personal information outside of these categories instances where you interact with us in-person, online, or by phone or mail in the context of:</p>
 <ul>
 <li type="square" class="col-lg-10 offset-lg-1">Receiving help through our customer support channels;</li>
 <li type="square" class="col-lg-10 offset-lg-1">Participation in customer surveys or contests; and</li>
 <li type="square" class="col-lg-10 offset-lg-1">Facilitation in the delivery of our Services and to respond to your inquiries.</li>
+</ul>
 <br>
 <p class="col-lg-10 offset-lg-1"><b>How do we use and share your personal information?</b></p>
 
@@ -438,7 +438,6 @@ In accordance with applicable law, we are not obligated to provide or delete con
 
 <p class="col-lg-10 offset-lg-1">We will only use personal information provided in your request to verify your identity or authority to make the request. To the extent possible, we will avoid requesting additional information from you for the purposes of verification. If, however, we cannot verify your identity from the information already maintained by us, we may request that you provide additional information for the purposes of verifying your identity, and for security or fraud-prevention purposes. We will delete such additionally provided information as soon as we finish verifying you.</p>
 
-
 <p class="col-lg-10 offset-lg-1"><b>Other privacy rights</b></p>
 <ul>
 <li type="square" class="col-lg-10 offset-lg-1">you may object to the processing of your personal data</li>
@@ -459,7 +458,6 @@ In accordance with applicable law, we are not obligated to provide or delete con
 
 <p class="col-lg-10 offset-lg-1">We may update this privacy notice from time to time. The updated version will be indicated by an updated "Revised" date and the updated version will be effective as soon as it is accessible. If we make material changes to this privacy notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this privacy notice frequently to be informed of how we are protecting your information.</p>
 
-
 <br>
 <h5 class="col-lg-10 offset-lg-1">13. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?     
 </h5>
@@ -468,47 +466,21 @@ In accordance with applicable law, we are not obligated to provide or delete con
 
 <p class="col-lg-10 offset-lg-1">If you have questions or comments about this notice, you may email us at support@givemycertificate.com or by post to:</p>
 
-<p class="col-lg-10 offset-lg-1">Give My Certificate India<p>
+<p class="col-lg-10 offset-lg-1">Give My Certificate India</p>
 <br>
 <h5 class="col-lg-10 offset-lg-1">14. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?     
 </h5>
 
-     
 
 <p class="col-lg-10 offset-lg-1">Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it in some circumstances. To request to review, update, or delete your personal information, contact us on support@givemycertificate.com</p>
 
 
+  </div></div></div></div></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-  
 <?php 
     include 'inc/footer.html';
     ?>
+    </div>
   <!-- /.content-wrapper -->
   <script src="style/js/jquery.min.js"></script>
   <script src="style/js/popper.min.js"></script>
