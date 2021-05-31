@@ -504,10 +504,11 @@ In accordance with applicable law, we are not obligated to provide or delete con
 
 
 
+  </div>
+  
 <?php 
     include 'inc/footer.html';
     ?>
-  </div>
   <!-- /.content-wrapper -->
   <script src="style/js/jquery.min.js"></script>
   <script src="style/js/popper.min.js"></script>
