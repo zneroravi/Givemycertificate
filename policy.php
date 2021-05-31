@@ -13,6 +13,15 @@
   <link rel="stylesheet" type="text/css" href="style/type/type.css">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="style/css/color/purple.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173970539-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-173970539-1');
+</script>
   <style>
 table, th, td {
   border: 1px solid black;
@@ -22,7 +31,9 @@ table, th, td {
 </head>
 <body>
   <div class="content-wrapper">
-    
+    <?php 
+    include 'inc/nav2.html'; 
+    ?>
     
     <!-- /.offcanvas-info -->
     <div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text" data-image-src="style/images/art/bg1.jpg">
