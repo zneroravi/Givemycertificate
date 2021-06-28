@@ -288,7 +288,7 @@
             <h3 class="display-2">Subscribe to our mail reminders to get updates from us about the periodic coding contests</h3>
             <div class="space20"></div>
             <p>Join the <b>Telegram group</b> for all updates : <a href="https://t.me/campuscode">https://t.me/campuscode</a></p>
-            <p>Campus Code Coding Contest series will start from November 2020. Register yourself for updates regarding it.</p>
+            <p>Campus Code Coding Contest series will start from 15 July 2021.<br/>Coding Plateform -<b> CodeChef</b> <br/>Register yourself for updates regarding it.</p>
             <a href="https://forms.gle/XHP7XrUavSdNBV826" target="_blank" class="btn btn-blue">Yes, I want to take part in that</a>
             <div class="space10"></div>
           </div>
