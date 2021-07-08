@@ -262,7 +262,7 @@
               <div class="icon icon-svg mb-20">
                 <img src="style/images/icons/co-telephone.png" alt="" />
               </div>
-              <p class="mb-0">+91 843-929-1909</p>
+              <p class="mb-0">+91 8686-7-3030-8</p>
             </div>
             <!--/column -->
             <div class="col-md-4">
