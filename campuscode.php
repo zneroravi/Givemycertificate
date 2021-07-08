@@ -30,7 +30,7 @@
   <div class="content-wrapper">
 
     <?php 
-    include 'inc/nav2.html'; 
+    include 'inc/nav1.html'; 
     ?>
     <div class="wrapper dark-wrapper">
       <div class="rev_slider_wrapper fullwidth-container">

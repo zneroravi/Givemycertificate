@@ -208,7 +208,7 @@
 <body>
   <div class="content-wrapper">
     <?php
-    include 'inc/nav2.html';
+    include 'inc/nav1.html';
     ?>
     
     <!-- /.offcanvas-info -->
