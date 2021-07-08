@@ -106,6 +106,7 @@
 	               data-paddingleft="[0,0,0,0]" 
 	               data-lasttriggerstate="reset" style="z-index: 6;background-color:rgba(0,0,0,0.75);">  
 	          </div>
+
 			  <!-- /.tp-caption -->
               <div class="tp-caption tp-videolayer" id="slide-537-layer-15" 
 	               data-x="['center','center','center','center']" 
@@ -130,6 +131,7 @@
 	               data-autoplay="off" 
 	               data-volume="100" style="z-index: 14;">  
 	          </div>
+
 			  <!-- /.tp-caption -->
               <div class="tp-caption video-control" id="slide-537-layer-20" 
 	               data-x="['center','center','center','center']" 
@@ -152,6 +154,16 @@
 	               data-paddingleft="[0,0,0,0]" 
 	               data-lasttriggerstate="reset" style="z-index: 15;"><i class="c-close"></i>  
 	          </div>
+            <a class="tp-caption btn btn-l btn-white btn-strong-hover scroll" 
+                 data-x="center" 
+                 data-y="middle" 
+                 data-voffset="['140','140','140','140']" 
+                 data-width="['auto','auto','auto','auto']" 
+                 data-textAlign="['center','center','center','center']" 
+                 data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.7;sY:0.7;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' 
+                 data-responsive="on" 
+                 data-responsive_offset="on" style="z-index: 9;" href="https://forms.gle/XHP7XrUavSdNBV826" target="_blank">REGISTER NOW
+          </a>
 			  <!-- /.tp-caption -->
             </li>
           </ul>
