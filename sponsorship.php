@@ -75,7 +75,7 @@
                  data-x="['left','left','left','center']" 
                  data-y="middle" 
                  data-hoffset="['650','50','30','0']" 
-                 data-voffset="['70','70','50','65']" 
+                 data-voffset="['70','70','50','90']" 
                  data-fontsize="['18','18','13','13']" 
                  data-lineheight="['36','36','29','28']" 
                  data-width="['500','500','400','340']" 
@@ -90,7 +90,7 @@
                  data-x="['left','left','left','center']" 
                  data-y="middle" 
                  data-hoffset="['760','50','30','-5']" 
-                 data-voffset="['205','205','165','170']" 
+                 data-voffset="['235','235','185','195']" 
                  data-width="['auto','auto','auto','auto']" 
                  data-textAlign="['center','center','center','center']" 
                  data-frames='[{"delay":2500,"speed":1200,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' 

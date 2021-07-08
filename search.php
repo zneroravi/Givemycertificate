@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="verification" content="certificate verification, initial-scale=1.0">
-  <link rel="shortcut icon" href="style/images/favicon.png">
-  <title>Certificate Verification | GMC</title>
-  <link
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="give my certificate contact" />
+  <meta name="keywords" content="contact, givemycertificate, give my certificate, certificate" />
+  <link rel="shortcut icon" href="style/images/favicon.ico">
+  <title>Certificate Verification | Give My Certificate</title>
+<link
   rel="stylesheet"
   href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
   integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -14,6 +16,8 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <link rel="shortcut icon" href="../assets/img/favicon.ico" />
 
+
+  
   <link rel="stylesheet" type="text/css" href="style/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="style/css/plugins.css">
   <link rel="stylesheet" type="text/css" href="style/revolution/css/settings.css">
@@ -22,6 +26,7 @@
   <link rel="stylesheet" type="text/css" href="style/type/type.css">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="style/css/color/purple.css">
+</head>
   <style>
           .has-search .form-control {
         padding-left: 2.375rem;
@@ -183,32 +188,10 @@
       }
   }
   </style>
-      <script type="text/javascript">
-        function funsearch() {
-          // body...
-          var certid = document.getElementById("searchtext").value;
-          if(!certid){
-            return alert('Please Enter a certificate id');
-          }
-  
-          window.location =
-            "https://verify.givemycertificate.com/verify/" + certid;
-        }
-      </script>
-          <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173970539-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-173970539-1');
-</script>
-</head>
 <body>
   <div class="content-wrapper">
     <?php
-    include 'inc/nav1.html';
+    include 'inc/nav2.html';
     ?>
     
     <!-- /.offcanvas-info -->
