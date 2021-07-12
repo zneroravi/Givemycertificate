@@ -255,7 +255,7 @@
               <div class="icon icon-svg mb-20">
                 <img src="style/images/icons/ui-gps.png" alt="" />
               </div>
-              <p class="mb-0">Gurgoan, India</p>
+              <p class="mb-0">Gurgaon, India</p>
             </div>
             <!--/column -->
             <div class="col-md-4">
