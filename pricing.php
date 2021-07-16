@@ -75,7 +75,7 @@
                       <td><strong>150</strong> Certificates </td>
                     </tr>
                     <tr>
-                      <td><strong>1</strong> Organisations </td>
+                      <td><strong>1</strong> Organisation </td>
                     </tr>
                     <tr>
                       <td><strong>Dedicated</strong> Profile Page </td>
