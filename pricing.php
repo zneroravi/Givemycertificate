@@ -104,7 +104,7 @@
                   </table>
                 </div>
                 <!--/.panel-body -->
-                <div class="panel-footer"> <a href="#" class="btn" role="button">Choose Plan</a></div>
+                <div class="panel-footer"> <a href="contact.php" class="btn" role="button">Talk to Sales</a></div>
               </div>
               <!--/.pricing -->
             </div>
@@ -153,7 +153,7 @@
                   </table>
                 </div>
                 <!--/.panel-body -->
-                <div class="panel-footer"> <a href="#" class="btn" role="button">Choose Plan</a></div>
+                <div class="panel-footer"> <a href="contact.php" class="btn" role="button">Talk to Sales</a></div>
               </div>
               <!--/.pricing -->
             </div>
@@ -202,7 +202,7 @@
                   </table>
                 </div>
                 <!--/.panel-body -->
-                <div class="panel-footer"> <a href="#" class="btn" role="button">Choose Plan</a></div>
+                <div class="panel-footer"> <a href="contact.php" class="btn" role="button">Talk to Sales</a></div>
               </div>
               <!--/.pricing -->
             </div>
@@ -252,7 +252,7 @@
                   </table>
                 </div>
                 <!--/.panel-body -->
-                <div class="panel-footer"> <a href="#" class="btn" role="button">Choose Plan</a></div>
+                <div class="panel-footer"> <a href="contact.php" class="btn" role="button">Talk to Sales</a></div>
               </div>
               <!--/.pricing -->
             </div>
@@ -303,7 +303,7 @@
                   </table>
                 </div>
                 <!--/.panel-body -->
-                <div class="panel-footer"> <a href="#" class="btn" role="button">Choose Plan</a></div>
+                <div class="panel-footer"> <a href="contact.php" class="btn" role="button">Talk to Sales</a></div>
               </div>
 
               <!--/.pricing -->
@@ -354,7 +354,7 @@
                   </table>
                 </div>
                 <!--/.panel-body -->
-                <div class="panel-footer"> <a href="#" class="btn" role="button">Choose Plan</a></div>
+                <div class="panel-footer"> <a href="contact.php" class="btn" role="button">Talk to Sales</a></div>
               </div>
               <!--/.pricing -->
             </div>
