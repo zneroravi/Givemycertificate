@@ -51,7 +51,7 @@
 	               data-responsive_offset="on" style="z-index: 9; letter-spacing: 2px;"><u>Campus Code</u>
 	          </div>
 			  <!-- /.tp-caption -->
-              <div class="tp-caption font-weight-600 color-white text-center" 
+              <div class="tp-caption font-weight-400 color-white text-center" 
 	               data-x="center" 
 	               data-y="middle" 
 	               data-voffset="['-10','-30','-30','-30']" 
@@ -62,7 +62,7 @@
 	               data-whitespace="['normal','normal','normal','normal']" 
 	               data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.7;sY:0.7;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' 
 	               data-responsive="on" 
-	               data-responsive_offset="on" style="z-index: 9;">Dive into the most important sport in the CS world  
+	               data-responsive_offset="on" style="z-index: 9;">Winner Winner Pizza Dinner<br/>  
 	          </div>
 
 			  <!-- /.tp-caption -->
@@ -300,7 +300,7 @@
             <h3 class="display-2">Subscribe to our mail reminders to get updates from us about the periodic coding contests</h3>
             <div class="space20"></div>
             <p>Join the <b>Telegram group</b> for all updates : <a href="https://t.me/campuscode">https://t.me/campuscode</a></p>
-            <p>Campus Code Coding Contest series will start from 24 July 2021, 8:00 PM.<br/>Coding Plateform -<b> CodeChef</b> <br/>Register yourself for updates regarding it.</p>
+            <p>Campus Code Coding Contest series will start from 21 August 2021, 8:00 PM.<br/>Coding Plateform -<b> CodeChef</b> <br/>Register yourself for updates regarding it.</p>
             <a href="https://forms.gle/XHP7XrUavSdNBV826" target="_blank" class="btn btn-blue">Yes, I want to take part in that</a>
             <div class="space10"></div>
           </div>
