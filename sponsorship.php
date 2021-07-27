@@ -132,7 +132,7 @@
                           </div>
                           <div>
                             <h5 class="mb-10">Certificates</h5>
-                            <p>Certificate sponsorship upto INR 50,000 : Issue digital verifiable certificates from our portal, which are automatically sent to the recipients.</p>
+                            <p>Certificate sponsorship upto INR 150,000 : Issue digital verifiable certificates from our portal, which are automatically sent to the recipients.</p>
                           </div>
                         </div>
                         <div class="space10 d-none d-md-block"></div>
