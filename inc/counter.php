@@ -10,7 +10,7 @@
               </div>
               <!--/column -->
               <?php 
-                $cert_count = 2370217;
+                $cert_count = 2384739;
                 $tree_count = ($cert_count/2400);
                 $tree_count = (int)$tree_count;
               ?>
