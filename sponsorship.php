@@ -420,7 +420,7 @@
                   <div class="form-row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <label for="suggesstions">Looking for more in the partnership ? Write down your suggestions. *</label>
+                        <label for="suggesstions">Looking for more in the partnership ? Write down your suggestions.</label>
                         <textarea id="suggesstions" name="suggestion" class="form-control" placeholder="Your suggestions..." rows="4" required="required" data-error="Message is required."></textarea>
                         <div class="help-block with-errors"></div>
                       </div>
