@@ -171,7 +171,7 @@
                 <div class="panel-heading">
                   <div class="prices color-dark">
                     <div class="price price-show"><span class="price-currency">$</span><span class="price-value">40</span> <span class="price-duration">month</span></div>
-                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">3000</span> <span class="price-duration">month</span></div>
+                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">2999</span> <span class="price-duration">month</span></div>
                   </div>
                   <h4 class="panel-title mb-0">Startup Plan</h4>
                 </div>
@@ -221,7 +221,7 @@
                 <div class="panel-heading">
                   <div class="prices color-dark">
                     <div class="price price-show"><span class="price-currency">$</span><span class="price-value">110</span> <span class="price-duration">month</span></div>
-                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">8000</span><span class="price-duration">month</span></div>
+                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">7999</span><span class="price-duration">month</span></div>
                   </div>
                   <h4 class="panel-title mb-0">Plus Plan</h4>
                 </div>
@@ -272,7 +272,7 @@
                 <div class="panel-heading">
                   <div class="prices color-dark">
                     <div class="price price-show"><span class="price-currency">$</span><span class="price-value">170</span> <span class="price-duration">month</span></div>
-                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">12500</span> <span class="price-duration">month</span></div>
+                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">12499</span> <span class="price-duration">month</span></div>
                   </div>
                   <h4 class="panel-title mb-0">Advanced Plan</h4>
                 </div>
