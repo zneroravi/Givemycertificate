@@ -113,7 +113,7 @@
                   </table>
                 </div>
                 <!--/.panel-body -->
-                <div class="panel-footer"> <a href="contact.php" class="btn" role="button">Talk to Sales</a></div>
+                <div class="panel-footer"> <a href="https://app.givemycertificate.com" class="btn" role="button">Sign up</a></div>
               </div>
               <!--/.pricing -->
             </div>
@@ -162,7 +162,7 @@
                   </table>
                 </div>
                 <!--/.panel-body -->
-                <div class="panel-footer"> <a href="contact.php" class="btn" role="button">Talk to Sales</a></div>
+                <div class="panel-footer"> <a href="https://app.givemycertificate.com" class="btn" role="button">Sign up</a></div>
               </div>
               <!--/.pricing -->
             </div>
@@ -211,7 +211,7 @@
                   </table>
                 </div>
                 <!--/.panel-body -->
-                <div class="panel-footer"> <a href="contact.php" class="btn" role="button">Talk to Sales</a></div>
+                <div class="panel-footer"> <a href="https://app.givemycertificate.com" class="btn" role="button">Sign up</a></div>
               </div>
               <!--/.pricing -->
             </div>
@@ -261,7 +261,7 @@
                   </table>
                 </div>
                 <!--/.panel-body -->
-                <div class="panel-footer"> <a href="contact.php" class="btn" role="button">Talk to Sales</a></div>
+                <div class="panel-footer"> <a href="https://app.givemycertificate.com" class="btn" role="button">Sign up</a></div>
               </div>
               <!--/.pricing -->
             </div>
@@ -311,7 +311,7 @@
                   </table>
                 </div>
                 <!--/.panel-body -->
-                <div class="panel-footer"> <a href="contact.php" class="btn" role="button">Talk to Sales</a></div>
+                <div class="panel-footer"> <a href="https://app.givemycertificate.com" class="btn" role="button">Sign up</a></div>
               </div>
               <!--/.pricing -->
             </div>
@@ -362,7 +362,7 @@
                   </table>
                 </div>
                 <!--/.panel-body -->
-                <div class="panel-footer"> <a href="contact.php" class="btn" role="button">Talk to Sales</a></div>
+                <div class="panel-footer"> <a href="https://app.givemycertificate.com" class="btn" role="button">Sign up</a></div>
               </div>
 
               <!--/.pricing -->
@@ -413,7 +413,7 @@
                   </table>
                 </div>
                 <!--/.panel-body -->
-                <div class="panel-footer"> <a href="contact.php" class="btn" role="button">Talk to Sales</a></div>
+                <div class="panel-footer"> <a href="contact.php" class="btn" role="button">talk to sales</a></div>
               </div>
               <!--/.pricing -->
             </div>
