@@ -189,7 +189,9 @@
                           <li>
                             <p>- Make social media announcements declaring our partnership with Hashtag <b> #vocalforlocal #GiveMyCertificate</b>.</p>
                           </li>
-                          
+                          <li>
+                            <p>- LinkedIn/Medium post as an honest feedback of our services after the event.</p>
+                          </li>
                         </ul>
                         <!-- /.progress-list -->
                       </div>
