@@ -1,52 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
 <url>
-  <loc>https://givemycertificate.com/</loc>
-  <lastmod>2020-11-06T10:17:20+00:00</lastmod>
-  <priority>1.00</priority>
+<loc>https://givemycertificate.com/</loc>
+<lastmod>2021-10-28T17:32:46+00:00</lastmod>
+<priority>1.00</priority>
 </url>
 <url>
-  <loc>https://givemycertificate.com/index.php</loc>
-  <lastmod>2020-11-06T10:17:20+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://givemycertificate.com/index.php</loc>
+<lastmod>2021-10-28T17:32:46+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://givemycertificate.com/sponsorship.php</loc>
-  <lastmod>2020-11-06T10:17:20+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://app.givemycertificate.com</loc>
+<lastmod>2021-10-28T17:32:46+00:00</lastmod>
+<priority>0.90</priority>
 </url>
 <url>
-  <loc>https://givemycertificate.com/search.php</loc>
-  <lastmod>2020-11-06T10:17:20+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://givemycertificate.com/search.php</loc>
+<lastmod>2021-10-28T17:32:46+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://givemycertificate.com/campuscode.php</loc>
-  <lastmod>2020-11-06T10:17:20+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
 <url>
-  <loc>https://givemycertificate.com/contact.php</loc>
-  <lastmod>2020-11-06T10:17:20+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
 <url>
-  <loc>https://givemycertificate.com/components/coronaWarrior/coronaWarriorCertificate.html</loc>
-  <lastmod>2020-09-05T21:02:10+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://blog.givemycertificate.com</loc>
+<lastmod>2021-10-28T17:32:46+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-<url>
-  <loc>https://givemycertificate.com/student.php</loc>
-  <lastmod>2020-11-06T10:17:20+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-
-
 </urlset>
