@@ -81,7 +81,7 @@
                 <div class="panel-body">
                   <table class="table">
                     <tr>
-                      <td><strong>150</strong> Certificates </td>
+                      <td><strong>100</strong> Certificates </td>
                     </tr>
                     <tr>
                       <td><strong>1</strong> Organisation </td>
