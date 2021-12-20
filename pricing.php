@@ -121,8 +121,8 @@
               <div class="pricing panel box bg-white shadow">
                 <div class="panel-heading">
                   <div class="prices color-dark">
-                    <div class="price price-show"><span class="price-currency">$</span><span class="price-value">9</span> <span class="price-duration">month</span></div>
-                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">599</span> <span class="price-duration">month</span></div>
+                    <div class="price price-show"><span class="price-currency">$</span><span class="price-value">12</span> <span class="price-duration">month</span></div>
+                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">799</span> <span class="price-duration">month</span></div>
                   </div>
                   <h4 class="panel-title mb-0">Basic Plan</h4>
                 </div>
@@ -130,7 +130,7 @@
                 <div class="panel-body">
                   <table class="table">
                     <tr>
-                      <td><strong>300</strong> Certificates </td>
+                      <td><strong>+200</strong> Certificates </td>
                     </tr>
                     <tr>
                       <td><strong>1</strong> Organisations </td>
@@ -170,8 +170,8 @@
               <div class="pricing panel box bg-white shadow">
                 <div class="panel-heading">
                   <div class="prices color-dark">
-                    <div class="price price-show"><span class="price-currency">$</span><span class="price-value">39</span> <span class="price-duration">month</span></div>
-                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">2999</span> <span class="price-duration">month</span></div>
+                    <div class="price price-show"><span class="price-currency">$</span><span class="price-value">54</span> <span class="price-duration">month</span></div>
+                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">3999</span> <span class="price-duration">month</span></div>
                   </div>
                   <h4 class="panel-title mb-0">Startup Plan</h4>
                 </div>
@@ -220,8 +220,8 @@
               <div class="pricing panel box bg-white shadow">
                 <div class="panel-heading">
                   <div class="prices color-dark">
-                    <div class="price price-show"><span class="price-currency">$</span><span class="price-value">79</span> <span class="price-duration">month</span></div>
-                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">5499</span> <span class="price-duration">month</span></div>
+                    <div class="price price-show"><span class="price-currency">$</span><span class="price-value">100</span> <span class="price-duration">month</span></div>
+                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">7499</span> <span class="price-duration">month</span></div>
                   </div>
                   <h4 class="panel-title mb-0">Startup Plus Plan</h4>
                 </div>
@@ -270,8 +270,8 @@
               <div class="pricing panel box bg-white shadow">
                 <div class="panel-heading">
                   <div class="prices color-dark">
-                    <div class="price price-show"><span class="price-currency">$</span><span class="price-value">109</span> <span class="price-duration">month</span></div>
-                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">7999</span><span class="price-duration">month</span></div>
+                    <div class="price price-show"><span class="price-currency">$</span><span class="price-value">140</span> <span class="price-duration">month</span></div>
+                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">10499</span><span class="price-duration">month</span></div>
                   </div>
                   <h4 class="panel-title mb-0">Plus Plan</h4>
                 </div>
@@ -321,8 +321,8 @@
               <div class="pricing panel box bg-white shadow">
                 <div class="panel-heading">
                   <div class="prices color-dark">
-                    <div class="price price-show"><span class="price-currency">$</span><span class="price-value">169</span> <span class="price-duration">month</span></div>
-                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">12499</span> <span class="price-duration">month</span></div>
+                    <div class="price price-show"><span class="price-currency">$</span><span class="price-value">214</span> <span class="price-duration">month</span></div>
+                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">15999</span> <span class="price-duration">month</span></div>
                   </div>
                   <h4 class="panel-title mb-0">Advanced Plan</h4>
                 </div>
@@ -424,7 +424,7 @@
         </div>
         <!--/.pricing-wrapper -->
         <div class="space20"></div>
-        <p>* ₹4/certificate overages apply.</p>
+        <p>* ₹6/certificate overages apply.</p>
         
         <p>If your represent a student organisation or an NGO, you are eligible for a sponsorship for certificates. Know more and <a href="sponsorship.php">apply here.</a></p>
       </div>
