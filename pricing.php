@@ -418,6 +418,59 @@
               <!--/.pricing -->
             </div>
             <!--/column -->
+
+            <div class="col-md-6 col-lg-6 col-xl-3">
+              <div class="pricing panel box bg-white shadow">
+                <div class="panel-heading">
+                  <div class="prices color-dark">
+                    <div class="price price-show"><span class="price-currency">$</span><span class="price-value">999</span> <span class="price-duration">Year</span></div>
+                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">15999</span> <span class="price-duration">month</span></div>
+                  </div>
+                  <h4 class="panel-title mb-0">Blockchain certificate</h4>
+                </div>
+                <!--/.panel-heading -->
+                <div class="panel-body">
+                  <table class="table">
+                    <tr>
+                      <td><strong>1000</strong> Certificates </td>
+                    </tr>
+                    <tr>
+                      <td><strong>1</strong> Organisations </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Dedicated</strong> Profile Page </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Unlimited</strong> Event Publish </td>
+                    </tr>
+                    <tr>
+                      <td> Custom Email<strong> Content</strong></td>
+                    </tr>
+                    
+                    <tr>
+                      <td> Verification<strong> API</strong></td>
+                    </tr>
+                    <tr>
+                      <td> Event<strong> API</strong></td>
+                    </tr>
+                    <tr>
+                      <td> Certificate<strong> API</strong></td>
+                    </tr>
+                    <tr>
+                      <td> - </td>
+                    </tr>
+                    <tr>
+                      <td> - </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--/.panel-body -->
+                <div class="panel-footer"> <a href="https://app.givemycertificate.com" class="btn" role="button">Talk to sales</a></div>
+              </div>
+
+              <!--/.pricing -->
+            </div>
+
             <!--/column -->
           </div>
           <!--/.row -->
