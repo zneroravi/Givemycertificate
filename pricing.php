@@ -426,7 +426,7 @@
                     <div class="price price-show"><span class="price-currency">$</span><span class="price-value">999</span> <span class="price-duration">Year</span></div>
                     <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">15999</span> <span class="price-duration">month</span></div>
                   </div>
-                  <h4 class="panel-title mb-0">Blockchain certificate</h4>
+                  <h4 class="panel-title mb-0">Blockchain Certificate</h4>
                 </div>
                 <!--/.panel-heading -->
                 <div class="panel-body">
@@ -455,12 +455,6 @@
                     </tr>
                     <tr>
                       <td> Certificate<strong> API</strong></td>
-                    </tr>
-                    <tr>
-                      <td> - </td>
-                    </tr>
-                    <tr>
-                      <td> - </td>
                     </tr>
                   </table>
                 </div>
