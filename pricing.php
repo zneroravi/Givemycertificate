@@ -424,7 +424,7 @@
                 <div class="panel-heading">
                   <div class="prices color-dark">
                     <div class="price price-show"><span class="price-currency">$</span><span class="price-value">999</span> <span class="price-duration">Year</span></div>
-                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">15999</span> <span class="price-duration">month</span></div>
+                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">74999</span> <span class="price-duration">month</span></div>
                   </div>
                   <h4 class="panel-title mb-0">Blockchain Certificate</h4>
                 </div>
