@@ -471,8 +471,6 @@
         </div>
         <!--/.pricing-wrapper -->
         <div class="space20"></div>
-        <p>* ₹6/certificate overages apply.</p>
-        
         <p>If your represent a student organisation or an NGO, you are eligible for a sponsorship for certificates. Know more and <a href="sponsorship.php">apply here.</a></p>
       </div>
 
