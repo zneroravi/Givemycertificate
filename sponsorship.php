@@ -312,7 +312,7 @@
           <div class="row justify-content-center">
             <div class="col-lg-8 order-lg-2">
               <h1 class="section-title">Give My Certificate Sponsorship</h1>
-              <p class="lead larger">Before filling out the sponsorship form we recommended these steps:-<br>1. Create an account with an organization email id/Gmail id on the dashboard <br>2. create your organization with all the details including social media in the dashboard.</p>
+              <p class="lead larger">Before filling out the sponsorship form we recommended these steps:-<br>1. Create an account with an organization email id/gmail id on the <a href="https://app.givemycertificate.com" target="_blank">dashboard</a><br>2. create your organization with all the details including social media in the dashboard.</p>
               <div class="space40"></div>
               <form id="contact-form" class="fields-white" method="post" name="google-sheet">
                 <div class="messages"></div>
