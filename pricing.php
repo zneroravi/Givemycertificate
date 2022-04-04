@@ -315,58 +315,6 @@
               </div>
               <!--/.pricing -->
             </div>
-            <!--/column -->
-            <div class="space30 d-none d-md-block d-lg-block d-xl-none"></div>
-            <div class="col-md-6 col-lg-6 col-xl-3">
-              <div class="pricing panel box bg-white shadow">
-                <div class="panel-heading">
-                  <div class="prices color-dark">
-                    <div class="price price-show"><span class="price-currency">$</span><span class="price-value">214</span> <span class="price-duration">month</span></div>
-                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">15999</span> <span class="price-duration">month</span></div>
-                  </div>
-                  <h4 class="panel-title mb-0">Advanced Plan</h4>
-                </div>
-                <!--/.panel-heading -->
-                <div class="panel-body">
-                  <table class="table">
-                    <tr>
-                      <td><strong>5000</strong> Certificates </td>
-                    </tr>
-                    <tr>
-                      <td><strong>5</strong> Organisations </td>
-                    </tr>
-                    <tr>
-                      <td><strong>Dedicated</strong> Profile Page </td>
-                    </tr>
-                    <tr>
-                      <td><strong>Unlimited</strong> Event Publish </td>
-                    </tr>
-                    <tr>
-                      <td><strong>15+ Years</strong> Verification </td>
-                    </tr>
-                    <tr>
-                      <td> Custom Email<strong> Content</strong></td>
-                    </tr>
-                    <tr>
-                      <td> Crypto<strong>  Certificate</strong></td>
-                    </tr>
-                    <tr>
-                      <td> Verification<strong> API</strong></td>
-                    </tr>
-                    <tr>
-                      <td> Event<strong> API</strong></td>
-                    </tr>
-                    <tr>
-                      <td> Certificate<strong> API</strong></td>
-                    </tr>
-                  </table>
-                </div>
-                <!--/.panel-body -->
-                <div class="panel-footer"> <a href="https://app.givemycertificate.com" class="btn" role="button">Sign up</a></div>
-              </div>
-
-              <!--/.pricing -->
-            </div>
             
             <!--/column -->
             <div class="col-md-6 col-lg-6 col-xl-3">
@@ -375,7 +323,7 @@
                   <div class="prices color-dark">
                     <div class=""><span class="price-currency"></span><span class="price-value">Contact us</span></div>
                   </div>
-                  <h4 class="panel-title mb-0">Premium Plan</h4>
+                  <h4 class="panel-title mb-0">Custom Plan</h4>
                 </div>
                 <!--/.panel-heading -->
                 <div class="panel-body">
@@ -384,10 +332,7 @@
                       <td><strong>Custom</strong> Certificates </td>
                     </tr>
                     <tr>
-                      <td><strong>Custom</strong> Organisations </td>
-                    </tr>
-                    <tr>
-                      <td><strong>Advanced</strong> plan Features </td>
+                      <td><strong>Blockchain</strong> Certificates </td>
                     </tr>
                     <tr>
                       <td><strong>Custom Verification URL</strong></td>
@@ -396,16 +341,19 @@
                       <td><strong>Custom logo</strong> on QR Code </td>
                     </tr>
                     <tr>
-                      <td>-<strong> </strong></td>
+                      <td><strong>Analytics</strong></td>
                     </tr>
                     <tr>
-                      <td> -<strong> </strong></td>
+                      <td>-<strong>NO </strong> QR/URL</td>
                     </tr>
                     <tr>
-                      <td> -<strong> </strong></td>
+                      <td><strong>Premium </strong>Integrations</td>
                     </tr>
                     <tr>
-                      <td> -<strong></strong></td>
+                      <td><strong>Advanced </strong>Branding</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Custom </strong>SMTP</td>
                     </tr>
                     <tr>
                       <td> -<strong> </strong></td>
@@ -418,52 +366,6 @@
               <!--/.pricing -->
             </div>
             <!--/column -->
-
-            <div class="col-md-6 col-lg-6 col-xl-3">
-              <div class="pricing panel box bg-white shadow">
-                <div class="panel-heading">
-                  <div class="prices color-dark">
-                    <div class="price price-show"><span class="price-currency">$</span><span class="price-value">999</span> <span class="price-duration">Year</span></div>
-                    <div class="price price-hide price-hidden"><span class="price-currency">₹</span><span class="price-value">74999</span> <span class="price-duration">month</span></div>
-                  </div>
-                  <h4 class="panel-title mb-0">Blockchain Certificate</h4>
-                </div>
-                <!--/.panel-heading -->
-                <div class="panel-body">
-                  <table class="table">
-                    <tr>
-                      <td><strong>1000</strong> Certificates </td>
-                    </tr>
-                    <tr>
-                      <td><strong>1</strong> Organisations </td>
-                    </tr>
-                    <tr>
-                      <td><strong>Dedicated</strong> Profile Page </td>
-                    </tr>
-                    <tr>
-                      <td><strong>Unlimited</strong> Event Publish </td>
-                    </tr>
-                    <tr>
-                      <td> Custom Email<strong> Content</strong></td>
-                    </tr>
-                    
-                    <tr>
-                      <td> Verification<strong> API</strong></td>
-                    </tr>
-                    <tr>
-                      <td> Event<strong> API</strong></td>
-                    </tr>
-                    <tr>
-                      <td> Certificate<strong> API</strong></td>
-                    </tr>
-                  </table>
-                </div>
-                <!--/.panel-body -->
-                <div class="panel-footer"> <a href="https://app.givemycertificate.com" class="btn" role="button">Talk to sales</a></div>
-              </div>
-
-              <!--/.pricing -->
-            </div>
 
             <!--/column -->
           </div>
