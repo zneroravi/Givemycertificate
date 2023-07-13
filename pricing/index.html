@@ -44,9 +44,19 @@
           <h1>Solo, agency or team? We’ve got you covered.</h1>
         </div>
 
+
+        <!-- Price Toggle -->
+              
+              <div class="form-check form-switch form-switch-between mb-4" align="center">
+                <label class="form-check-label">$ USD</label>
+                <input type="checkbox" class="form-check-input" id="checbox" onclick="check()" ; />
+                <label class="form-check-label">₹ Rupee</label>
+              </div>
+
         <div class="position-relative">
           <div class="row mb-5">
             <div class="col-lg-6 mb-4 mb-lg-0">
+              
               <!-- Card -->
               <div class="card card-lg h-100">
                 <div class="card-body">
@@ -58,10 +68,14 @@
                   <!-- Media -->
                   <div class="d-flex mb-5">
                     <div class="flex-shrink-0">
-                      <span class="display-4 lh-1 text-dark">$18</span>
+                      <span class="display-4 lh-1 text-dark price1">$18</span>
+                      <span class="display-4 lh-1 text-dark price2">₹1200</span>
                     </div>
-                    <div class="flex-grow-1 align-self-end ms-3">
-                      <span class="d-block">USD / monthly</span>
+                    <div class="flex-grow-1 align-self-end ms-3 price1">
+                      <span class="price1 d-block">USD / monthly</span>
+                    </div>
+                    <div class="flex-grow-1 align-self-end ms-3 price2">
+                      <span class="price1 d-block">Rupees / monthly</span>
                     </div>
                   </div>
                   <!-- End Media -->
@@ -95,7 +109,8 @@
                 <div class="card-footer pt-0">
                   <div class="row align-items-center">
                     <div class="col-sm-auto order-sm-2 mb-3 mb-sm-0">
-                      <a class="btn btn-white" href="https://buy.stripe.com/3cs16baned7EbvObIU">Subscribe</a>
+                      <a class="btn btn-white price1" href="https://buy.stripe.com/3cs16baned7EbvObIU">Subscribe</a>
+                      <a class="btn btn-white price2" href="https://buy.stripe.com/aEU2afcvmaZw8jC14k">Subscribe</a>
                     </div>
                     <!-- End Col -->
                     
@@ -126,10 +141,14 @@
                   <!-- Media -->
                   <div class="d-flex mb-5">
                     <div class="flex-shrink-0">
-                      <span class="display-4 lh-1 text-dark">$59</span>
+                      <span class="display-4 lh-1 text-dark price1">$59</span>
+                      <span class="display-4 lh-1 text-dark price2">₹4000</span>
                     </div>
-                    <div class="flex-grow-1 align-self-end ms-3">
-                      <span class="d-block">USD / monthly</span>
+                    <div class="flex-grow-1 align-self-end ms-3 price1">
+                      <span class="price1 d-block">USD / monthly</span>
+                    </div>
+                    <div class="flex-grow-1 align-self-end ms-3 price2">
+                      <span class="price1 d-block">Rupees / monthly</span>
                     </div>
                   </div>
                   <!-- End Media -->
@@ -163,7 +182,8 @@
                 <div class="card-footer pt-0">
                   <div class="row align-items-center">
                     <div class="col-sm-auto order-sm-2 mb-3 mb-sm-0">
-                      <a class="btn btn-primary" href="https://buy.stripe.com/dR6eX11QI5FcdDWaER">Subscribe</a>
+                      <a class="btn btn-primary price1" href="https://buy.stripe.com/dR6eX11QI5FcdDWaER">Subscribe</a>
+                      <a class="btn btn-primary price2" href="https://buy.stripe.com/9AQdSXfHy8Ro6bu9AS">Subscribe</a>
                     </div>
                     <!-- End Col -->
                     
@@ -197,10 +217,14 @@
                   <!-- Media -->
                   <div class="d-flex mb-5">
                     <div class="flex-shrink-0">
-                      <span class="display-4 lh-1 text-dark">$115</span>
+                      <span class="display-4 lh-1 text-dark price1">$115</span>
+                      <span class="display-4 lh-1 text-dark price2">₹8000</span>
                     </div>
-                    <div class="flex-grow-1 align-self-end ms-3">
+                    <div class="flex-grow-1 align-self-end ms-3 price1">
                       <span class="d-block">USD / monthly</span>
+                    </div>
+                    <div class="flex-grow-1 align-self-end ms-3 price2">
+                      <span class="d-block">Rupee / monthly</span>
                     </div>
                   </div>
                   <!-- End Media -->
@@ -234,10 +258,18 @@
                 <div class="card-footer pt-0">
                   <div class="row align-items-center">
                     <div class="col-sm-auto order-sm-2 mb-3 mb-sm-0">
-                      <a class="btn btn-primary" href="https://buy.stripe.com/dR68yD2UMd7EgQ85ky">Subscribe</a>
+                      <a class="btn btn-primary price1" href="https://buy.stripe.com/dR68yD2UMd7EgQ85ky">Subscribe</a>
+                      <a class="btn btn-primary price2" href="https://buy.stripe.com/00g0272UM9Vs6buaEX">Subscribe</a>
                     </div>
                     <!-- End Col -->
-                    
+
+                    <!-- Added to fix code -->
+                    <div>
+                      <a class="price1" href=""></a>
+                      <a class="price2" href=""></a>
+                      <a class="price1" href=""></a>
+                      <a class="price2" href=""></a>
+                    </div>
                     <div class="col">
                       <span class="fs-5 text-muted d-block">Cancel anytime.</span>
                       <!-- <span class="fs-5 text-muted d-block">No card required.</span> -->
@@ -333,7 +365,8 @@
         </div>
 
         <div class="text-center">
-          <p class="fs-6 text-muted mb-0">Prices in USD. Taxes may apply.</p>
+          <p class="fs-6 text-muted mb-0 price1">Prices in USD.</p>
+          <p class="fs-6 text-muted mb-0 price2">Prices in Rupees. GST will apply.</p>
         </div>
       </div>
     </div>
@@ -1148,7 +1181,7 @@
 
   <!-- JS Unify -->
   <script src="./assets/js/theme.min.js"></script>
-
+  <script src="pricetoggle.js"></script>
   <!-- JS Plugins Init. -->
   <script>
     (function() {
