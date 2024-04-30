@@ -22,7 +22,16 @@
 
 		.middle-section {
 			background-color: RGBA(0, 0, 0, 0.06);
-			height: 70vh;
+			height: 85vh;
+		}
+
+		.score-card-img {
+			height: 100%;
+			/* width: 100%; */
+		}
+
+		#myChart {
+			/* width: 100% !important; */
 		}
 	</style>
 </head>
@@ -35,10 +44,9 @@
 	</nav>
 
 	<div class="container-fluid middle-section">
-		<div class="container h-100 p-5">
-			<div class="card mx-auto h-100" style="padding: 10px 50px;">
-				<canvas id="myChart"></canvas>
-			</div>
+		<div class="container h-100 p-5 text-center">
+			<img src="./gwt.png" class="score-card-img mx-auto" />
+			<!--  -->
 		</div>
 	</div>
 
@@ -73,6 +81,7 @@
 							<div class="mt-2">Does not expire</div>
 						</div>
 					</div>
+
 				</div>
 				<div class="col-4">
 					<div class="card p-4">
@@ -88,6 +97,12 @@
 						<div><a href="#" target="_blank">Visit Issuer Website</a></div>
 						<div>credentials from the Issuer</div>
 					</div>
+				</div>
+			</div>
+
+			<div class="row my-5">
+				<div class="card mx-auto h-100 w-100" style="padding: 10px 50px;">
+					<canvas id="myChart"></canvas>
 				</div>
 			</div>
 		</div>
@@ -129,7 +144,7 @@
 					'rgb(153, 102, 255)',
 					'rgb(201, 203, 207)'
 				],
-				borderWidth: 1.5
+				borderWidth: 2
 			},
 		],
 	};
@@ -140,9 +155,10 @@
 		options: {
 			scales: {
 				y: {
-					beginAtZero: true,
-				},
+					beginAtZero: true
+				}
 			},
+			alignToPixels: true
 		},
 	};
 
