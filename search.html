@@ -1,156 +1,170 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="certificate verification , givemycertificate"
-    />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+<head>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link rel="shortcut icon" href="../assets/img/favicon.ico" />
-    <title>Certificate Verification | GMC</title>
-    <style type="text/css">
-      /* Styles for wrapping the search box */
+  <!-- Title -->
+  <title>Verify Credential</title>
 
-      /* Bootstrap 4 text input with search icon */
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./favicon.ico">
 
-      .has-search .form-control {
-        padding-left: 2.375rem;
-      }
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-      .has-search .form-control-feedback {
-        position: absolute;
-        z-index: 2;
-        display: block;
-        width: 2.375rem;
-        height: 2.375rem;
-        line-height: 2.375rem;
-        text-align: center;
-        pointer-events: none;
-        color: #aaa;
-      }
-      .pad{
-        padding: 14em;
-      }
-      button{
-        padding-left:2.5em !important;
-        padding-right: 2.5em !important;
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="./assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
 
-      }
-      body{
-        overflow-x: hidden;
-        padding: 0;
-        margin: 0;
-      }
-      input{
-        padding: 1em !important;
-      }
-      
-      @media (max-width:475px){
-        .pad{
-          padding: 1em;
-
-        }
-        button{
-          padding-left: 1em !important;
-          padding-right: 1em !important;
-        }
-        .add{
-          height: 60vh;
-        }
-
-       
-      }
-    </style>
-    <script type="text/javascript">
+  <!-- CSS Unify Template -->
+  <link rel="stylesheet" href="./assets/css/theme.min.css">
+  <script type="text/javascript">
       function funsearch() {
         // body...
         var certid = document.getElementById("searchtext").value;
 
         window.location =
-          "https://verify.givemycertificate.com/verify/" + certid;
+          "https://verification.givemycertificate.com/v/" + certid;
       }
     </script>
-  </head>
-  <body style="background-color: #b4cde4">
-    <!-- Image and text -->
-    <div class="container-fluid bg-light">
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="index.php">
-        <img
-          src="assets/img/gmclogo.png"
-          width="30"
-          height="20"
-          class="d-inline-block"
-          alt=""
-        />
-        Give My Certificate
+</head>
+
+<body>
+  <!-- ========== HEADER ========== -->
+  <header id="header" class="navbar navbar-height navbar-light navbar-absolute-top bg-white mt-2">
+    <div class="container">
+      <a class="navbar-brand mx-auto" href="./index.html" aria-label="Unify">
+        <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Image Description">
       </a>
-    </nav>
-  </div>
+    </div>
+  </header>
+  <!-- ========== END HEADER ========== -->
 
-    <div class="main">
-      <div class="row use align-items-center" style="height: 100vh">
-        <div class="col-md-12  align-self-center">
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main">
+    <!-- Content -->
+    <div class="d-sm-flex">
+      <div class="container d-sm-flex align-items-sm-center vh-sm-100 content-space-t-3 content-space-b-1 content-space-b-sm-3 content-space-sm-0">
+        <div class="row justify-content-md-between align-items-md-center flex-grow-1">
+          <div class="col-9 col-md-5 col-md-4 mb-5 mb-md-0">
+            <img class="img-fluid" src="./assets/svg/illustrations/plane.svg" alt="SVG Illustration">
+          </div>
+          <!-- End Col -->
 
-          <!-- Another variation with a button -->
-          <div class="container pad">
-            <div class="input-group">
-              <input
-                type="text"
-                class="form-control"
-                id="searchtext"
-                placeholder="Enter Certificate ID"
-              />
-              <div class="input-group-append">
-                <button
-                  class="btn btn-secondary"
-                  onclick="funsearch()"
-                  type="button"
-                >
-                  <i class="fa fa-search"></i>
-                </button>
-                <button
-                class="btn btn-primary"
-                type="button"
-                data-toggle="collapse"
-                data-target="#collapseExample"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-                onclick="start()"
-              >
-              <i class="fa fa-qrCode"></i>
-              </button>
-              </div>
+          <div class="col-md-6">
+            <!-- Heading -->
+            <div class="mb-4">
+              <h1>We're coming soon.</h1>
+              <p>Our website is under construction. We'll be here soon with our new awesome site, subscribe to be notified.</p>
             </div>
-           
-            <p class="d-flex justify-content-center">
+            <!-- End Heading -->
 
-                <div class="container-fluid collapse bg-secondary" id="collapseExample">
-                    <div class="row">
-                    
-                      
-                      <div class="col-md-12">
-                        <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-                      
-                        <div class="col-md-12 sm-12">
-                          <div class="container">
-                          <video id="preview" class="p-3 add" style="width:100%;"></video>
-                        </div>
-                        </div>
-                        <script type="text/javascript">
+                          <!-- Input Card -->
+              <div class="input-card border">
+                <div class="input-card-form">
+                  
+                  <input type="email" class="form-control form-control-lg" id="searchtext" placeholder="Enter Certificate ID" aria-label="Enter email">
+                </div>
+                <button type="button" class="btn btn-primary btn-lg" onclick="funsearch()" ><i class="bi-search"></i> Search</button>
+
+                &nbsp;&nbsp;
+                <button type="button" class="btn btn-primary btn-lg" onclick="start()"><i class="bi-qr-code-scan"></i> Scan</button>
+              </div>
+              
+              <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+                            
+    
+                                <div class="boxi">
+                                <video id="preview" class=" add slave active" style="width:100%;" autoplay="autoplay"></video>
+                                
+                              </div>
+              <!-- End Input Card -->
+            
+          </div>
+          <!-- End Col -->
+        </div>
+        <!-- End Row -->
+      </div>
+    </div>
+    <!-- End Content -->
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="position-md-absolute start-0 end-0 bottom-0">
+    <div class="container py-4">
+      <div class="row align-items-md-center text-center text-md-start">
+        <div class="col-md mb-3 mb-md-0">
+          <p class="fs-5 mb-0">© Give My Certificate. 2025 </p>
+        </div>
+
+        <div class="col-md d-md-flex justify-content-md-end">
+          <!-- Socials -->
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              <a class="btn btn-icon btn-sm btn-ghost-secondary rounded-circle" href="https://www.facebook.com/givemycertificate/">
+                <i class="bi-facebook"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-icon btn-sm btn-ghost-secondary rounded-circle" href="https://www.linkedin.com/company/givemycertificate">
+                <i class="bi-linkedin"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-icon btn-sm btn-ghost-secondary rounded-circle" href="https://twitter.com/givemycert">
+                <i class="bi-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-icon btn-sm btn-ghost-secondary rounded-circle" href="https://www.youtube.com/c/givemycertificate">
+                <i class="bi-youtube"></i>
+              </a>
+            </li>
+          </ul>
+          <!-- End Socials -->
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ========== END FOOTER ========== -->
+
+  <!-- JS Global Compulsory  -->
+  <script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="./assets/vendor/countdown/countdown.js"></script>
+
+  <!-- JS Unify -->
+  <script src="./assets/js/theme.min.js"></script>
+
+  <script>
+    (function () {
+      // INITIALIZATION OF COUNTDOWN
+      // =======================================================
+      const oneYearFromNow = new Date()
+
+      document.querySelectorAll('.js-countdown').forEach(item => {
+        const days = item.querySelector('.js-cd-days'),
+          hours = item.querySelector('.js-cd-hours'),
+          minutes = item.querySelector('.js-cd-minutes'),
+          seconds = item.querySelector('.js-cd-seconds')
+
+        countdown(oneYearFromNow.setFullYear(
+          oneYearFromNow.getFullYear() + 1),
+          ts => {
+            days.innerHTML = ts.days
+            hours.innerHTML = ts.hours
+            minutes.innerHTML = ts.minutes
+            seconds.innerHTML = ts.seconds
+          },
+          countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS
+        )
+      })
+    })()
+  </script>
+  <script type="text/javascript">
                         function start(){
                           var scanner = new Instascan.Scanner({ video: document.getElementById('preview'), scanPeriod: 5, mirror: false });
                           scanner.addListener('scan',function(content){
@@ -175,43 +189,5 @@
                           });
                         }
                         </script>
-                      </div>
-                      
-                      
-                      <div class="col-sm-3">
-                      </div>
-                    
-                    </div>
-                  </div>
-    
-            </p>
-            <h3 class="mt-4 text-center font-weight-bold text-white ">See how it work?</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+</body>
 </html>
