@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>Verify Credentials | Give My Certificate</title>
+  <meta name="description" content="Instantly verify digital certificates by ID or QR code scan. Give My Certificate provides secure credential verification for organizations worldwide.">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./assets/img/favicon.ico">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="./assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css">
+  <link rel="stylesheet" href="./assets/vendor/swiper/swiper-bundle.min.css">
+
+  <!-- CSS Unify Template -->
+  <link rel="stylesheet" href="./assets/css/theme.min.css">
+
+  <!-- QR Scanner Styles -->
+  <style type="text/css">
+    .whats-app {
+      position: fixed;
+      width: 60px;
+      height: 50px;
+      bottom: 40px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+      left: 15px;
+    }
+    
+    .my-float {
+      margin-top: 16px;
+    }
+    
+    /* QR Scanner Container */
+    .scanner-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      z-index: 1000;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .scanner-header {
+      color: white;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .scanner-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+    #preview {
+      max-width: 80%;
+      max-height: 60vh;
+      object-fit: contain;
+    }
+  </style>
+
+  <!-- Calendly badge widget begin -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</head>
+
+<body>
+  <!-- ========== HEADER ========== -->
+  <header id="header" class="navbar navbar-expand-lg navbar-end navbar-light navbar-absolute-top navbar-show-hide"
+          data-hs-header-options='{
+            "fixMoment": 0,
+            "fixEffect": "slide"
+          }'>
+    <!-- Header content remains the same as in your original code -->
+    <!-- ... -->
+  </header>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main">
+    <!-- Verification Section -->
+    <div class="d-sm-flex">
+      <div class="container d-sm-flex align-items-sm-center vh-sm-100 content-space-t-3 content-space-b-1 content-space-b-sm-3 content-space-sm-0">
+        <div class="row justify-content-md-between align-items-md-center flex-grow-1">
+          <div class="col-9 col-md-5 col-md-4 mb-5 mb-md-0">
+            <img class="img-fluid" src="./assets/svg/illustrations/plane.svg" alt="Certificate Verification Illustration">
+          </div>
+
+          <div class="col-md-6">
+            <!-- Verification Heading -->
+            <div class="mb-4">
+              <h1 class="display-4">Verify Your Digital Credentials</h1>
+              <p class="lead">Search by Certificate ID, Recipient Name, or Scan QR Code</p>
+            </div>
+
+            <!-- Verification Form -->
+            <div class="verification-form">
+              <div class="input-card border rounded-3 p-3 shadow-sm">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control form-control-lg" id="searchtext" 
+                         placeholder="Enter Certificate ID or Name" 
+                         aria-label="Certificate verification search">
+                  <button class="btn btn-primary" type="button" onclick="funsearch()">
+                    <i class="bi-search me-1"></i> Search
+                  </button>
+                </div>
+                
+                <div class="text-center my-3">
+                  <span class="text-muted">OR</span>
+                </div>
+                
+                <button class="btn btn-outline-primary w-100" onclick="startScanner()">
+                  <i class="bi-qr-code-scan me-1"></i> Scan QR Code
+                </button>
+              </div>
+              
+              <div class="mt-3 text-center">
+                <small class="text-muted">Verify the authenticity of certificates issued through Give My Certificate</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QR Scanner Modal -->
+    <div id="scannerModal" class="scanner-container">
+      <span class="scanner-close" onclick="closeScanner()">&times;</span>
+      <h3 class="scanner-header">Scan Certificate QR Code</h3>
+      <p class="text-white mb-4">Point your camera at the QR code to verify</p>
+      <video id="preview" class="rounded-3" autoplay playsinline></video>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="position-md-absolute start-0 end-0 bottom-0">
+    <!-- Footer content remains the same as in your original code -->
+    <!-- ... -->
+  </footer>
+
+  <!-- JS Global Compulsory  -->
+  <script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="./assets/vendor/hs-header/dist/hs-header.min.js"></script>
+  <script src="./assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script>
+  <script src="./assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
+  <script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- JS Unify -->
+  <script src="./assets/js/theme.min.js"></script>
+
+  <!-- Verification Scripts -->
+  <script>
+    // Search function
+    function funsearch() {
+      var certid = document.getElementById("searchtext").value.trim();
+      if (certid) {
+        window.location = "https://verification.givemycertificate.com/v/" + certid;
+      } else {
+        alert("Please enter a certificate ID or name");
+      }
+    }
+    
+    // QR Scanner functions
+    let scanner = null;
+    
+    function startScanner() {
+      const scannerModal = document.getElementById('scannerModal');
+      scannerModal.style.display = 'flex';
+      
+      scanner = new Instascan.Scanner({ 
+        video: document.getElementById('preview'),
+        scanPeriod: 5,
+        mirror: false 
+      });
+      
+      scanner.addListener('scan', function(content) {
+        if (content.includes('verification.givemycertificate.com')) {
+          window.location.href = content;
+        } else {
+          alert('This is not a valid Give My Certificate QR code');
+        }
+      });
+      
+      Instascan.Camera.getCameras().then(function(cameras) {
+        if (cameras.length > 0) {
+          const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+          scanner.start(isMobile ? cameras[1] || cameras[0] : cameras[0]);
+        } else {
+          alert('No cameras found. Please check your camera permissions.');
+          closeScanner();
+        }
+      }).catch(function(e) {
+        console.error('Camera error:', e);
+        alert('Camera access error: ' + e.message);
+        closeScanner();
+      });
+    }
+    
+    function closeScanner() {
+      if (scanner) {
+        scanner.stop();
+      }
+      document.getElementById('scannerModal').style.display = 'none';
+    }
+    
+    // Handle Enter key in search field
+    document.getElementById('searchtext').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        funsearch();
+      }
+    });
+  </script>
+</body>
+</html>
