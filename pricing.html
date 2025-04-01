@@ -247,10 +247,18 @@
 
         <!-- Price Toggle -->
               
-              <div class="toggle-container form-check form-switch form-switch-between mb-4 " align="center">
+              <div class="toggle-container form-check form-switch form-switch-between mb-4 " align="center" id="currency-toggle">
                 <label class="form-check-label" id="usd-label">$ USD</label>
-                <input type="checkbox" class="form-check-input" id="currency-toggle"/>
+                <span class="toggle-slider"></span>
+                <input type="checkbox" class="form-check-input" id="currency-input">
                 <label class="form-check-label" id="inr-label">₹ Rupee</label>
+              </div>
+
+              <div class="toggle-container form-check form-switch form-switch-between mb-4 " align="center" id="billing-toggle">
+                <label class="form-check-label" id="monthly-label">Monthly</label>
+                <span class="toggle-slider"></span>
+                <input type="checkbox" class="form-check-input" id="billing-input">
+                <label class="form-check-label" id="yearly-label">Yearly</label>
               </div>
 
 
@@ -285,9 +293,9 @@
         
         <div class="price-display">
             <div class="price-amount">
-                <span class="price-currency display-4 lh-1 text-dark ">$</span>
-                <span id="price-amount" class="display-4 lh-1 text-dark ">99</span>
-                <span class="price-currency display-8 lh-1 text-dark ">/Yearly</span>
+                <span class="price-currency display-4 lh-1 text-dark" >$</span>
+                <span id="price-amount" class="display-4 lh-1 text-dark">99</span>
+                <span class="price-currency display-8 lh-1 text-dark" id="price-period">/Yearly</span>
             </div>
         </div>
         <div class="mb-4"></div>
@@ -1356,47 +1364,135 @@
   
   <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
             const currencyToggle = document.getElementById('currency-toggle');
+            const currencyInput = document.getElementById('currency-input');
             const usdLabel = document.getElementById('usd-label');
             const inrLabel = document.getElementById('inr-label');
+            const currencySlider = currencyToggle.querySelector('.toggle-slider');
+            
+            const billingToggle = document.getElementById('billing-toggle');
+            const billingInput = document.getElementById('billing-input');
+            const monthlyLabel = document.getElementById('monthly-label');
+            const yearlyLabel = document.getElementById('yearly-label');
+            const billingSlider = billingToggle.querySelector('.toggle-slider');
+            
             const credentialSelect = document.getElementById('credential-select');
             const priceAmount = document.getElementById('price-amount');
             const priceCurrency = document.querySelector('.price-currency');
+            const pricePeriod = document.getElementById('price-period');
             const paymentLink = document.getElementById('payment-link');
 
-            // Pricing data
+            // Pricing data (yearly prices)
             const pricingData = {
-                '1000': { usd: 99, inr: 7000, usdLink: 'https://buy.stripe.com/eVa4ingLCd7E2Zi5kS', inrLink: 'https://buy.stripe.com/bIY3ejbri6Jg9nG28H' },
-                '2000': { usd: 199, inr: 14000, usdLink: 'https://buy.stripe.com/dR64ineDu0kSarKbJi', inrLink: 'https://buy.stripe.com/14k2afdzqc3AbvOdRw' },
-                '3000': { usd: 299, inr: 21000, usdLink: 'https://buy.stripe.com/6oE9CH66Y5FcczS14H', inrLink: 'https://buy.stripe.com/aEUeX166YgjQczSdRs' },
-                '5000': { usd: 499, inr: 35000, usdLink: 'https://buy.stripe.com/9AQ16beDu5Fc7fyeVz', inrLink: 'https://buy.stripe.com/9AQ7uzfHy0kSgQ85kY' },
-                '10000': { usd: 999, inr: 70000, usdLink: 'https://buy.stripe.com/8wM4ineDuaZw9nG9Bh', inrLink: 'https://buy.stripe.com/5kA16b0ME3x443m28Q' },
-                '20000': { usd: 1999, inr: 140000, usdLink: 'https://buy.stripe.com/cN26qv2UMaZw9nG14N', inrLink: 'https://buy.stripe.com/dR6aGL52UgjQbvO8xg' }
+                '1000': { 
+                    usd: 99, 
+                    inr: 7000, 
+                    usdMonthlyLink: 'https://buy.stripe.com/eVa4ingLCd7E2Zi5kS', 
+                    inrMonthlyLink: 'https://buy.stripe.com/bIY3ejbri6Jg9nG28H',
+                    usdYearlyLink: 'https://buy.stripe.com/eVa4ingLCd7E2Zi5kS', 
+                    inrYearlyLink: 'https://buy.stripe.com/bIY3ejbri6Jg9nG28H'
+                },
+                '2000': { 
+                    usd: 199, 
+                    inr: 14000, 
+                    usdMonthlyLink: 'https://buy.stripe.com/dR64ineDu0kSarKbJi', 
+                    inrMonthlyLink: 'https://buy.stripe.com/14k2afdzqc3AbvOdRw',
+                    usdYearlyLink: 'https://buy.stripe.com/dR64ineDu0kSarKbJi', 
+                    inrYearlyLink: 'https://buy.stripe.com/14k2afdzqc3AbvOdRw'
+                },
+                '3000': { 
+                    usd: 299, 
+                    inr: 21000, 
+                    usdMonthlyLink: 'https://buy.stripe.com/6oE9CH66Y5FcczS14H', 
+                    inrMonthlyLink: 'https://buy.stripe.com/aEUeX166YgjQczSdRs',
+                    usdYearlyLink: 'https://buy.stripe.com/6oE9CH66Y5FcczS14H', 
+                    inrYearlyLink: 'https://buy.stripe.com/aEUeX166YgjQczSdRs'
+                },
+                '5000': { 
+                    usd: 499, 
+                    inr: 35000, 
+                    usdMonthlyLink: 'https://buy.stripe.com/9AQ16beDu5Fc7fyeVz', 
+                    inrMonthlyLink: 'https://buy.stripe.com/9AQ7uzfHy0kSgQ85kY',
+                    usdYearlyLink: 'https://buy.stripe.com/9AQ16beDu5Fc7fyeVz', 
+                    inrYearlyLink: 'https://buy.stripe.com/9AQ7uzfHy0kSgQ85kY'
+                },
+                '10000': { 
+                    usd: 999, 
+                    inr: 70000, 
+                    usdMonthlyLink: 'https://buy.stripe.com/8wM4ineDuaZw9nG9Bh', 
+                    inrMonthlyLink: 'https://buy.stripe.com/5kA16b0ME3x443m28Q',
+                    usdYearlyLink: 'https://buy.stripe.com/8wM4ineDuaZw9nG9Bh', 
+                    inrYearlyLink: 'https://buy.stripe.com/5kA16b0ME3x443m28Q'
+                }
             };
+
+            // State
+            let currentCurrency = 'usd';
+            let isYearlyBilling = false;
 
             // Update price display
             function updatePrice() {
                 const credentialCount = credentialSelect.value;
                 const priceData = pricingData[credentialCount];
-                const isINR = currencyToggle.checked;
                 
-                if (isINR) {
-                    priceCurrency.textContent = '₹';
-                    priceAmount.textContent = priceData.inr;
-                    paymentLink.href = priceData.inrLink;
-                    inrLabel.classList.add('active');
-                    usdLabel.classList.remove('active');
-                } else {
+                // Set currency symbol and amount
+                if (currentCurrency === 'usd') {
                     priceCurrency.textContent = '$';
-                    priceAmount.textContent = priceData.usd;
-                    paymentLink.href = priceData.usdLink;
-                    usdLabel.classList.add('active');
-                    inrLabel.classList.remove('active');
+                    priceAmount.textContent = isYearlyBilling ? priceData.usd : (priceData.usd / 12).toFixed(2);
+                } else {
+                    priceCurrency.textContent = '₹';
+                    priceAmount.textContent = isYearlyBilling ? priceData.inr : (priceData.inr / 12).toFixed(2);
+                }
+                
+                // Set period text
+                pricePeriod.textContent = isYearlyBilling ? '/ year' : '/ month (Billed yearly)';
+                
+                // Update payment link
+                if (currentCurrency === 'usd') {
+                    paymentLink.href = isYearlyBilling ? priceData.usdYearlyLink : priceData.usdMonthlyLink;
+                } else {
+                    paymentLink.href = isYearlyBilling ? priceData.inrYearlyLink : priceData.inrMonthlyLink;
                 }
             }
             
-            // Toggle change event
-            currencyToggle.addEventListener('change', updatePrice);
+            // Currency toggle events
+            currencyToggle.addEventListener('click', function() {
+                currentCurrency = currentCurrency === 'usd' ? 'inr' : 'usd';
+                
+                // Update UI
+                if (currentCurrency === 'usd') {
+                    usdLabel.classList.add('active');
+                    inrLabel.classList.remove('active');
+                    currencySlider.classList.remove('right');
+                } else {
+                    usdLabel.classList.remove('active');
+                    inrLabel.classList.add('active');
+                    currencySlider.classList.add('right');
+                }
+                
+                // Update price
+                updatePrice();
+            });
+            
+            // Billing toggle events
+            billingToggle.addEventListener('click', function() {
+                isYearlyBilling = !isYearlyBilling;
+                
+                // Update UI
+                if (isYearlyBilling) {
+                    yearlyLabel.classList.add('active');
+                    monthlyLabel.classList.remove('active');
+                    billingSlider.classList.add('right');
+                } else {
+                    yearlyLabel.classList.remove('active');
+                    monthlyLabel.classList.add('active');
+                    billingSlider.classList.remove('right');
+                }
+                
+                // Update price
+                updatePrice();
+            });
             
             // Select change event
             credentialSelect.addEventListener('change', updatePrice);
