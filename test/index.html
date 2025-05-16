@@ -1,172 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Document</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-	<style>
-		.top-nav {
-			-webkit-box-shadow: 0px 3px 0px 2px rgba(0, 0, 0, 0.1),
-				-1px 18px 18px -2px rgba(0, 0, 0, 0.16);
-			box-shadow: 0px 3px 0px 2px rgba(0, 0, 0, 0.1),
-				-1px 18px 18px -2px rgba(0, 0, 0, 0.16);
-			min-height: 60px;
-		}
-
-		.cursor-default {
-			cursor: pointer;
-		}
-
-		.middle-section {
-			background-color: RGBA(0, 0, 0, 0.06);
-			height: 85vh;
-		}
-
-		.score-card-img {
-			height: 100%;
-			/* width: 100%; */
-		}
-
-		#myChart {
-			/* width: 100% !important; */
-		}
-	</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Certificate | GiveMyCertificate</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light top-nav my-auto">
-		<div class="container d-flex flex-row-reverse cursor-default">
-			Sign in
-		</div>
-	</nav>
+  <div class="certificate-wrapper">
+    <header class="header">
+      <h1>GiveMyCertificate</h1>
+      <p class="subtitle">Your verified credentials, always accessible</p>
+    </header>
 
-	<div class="container-fluid middle-section">
-		<div class="container h-100 p-5 text-center">
-			<img src="./gwt.png" class="score-card-img mx-auto" />
-			<!--  -->
-		</div>
-	</div>
+    <main class="main-content">
+      <section class="certificate-display">
+        <img src="certificate-image.jpeg" alt="Certificate Preview" class="certificate-img" />
+      </section>
 
-	<div class="container-fluid mt-5 pt-3 mb-5">
-		<div class="container">
-			<div class="row">
-				<div class="col-8">
-					<h2><b>Organization name</b></h2>
-					<h4>ITSC International Testing Service Center</h4>
-					<h3 class="mt-5">Course name</h3>
-					<h4>G-TELP General Tests of English Language Proficiency</h4>
-					<h4 class="mt-4">KIM-JA-SEONG</h4>
+      <section class="certificate-info">
+        <div class="certificate-meta">
+          <h2 class="course-title">How to be a Successful Business Analyst</h2>
 
-					<div class="mt-5">
-						<p class="mt-5">Skills / Knowledge Gained</p>
-						<ul>
-							<li>STYLE</li>
-							<li>GRAMMER</li>
-							<li>VOCABULARY</li>
-							<li>ORGANISATION</li>
-							<li>SUBSTANCE</li>
-						</ul>
-					</div>
+          <div class="btn-group">
+            <button id="download-btn" class="btn">
+               Download
+            </button>
+            <button id="linkedin-btn" class="btn">
+               Add to LinkedIn
+            </button>
+            <button id="share-btn" class="btn">
+               Share
+            </button>
+          </div>
+        </div>
 
-					<div class="row">
-						<div class="mt-5 col-4">
-							ISSUED ON
-							<div class="mt-2">2017-01-23</div>
-						</div>
-						<div class="mt-5 col-4">
-							EXPIRES ON
-							<div class="mt-2">Does not expire</div>
-						</div>
-					</div>
+        <div class="details-card">
+          <div class="row">
+            <div>
+              <span class="label">Issued to</span>
+              <p class="value">Priyanshu Nishant</p>
+            </div>
+            <div>
+              <span class="label">Issued by</span>
+              <p class="value">upGrad</p>
+            </div>
+          </div>
 
-				</div>
-				<div class="col-4">
-					<div class="card p-4">
-						<h5><b>Credential Verification</b></h5>
-						<div>This credential is from a <b>verified issuer</b></div>
-						<button type="button" class="btn btn-light mt-2">
-							Verify credentials
-						</button>
-					</div>
+          <div class="divider"></div>
 
-					<div class="card p-4 mt-4">
-						<h5><b>More about the Issuer</b></h5>
-						<div><a href="#" target="_blank">Visit Issuer Website</a></div>
-						<div>credentials from the Issuer</div>
-					</div>
-				</div>
-			</div>
+          <div class="row">
+            <div>
+              <span class="label">Event Dates</span>
+              <p class="value">01-Sep-2023 to 20-Oct-2023</p>
+            </div>
+            <div>
+              <span class="label">Issued on</span>
+              <p class="value">23-Oct-2023</p>
+            </div>
+            <div>
+              <span class="label">Expires on</span>
+              <p class="value">23-Oct-2026</p>
+            </div>
+          </div>
+        </div>
 
-			<div class="row my-5">
-				<div class="card mx-auto h-100 w-100" style="padding: 10px 50px;">
-					<canvas id="myChart"></canvas>
-				</div>
-			</div>
-		</div>
-	</div>
+        <div class="skills-section">
+          <h3>Skills Acquired</h3>
+          <div class="skills-list">
+            <span class="badge">Python</span>
+            <span class="badge">Data Science</span>
+            <span class="badge">Teach</span>
+          </div>
+        </div>
+
+        <div class="about-course">
+          <h3>About the Course</h3>
+          <p>
+            This course offers a practical approach to becoming a successful Business Analyst. Participants gain hands-on experience with tools and techniques to bridge business challenges and technical solutions effectively.
+          </p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="verification">
+          <div>
+            <span class="label">Verified by</span>
+            <p class="value">upGrad Education Private Limited</p>
+            <p class="address">Nishuvi, Ground Floor - 75, Dr. Annie Besant Road, Worli, Mumbai - 400018</p>
+          </div>
+          <div class="signature">
+            <p class="signer-name">Mayank Kumar</p>
+            <span class="signer-title">Co-founder & MD</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2025 GiveMyCertificate.com • All Rights Reserved</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-	const labels = [
-		'January',
-		'February',
-		'March',
-		'April',
-		'May',
-		'June',
-		'July',
-	];
-	const data = {
-		labels: ['Constructing a Paragraph', 'Composing a Personal Letter', 'Composing a Formal Letter', 'Describing a Situation', 'Writing an Essay'],
-		datasets: [
-			{
-				label: '',
-				data: [56, 56, 76, 60, 68],
-				backgroundColor: [
-					'rgba(255, 99, 132, 0.8)',
-					'rgba(255, 159, 64, 0.8)',
-					'rgba(255, 205, 86, 0.8)',
-					'rgba(75, 192, 192, 0.8)',
-					'rgba(54, 162, 235, 0.8)',
-					'rgba(153, 102, 255, 0.8)',
-					'rgba(201, 203, 207, 0.8)'
-				],
-				borderColor: [
-					'rgb(255, 99, 132)',
-					'rgb(255, 159, 64)',
-					'rgb(255, 205, 86)',
-					'rgb(75, 192, 192)',
-					'rgb(54, 162, 235)',
-					'rgb(153, 102, 255)',
-					'rgb(201, 203, 207)'
-				],
-				borderWidth: 2
-			},
-		],
-	};
-
-	const config = {
-		type: 'bar',
-		data: data,
-		options: {
-			scales: {
-				y: {
-					beginAtZero: true
-				}
-			},
-			alignToPixels: true
-		},
-	};
-
-	// Get the canvas element
-	const ctx = document.getElementById('myChart').getContext('2d');
-
-	// Create the chart
-	const myChart = new Chart(ctx, config);
-</script>
-
 </html>
