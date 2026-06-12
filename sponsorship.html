@@ -794,13 +794,28 @@
           return;
         }
 
+        const submitButton = document.getElementById('submit-button');
+        const originalButtonHTML = submitButton.innerHTML;
+        
+        // Set processing state
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Processing...';
+
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => {
           alert("Thanks for Contacting us..! We Will Contact You Soon...")
           form.reset();
           grecaptcha.reset();
         })
-        .catch(error => console.error('Error!', error.message))
+        .catch(error => {
+          console.error('Error!', error.message);
+          alert("An error occurred while submitting the form. Please try again.");
+        })
+        .finally(() => {
+          // Restore button state
+          submitButton.disabled = false;
+          submitButton.innerHTML = originalButtonHTML;
+        });
         
     })
   </script>
