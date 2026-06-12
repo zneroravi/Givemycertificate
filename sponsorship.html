@@ -422,8 +422,7 @@
                 <label class="form-label" for="blogContactsFormComment">Comment</label>
                 <textarea class="form-control" id="form_message" name="form_message" value="." placeholder="Leave your comment here..." rows="4" >Leave your comment here...</textarea>
               </span>
-              <div class="g-recaptcha" data-sitekey="6LfOX3gnAAAAAPTjMS1_DzUlBOa4JYthiG__76o9
-" required></div>
+              <div class="g-recaptcha" data-sitekey="6LfOX3gnAAAAAPTjMS1_DzUlBOa4JYthiG__76o9" required></div>
               <!-- End Form -->
 
               <div class="d-grid">
@@ -716,23 +715,92 @@
     
   </script>
 
-    </script>
-
-    <script>
+  <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyMBm8FVkaNxgF6ddoSQvbqrdB53xS4oGlLrrkqOMNFr631w-gN_CDR9DbFO8HuPWtpTg/exec'
     const form = document.forms['google-sheet']
   
+    function showToast(message, duration = 3000) {
+      let container = document.getElementById('custom-toast-container');
+      if (!container) {
+        container = document.createElement('div');
+        container.id = 'custom-toast-container';
+        container.style.cssText = `
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          z-index: 10000;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          pointer-events: none;
+        `;
+        document.body.appendChild(container);
+      }
+
+      const toast = document.createElement('div');
+      toast.style.cssText = `
+        background-color: #de4437;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: auto;
+        font-family: 'Inter', sans-serif;
+      `;
+      
+      toast.innerHTML = `
+        <i class="bi-exclamation-triangle-fill" style="font-size: 16px;"></i>
+        <span>${message}</span>
+      `;
+
+      container.appendChild(toast);
+
+      // Trigger animation
+      requestAnimationFrame(() => {
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateY(0)';
+      });
+
+      // Auto remove
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(-20px)';
+        setTimeout(() => {
+          toast.remove();
+        }, 300);
+      }, duration);
+    }
+
     form.addEventListener('submit', e => {
       e.preventDefault()
 
         if(document.forms['google-sheet'].form_name.value === ""|| document.forms['google-sheet'].form_lastname.value === ""|| document.forms['google-sheet'].form_email.value === ""|| document.forms['google-sheet'].form_mobile.value === ""|| document.forms['google-sheet'].form_community.value === ""|| document.forms['google-sheet'].form_role.value === ""|| document.forms['google-sheet'].form_address.value === ""|| document.forms['google-sheet'].form_linkedin.value === ""|| document.forms['google-sheet'].form_message.value === ""){
-          console.log('Fill Form correctly')
-
-        }else{
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
-        .catch(error => console.error('Error!', error.message))
+          alert('Please fill out all the required fields correctly.')
+          return;
         }
+
+        // Check human verification (reCAPTCHA)
+        const recaptchaResponse = grecaptcha.getResponse();
+        if (!recaptchaResponse) {
+          showToast("Please complete the human verification (reCAPTCHA) first.", 3000);
+          return;
+        }
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          alert("Thanks for Contacting us..! We Will Contact You Soon...")
+          form.reset();
+          grecaptcha.reset();
+        })
+        .catch(error => console.error('Error!', error.message))
         
     })
   </script>
