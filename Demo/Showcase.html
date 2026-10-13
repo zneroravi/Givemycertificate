@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Credential page — showcase 3D</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+<script src="./assets/81385044d19e70d26914bc6f62fe5e8c.js"></script>
+<script src="./assets/b1e3595ec4edbd693853693efbc7a6b9.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#2458E6}a:hover{color:#1A44B3}
+button{font:inherit;cursor:pointer}
+.tile.is-in{transition:transform .25s ease, box-shadow .25s ease}
+.tile.is-in:hover{transform:translateY(-4px);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 2px 4px rgba(15,23,42,.06),0 28px 40px -20px rgba(15,23,42,.28)}
+.cert3d{transition:transform .12s ease-out}
+.js-seal{animation:sealFloat 4s ease-in-out infinite}
+@keyframes sealFloat{0%,100%{translate:0 0}50%{translate:0 -8px}}
+@media (prefers-reduced-motion: reduce){.js-seal{animation:none}}
+</style>
+</helmet>
+<div style="min-height: 100%; background: #F1F2F5; color: #15181E; font-family: Manrope, 'Segoe UI', system-ui, sans-serif; font-size: 15px; line-height: 1.5; display: flex; flex-direction: column">
+
+  <!-- Hero stage -->
+  <section id="top" onMouseMove="{{tilt}}" onMouseLeave="{{resetTilt}}" style="position: relative; overflow: hidden; background: radial-gradient(1200px 600px at 70% 0%, #1E2A5A 0%, #0D1326 55%, #090D1A 100%); color: #F4F6FB">
+    <!-- WebGL particle field (three.js) -->
+    <canvas id="gmc-stage" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none"></canvas>
+    <!-- grid floor -->
+    <div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 46%; background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px); background-size: 48px 48px; transform: perspective(700px) rotateX(62deg); transform-origin: top; mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), transparent); -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), transparent)"></div>
+
+    <!-- top bar -->
+    <div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+      <a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: -0.01em">
+        <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><rect x="1" y="1" width="24" height="24" rx="7" fill="#fff"></rect><path d="M7 13.5l4 4 8-9" fill="none" stroke="#0D1326" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        Give My Certificate
+      </a>
+      <nav style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap">
+        <a href="#verify" style="text-decoration: none; padding: 10px 14px; border-radius: 10px; font-weight: 600; color: rgba(255,255,255,.85)">Verify a credential</a>
+        <a href="#top" style="text-decoration: none; padding: 10px 16px; border-radius: 10px; font-weight: 700; color: #0D1326; background: #fff">Sign in</a>
+      </nav>
+    </div>
+
+    <div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 36px 32px 72px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
+
+      <!-- Copy side -->
+      <div class="js-hero-copy" style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+        <div style="display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; padding: 8px 14px 8px 8px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); backdrop-filter: blur(8px); font-size: 14px; font-weight: 600">
+          <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(145deg, #4ADE80, #15803D); box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 4px 10px rgba(21,128,61,.5)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+          </span>
+          Valid credential · verified 2 seconds ago
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <div style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.7); font-size: 14px">
+            <span style="width: 28px; height: 28px; border-radius: 8px; background: #B5F04A; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 6px 14px rgba(181,240,74,.35)" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#14321a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 17l-6.5 4 2-7.5L2 9h7z"></path></svg>
+            </span>
+            <span>Issued by <a href="#issuer" style="color: #fff; font-weight: 700; text-decoration: none">Launch Crew</a></span>
+            <span style="display: inline-flex; align-items: center; gap: 4px; color: #8FB4FF; font-weight: 600">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5l2.6 2 3.3-.4 1.2 3.1 2.9 1.6-.6 3.2 1.6 2.9-2.3 2.4.1 3.3-3.2.9-1.8 2.8-3.1-1.2L9.6 23l-1.8-2.8-3.2-.9.1-3.3L2.4 13.6 4 10.7l-.6-3.2 2.9-1.6 1.2-3.1 3.3.4z"></path><path d="M8.5 12.2l2.4 2.4 4.6-4.9" fill="none" stroke="#0D1326" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              Verified
+            </span>
+          </div>
+          <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 48px; line-height: 1.05; font-weight: 700; letter-spacing: -0.025em; text-wrap: balance">Certificate of Participation</h1>
+          <p style="margin: 0; font-size: 17px; color: rgba(255,255,255,.72)">[Program / event name] · Participant</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); align-self: flex-start">
+          <span style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(145deg, #8FB4FF, #2458E6); color: #fff; font-weight: 800; font-size: 13px; display: inline-flex; align-items: center; justify-content: center; box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 6px 14px rgba(36,88,230,.45)" aria-hidden="true">RG</span>
+          <div style="display: flex; flex-direction: column; line-height: 1.3">
+            <span style="font-size: 12px; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700">Awarded to</span>
+            <span style="font-weight: 700; font-size: 18px">Ravi Goswami</span>
+          </div>
+          <a href="#top" style="margin-left: 12px; font-size: 14px; font-weight: 600; color: #8FB4FF">All credentials</a>
+        </div>
+
+        <div style="display: flex; gap: 10px; flex-wrap: wrap">
+          <button type="button" style="display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 20px; border-radius: 12px; border: 0; background: linear-gradient(180deg, #fff, #E9EDF7); color: #0D1326; font-weight: 800; box-shadow: inset 0 1px 0 #fff, 0 1px 0 #B9C2D9, 0 10px 24px -8px rgba(0,0,0,.6)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"></path><path d="M16 6l-4-4-4 4"></path><path d="M12 2v13"></path></svg>
+            Share
+          </button>
+          <button type="button" style="display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.08); color: #fff; font-weight: 700">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v5a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5"></path><path d="M8 11l4 4 4-4"></path><path d="M12 2v13"></path></svg>
+            Download
+          </button>
+          <button type="button" style="display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.08); color: #fff; font-weight: 700">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14H.2zM8.3 8h4.4v1.9h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.5 3 5.5 7V22h-4.6v-6.4c0-1.5 0-3.5-2.1-3.5s-2.5 1.7-2.5 3.4V22H8.3z"></path></svg>
+            Add to LinkedIn
+          </button>
+          <button type="button" aria-label="Copy link" style="width: 48px; height: 48px; border-radius: 12px; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.08); color: #fff; display: inline-flex; align-items: center; justify-content: center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"></path><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3D certificate -->
+      <div style="flex: 1 1 560px; min-width: 0; display: flex; justify-content: center; perspective: 1600px; padding: 24px 0 40px">
+        <div class="js-cert-wrap" style="position: relative; width: min(100%, 620px)">
+          <div class="cert3d" style="position: relative; transform-style: preserve-3d; transform: {{certTransform}}">
+            <!-- card thickness -->
+            <div aria-hidden="true" style="position: absolute; inset: 0; border-radius: 10px; background: #D9D2C3; transform: translateZ(-10px) translate(10px, 10px)"></div>
+            <div aria-hidden="true" style="position: absolute; inset: 0; border-radius: 10px; background: #E8E2D5; transform: translateZ(-5px) translate(5px, 5px)"></div>
+            <!-- face -->
+            <img src="./assets/5e4d05a9ce87fdb720fd69783eee811e.jpg" alt="Certificate of Participation issued to Ravi Goswami by Launch Crew" style="position: relative; display: block; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 0 0 1px rgba(255,255,255,.25), 0 50px 80px -20px rgba(0,0,0,.75), 0 24px 40px -24px rgba(0,0,0,.6)">
+            <!-- gloss -->
+            <div aria-hidden="true" style="position: absolute; inset: 0; border-radius: 10px; background: linear-gradient(115deg, rgba(255,255,255,.35) 0%, rgba(255,255,255,0) 35%, rgba(255,255,255,0) 65%, rgba(255,255,255,.12) 100%); pointer-events: none"></div>
+            <!-- floating seal -->
+            <div class="js-seal" style="position: absolute; right: -28px; bottom: -34px; transform: translateZ(70px); display: flex; flex-direction: column; align-items: center">
+              <div role="img" aria-label="Verified by Give My Certificate" style="width: 112px; height: 112px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FFF0B8 0%, #E8B84A 40%, #B9862A 100%); box-shadow: inset 0 2px 4px rgba(255,255,255,.7), inset 0 -6px 12px rgba(120,80,10,.45), 0 20px 40px -10px rgba(0,0,0,.7); display: flex; align-items: center; justify-content: center">
+                <div style="width: 84px; height: 84px; border-radius: 50%; border: 2px dashed rgba(120,80,10,.55); display: flex; align-items: center; justify-content: center">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5C3F0A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+                </div>
+              </div>
+              <span aria-hidden="true" style="position: absolute; top: 98px; left: 50%; transform: translateX(-50%) perspective(60px) rotateX(30deg); background: linear-gradient(180deg, #2B3A7A, #1A2552); color: #fff; font-size: 10px; letter-spacing: 0.12em; font-weight: 800; padding: 6px 12px; border-radius: 4px; box-shadow: 0 10px 18px -6px rgba(0,0,0,.6); white-space: nowrap">VERIFIED</span>
+            </div>
+          </div>
+          <!-- reflection -->
+          <img src="./assets/5e4d05a9ce87fdb720fd69783eee811e.jpg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: 100%; width: 100%; height: auto; margin-top: 14px; border-radius: 10px; transform: scaleY(-1) {{reflectTransform}}; opacity: .22; mask-image: linear-gradient(to top, rgba(0,0,0,.9) 0%, transparent 45%); -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,.9) 0%, transparent 45%); pointer-events: none">
+        </div>
+      </div>
+    </div>
+
+    <!-- Proof strip, bridging hero and body -->
+    <div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 0 32px; transform: translateY(44px)">
+      <dl class="js-proof" style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 1px; background: #E2E5EB; border: 1px solid #E2E5EB; border-radius: 18px; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(0,0,0,.6)">
+        <div style="background: #fff; padding: 20px 24px; display: flex; flex-direction: column; gap: 4px; color: #15181E">
+          <dt style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #5B6372">Issued on</dt>
+          <dd style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px">10 Oct 2026</dd>
+        </div>
+        <div style="background: #fff; padding: 20px 24px; display: flex; flex-direction: column; gap: 4px; color: #15181E">
+          <dt style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #5B6372">Expires</dt>
+          <dd style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px">Never</dd>
+        </div>
+        <div style="background: #fff; padding: 20px 24px; display: flex; flex-direction: column; gap: 4px; color: #15181E">
+          <dt style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #5B6372">Credential type</dt>
+          <dd style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px">Participation</dd>
+        </div>
+        <div style="background: #fff; padding: 20px 24px; display: flex; flex-direction: column; gap: 4px; color: #15181E; min-width: 0">
+          <dt style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #5B6372">Credential ID</dt>
+          <dd style="margin: 0; display: flex; align-items: center; gap: 8px; min-width: 0">
+            <code style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">416c5089-fbbd-48f9-a531-f6378cba1b5e</code>
+            <button type="button" aria-label="Copy credential ID" style="width: 32px; height: 32px; flex-shrink: 0; border-radius: 8px; border: 1px solid #E2E5EB; background: #fff; color: #15181E; display: inline-flex; align-items: center; justify-content: center">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </button>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Bento body -->
+  <main style="max-width: 1280px; width: 100%; margin: 0 auto; padding: 88px 32px 56px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); grid-auto-flow: dense; gap: 20px">
+
+    <!-- About (wide) -->
+    <section class="tile" style="grid-column: span 2; background: #fff; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 20px; box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 1px 2px rgba(15,23,42,.06), 0 16px 32px -20px rgba(15,23,42,.25)">
+      <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -0.01em">About this credential</h2>
+      <p style="margin: 0; max-width: 70ch; font-size: 16px; text-wrap: pretty">[Description of what the credential represents and what the recipient demonstrated — set by the issuer when the credential is designed.]</p>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <h3 style="margin: 0; font-size: 12px; font-weight: 800; color: #5B6372; letter-spacing: 0.1em; text-transform: uppercase">Skills &amp; knowledge</h3>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap">
+          <span style="padding: 9px 14px; border-radius: 10px; background: linear-gradient(180deg, #fff, #EEF0F4); border: 1px solid #E2E5EB; box-shadow: 0 1px 0 #fff inset, 0 2px 0 #D8DCE4; font-weight: 700; font-size: 14px">[Skill 1]</span>
+          <span style="padding: 9px 14px; border-radius: 10px; background: linear-gradient(180deg, #fff, #EEF0F4); border: 1px solid #E2E5EB; box-shadow: 0 1px 0 #fff inset, 0 2px 0 #D8DCE4; font-weight: 700; font-size: 14px">[Skill 2]</span>
+          <span style="padding: 9px 14px; border-radius: 10px; background: linear-gradient(180deg, #fff, #EEF0F4); border: 1px solid #E2E5EB; box-shadow: 0 1px 0 #fff inset, 0 2px 0 #D8DCE4; font-weight: 700; font-size: 14px">[Skill 3]</span>
+          <span style="padding: 9px 14px; border-radius: 10px; background: linear-gradient(180deg, #fff, #EEF0F4); border: 1px solid #E2E5EB; box-shadow: 0 1px 0 #fff inset, 0 2px 0 #D8DCE4; font-weight: 700; font-size: 14px">[Skill 4]</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <h3 style="margin: 0; font-size: 12px; font-weight: 800; color: #5B6372; letter-spacing: 0.1em; text-transform: uppercase">How it was earned</h3>
+        <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0">
+          <li style="display: flex; gap: 14px; align-items: flex-start">
+            <span style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0"><span style="width: 12px; height: 12px; border-radius: 50%; background: #2458E6; box-shadow: 0 0 0 4px #DCE6FF; margin-top: 5px"></span><span style="width: 2px; flex: 1; min-height: 28px; background: #E2E5EB; margin-top: 4px"></span></span>
+            <span><strong>Attended</strong> <a href="#top" style="font-weight: 600">[Program / event name]</a><br><span style="color: #5B6372; font-size: 14px">[Start] – [End] · [Hours]</span></span>
+          </li>
+          <li style="display: flex; gap: 14px; align-items: flex-start">
+            <span style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0"><span style="width: 12px; height: 12px; border-radius: 50%; background: #2458E6; box-shadow: 0 0 0 4px #DCE6FF; margin-top: 5px"></span></span>
+            <span><strong>Credential issued</strong> by Launch Crew on 10 Oct 2026<br><span style="color: #5B6372; font-size: 14px">Accreditation: [Accrediting body]</span></span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Verification (tall) -->
+    <section id="verify" class="tile" style="grid-row: span 2; background: linear-gradient(180deg, #0F1735, #0B1026); color: #F4F6FB; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 30px 50px -30px rgba(11,16,38,.9)">
+      <div style="display: flex; justify-content: center; padding: 8px 0 4px" aria-hidden="true">
+        <div style="width: 120px; height: 120px; border-radius: 32px; background: linear-gradient(145deg, #2B3A7A, #141C45); box-shadow: inset 0 2px 0 rgba(255,255,255,.18), inset 0 -10px 20px rgba(0,0,0,.45), 0 24px 40px -14px rgba(0,0,0,.8); display: flex; align-items: center; justify-content: center; transform: perspective(600px) rotateX(14deg) rotateY(-12deg)">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#7BE39B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+        </div>
+      </div>
+      <div style="text-align: center; display: flex; flex-direction: column; gap: 4px">
+        <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700">Verification</h2>
+        <span style="color: #7BE39B; font-weight: 700">Valid · not expired, not revoked</span>
+      </div>
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 14px">
+        <li style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7BE39B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><path d="M20 6L9 17l-5-5"></path></svg>
+          <span>Issued by a <strong>verified issuer</strong></span>
+        </li>
+        <li style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7BE39B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><path d="M20 6L9 17l-5-5"></path></svg>
+          <span>Record matches the issuer's register</span>
+        </li>
+        <li style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7BE39B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><path d="M20 6L9 17l-5-5"></path></svg>
+          <span>Certificate file unchanged since issue</span>
+        </li>
+        <li style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 12px; color: rgba(255,255,255,.65)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+          <span>Last verified 2 seconds ago</span>
+        </li>
+      </ul>
+      <button type="button" style="margin-top: auto; height: 48px; border-radius: 12px; border: 0; background: linear-gradient(180deg, #fff, #E9EDF7); color: #0D1326; font-weight: 800; box-shadow: inset 0 1px 0 #fff, 0 1px 0 #B9C2D9, 0 10px 24px -8px rgba(0,0,0,.6)">Re-verify now</button>
+      <a href="#top" style="text-align: center; font-size: 13px; color: rgba(255,255,255,.65)">Report this credential</a>
+    </section>
+
+    <!-- Share -->
+    <section class="tile" style="background: #fff; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 16px; box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 1px 2px rgba(15,23,42,.06), 0 16px 32px -20px rgba(15,23,42,.25)">
+      <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -0.01em">Share</h2>
+      <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px">
+        <button type="button" aria-label="Share on LinkedIn" style="height: 52px; border-radius: 12px; border: 1px solid #E2E5EB; background: linear-gradient(180deg, #fff, #F3F4F7); box-shadow: 0 2px 0 #D8DCE4; color: #15181E; display: inline-flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14H.2zM8.3 8h4.4v1.9h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.5 3 5.5 7V22h-4.6v-6.4c0-1.5 0-3.5-2.1-3.5s-2.5 1.7-2.5 3.4V22H8.3z"></path></svg></button>
+        <button type="button" aria-label="Share on WhatsApp" style="height: 52px; border-radius: 12px; border: 1px solid #E2E5EB; background: linear-gradient(180deg, #fff, #F3F4F7); box-shadow: 0 2px 0 #D8DCE4; color: #15181E; display: inline-flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.7A9 9 0 1 1 8 19.4z"></path><path d="M9 10a4 4 0 0 0 5 5"></path></svg></button>
+        <button type="button" aria-label="Share on X" style="height: 52px; border-radius: 12px; border: 1px solid #E2E5EB; background: linear-gradient(180deg, #fff, #F3F4F7); box-shadow: 0 2px 0 #D8DCE4; color: #15181E; display: inline-flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7 8 8.2 12h-6.4l-5-6.6L6 22H2.9l7.5-8.6L2.5 2h6.6l4.5 6z"></path></svg></button>
+        <button type="button" aria-label="Share on Facebook" style="height: 52px; border-radius: 12px; border: 1px solid #E2E5EB; background: linear-gradient(180deg, #fff, #F3F4F7); box-shadow: 0 2px 0 #D8DCE4; color: #15181E; display: inline-flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-5 2.2-5 5v2H6v4h3v7h4v-7h3l1-4h-4V9c0-.6.4-1 1-1z"></path></svg></button>
+        <button type="button" aria-label="Share by email" style="height: 52px; border-radius: 12px; border: 1px solid #E2E5EB; background: linear-gradient(180deg, #fff, #F3F4F7); box-shadow: 0 2px 0 #D8DCE4; color: #15181E; display: inline-flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></button>
+      </div>
+      <div style="display: flex; gap: 8px; align-items: center; border: 1px solid #E2E5EB; border-radius: 12px; padding: 6px 6px 6px 14px; background: #F7F8FA">
+        <span style="flex: 1; min-width: 0; font-size: 13px; color: #5B6372; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">givemycertificate.com/c/416c5089…</span>
+        <button type="button" style="height: 38px; padding: 0 14px; border-radius: 9px; border: 0; background: #2458E6; color: #fff; font-weight: 700; font-size: 13px; box-shadow: 0 2px 0 #1A44B3">Copy</button>
+      </div>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap">
+        <button type="button" style="flex: 1; height: 44px; border-radius: 12px; border: 1px solid #E2E5EB; background: #fff; color: #15181E; font-weight: 700; font-size: 14px">Embed</button>
+        <button type="button" style="flex: 1; height: 44px; border-radius: 12px; border: 1px solid #E2E5EB; background: #fff; color: #15181E; font-weight: 700; font-size: 14px">Download image</button>
+      </div>
+    </section>
+
+    <!-- QR -->
+    <section class="tile" style="background: #fff; border-radius: 20px; padding: 28px; display: flex; gap: 20px; align-items: center; box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 1px 2px rgba(15,23,42,.06), 0 16px 32px -20px rgba(15,23,42,.25)">
+      <div style="padding: 10px; border-radius: 16px; background: linear-gradient(180deg, #fff, #EEF0F4); border: 1px solid #E2E5EB; box-shadow: 0 3px 0 #D8DCE4, 0 14px 24px -14px rgba(15,23,42,.3); flex-shrink: 0; transform: perspective(500px) rotateY(-10deg)">
+        <svg width="108" height="108" viewBox="0 0 9 9" role="img" aria-label="QR code linking to this credential" shape-rendering="crispEdges"><path fill="#111" d="M0 0h3v3H0zM6 0h3v3H6zM0 6h3v3H0zM1 1h1v1H1zM7 1h1v1H7zM1 7h1v1H1zM4 0h1v1H4zM4 2h1v2H4zM3 4h1v1H3zM5 4h2v1H5zM8 4h1v1H8zM4 5h1v1H4zM6 6h1v1H6zM8 6h1v1H8zM4 7h2v1H4zM7 7h1v1H7zM5 8h1v1H5zM8 8h1v1H8z"></path></svg>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
+        <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Show it in person</h2>
+        <p style="margin: 0; font-size: 14px; color: #5B6372">Scan to open this page on any phone. Works on a printed certificate too.</p>
+        <a href="#top" style="font-weight: 700; font-size: 14px">Download QR</a>
+      </div>
+    </section>
+
+    <!-- Issuer (wide) -->
+    <section id="issuer" class="tile" style="grid-column: span 2; background: #fff; border-radius: 20px; padding: 28px; display: flex; gap: 24px; flex-wrap: wrap; align-items: center; box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 1px 2px rgba(15,23,42,.06), 0 16px 32px -20px rgba(15,23,42,.25)">
+      <div style="width: 72px; height: 72px; border-radius: 20px; background: linear-gradient(145deg, #D4FF7A, #9BD92E); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: inset 0 2px 0 rgba(255,255,255,.6), 0 14px 24px -10px rgba(120,180,20,.6); transform: perspective(500px) rotateY(12deg)" aria-hidden="true">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#14321a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 17l-6.5 4 2-7.5L2 9h7z"></path></svg>
+      </div>
+      <div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 800; color: #5B6372; letter-spacing: 0.1em; text-transform: uppercase">Issued by</span>
+        <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; display: flex; align-items: center; gap: 8px">Launch Crew
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#2458E6" role="img" aria-label="Verified issuer"><path d="M12 1.5l2.6 2 3.3-.4 1.2 3.1 2.9 1.6-.6 3.2 1.6 2.9-2.3 2.4.1 3.3-3.2.9-1.8 2.8-3.1-1.2L9.6 23l-1.8-2.8-3.2-.9.1-3.3L2.4 13.6 4 10.7l-.6-3.2 2.9-1.6 1.2-3.1 3.3.4z"></path><path d="M8.5 12.2l2.4 2.4 4.6-4.9" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </h2>
+        <p style="margin: 0; font-size: 14px; color: #5B6372; text-wrap: pretty">[Short issuer description — set in the organisation profile.] · <a href="https://credential.launchcrew.in">credential.launchcrew.in</a></p>
+      </div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap">
+        <a href="#top" style="height: 44px; padding: 0 16px; border-radius: 12px; border: 1px solid #E2E5EB; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #15181E; font-weight: 700; font-size: 14px; background: linear-gradient(180deg, #fff, #F3F4F7); box-shadow: 0 2px 0 #D8DCE4">Visit website</a>
+        <a href="#top" style="height: 44px; padding: 0 16px; border-radius: 12px; border: 1px solid #E2E5EB; display: inline-flex; align-items: center; text-decoration: none; color: #15181E; font-weight: 700; font-size: 14px; background: linear-gradient(180deg, #fff, #F3F4F7); box-shadow: 0 2px 0 #D8DCE4">Contact</a>
+        <a href="#top" style="height: 44px; padding: 0 16px; border-radius: 12px; border: 0; display: inline-flex; align-items: center; text-decoration: none; color: #fff; font-weight: 700; font-size: 14px; background: #2458E6; box-shadow: 0 2px 0 #1A44B3">Enrol in this program</a>
+      </div>
+      <a href="#top" style="flex-basis: 100%; font-weight: 700; font-size: 14px">All credentials from Launch Crew →</a>
+    </section>
+  </main>
+
+  <footer style="border-top: 1px solid #E2E5EB; background: #fff; margin-top: auto">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 18px 32px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; color: #5B6372">
+      <span>Credentials by <a href="https://givemycertificate.com" style="font-weight: 700; text-decoration: none">Give My Certificate</a></span>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap">
+        <a href="#top" style="color: #5B6372">Privacy</a>
+        <a href="#top" style="color: #5B6372">Terms</a>
+        <a href="#top" style="color: #5B6372">Help</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"tiltStrength":{"editor":"range","default":10,"min":0,"max":20,"step":1,"unit":"deg","section":"3D"},"particles":{"editor":"range","default":1400,"min":0,"max":4000,"step":100,"section":"3D"},"$preview":{"width":1440,"height":2120}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { rx: 8, ry: -14, live: false };
+    this._cleanup = [];
+  }
+
+  componentDidMount() {
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.initStage(reduce);
+    this.initMotion(reduce);
+  }
+
+  componentWillUnmount() {
+    this._cleanup.forEach((fn) => { try { fn(); } catch (e) {} });
+  }
+
+  // ---- three.js: particle field + gold ring behind the certificate ----
+  initStage(reduce) {
+    const canvas = document.getElementById('gmc-stage');
+    if (!canvas || !window.THREE) return;
+    const T = window.THREE;
+    const host = canvas.parentElement;
+    let w = host.clientWidth || 1200, h = host.clientHeight || 700;
+
+    const renderer = new T.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setSize(w, h, false);
+    const scene = new T.Scene();
+    const camera = new T.PerspectiveCamera(50, w / h, 0.1, 200);
+    camera.position.set(0, 0, 40);
+
+    // particles
+    const count = Math.max(0, this.props.particles ?? 1400);
+    const pos = new Float32Array(count * 3);
+    const seed = new Float32Array(count);
+    for (let i = 0; i < count; i++) {
+      pos[i * 3] = (Math.random() - 0.5) * 120;
+      pos[i * 3 + 1] = (Math.random() - 0.5) * 70;
+      pos[i * 3 + 2] = (Math.random() - 0.5) * 60 - 10;
+      seed[i] = Math.random() * Math.PI * 2;
+    }
+    const geo = new T.BufferGeometry();
+    geo.setAttribute('position', new T.BufferAttribute(pos, 3));
+    const mat = new T.PointsMaterial({ color: 0x9db8ff, size: 0.22, transparent: true, opacity: 0.75, depthWrite: false, blending: T.AdditiveBlending, sizeAttenuation: true });
+    const points = new T.Points(geo, mat);
+    scene.add(points);
+
+    // gold ring + soft glow disc behind the certificate (right half of the stage)
+    const ring = new T.Mesh(new T.TorusGeometry(13, 0.18, 16, 160), new T.MeshBasicMaterial({ color: 0xe8b84a, transparent: true, opacity: 0.55 }));
+    ring.position.set(14, -1, -8); ring.rotation.x = 1.1;
+    scene.add(ring);
+    const ring2 = new T.Mesh(new T.TorusGeometry(17, 0.08, 12, 160), new T.MeshBasicMaterial({ color: 0x8fb4ff, transparent: true, opacity: 0.3 }));
+    ring2.position.copy(ring.position); ring2.rotation.x = 1.4; ring2.rotation.y = 0.3;
+    scene.add(ring2);
+    const glow = new T.Mesh(new T.CircleGeometry(16, 48), new T.MeshBasicMaterial({ color: 0x2b4cff, transparent: true, opacity: 0.16, blending: T.AdditiveBlending, depthWrite: false }));
+    glow.position.set(14, -1, -12);
+    scene.add(glow);
+
+    let mx = 0, my = 0, tx = 0, ty = 0;
+    const onMove = (e) => {
+      const r = host.getBoundingClientRect();
+      tx = ((e.clientX - r.left) / r.width - 0.5) * 2;
+      ty = ((e.clientY - r.top) / r.height - 0.5) * 2;
+    };
+    host.addEventListener('mousemove', onMove);
+    const onResize = () => {
+      w = host.clientWidth || w; h = host.clientHeight || h;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h; camera.updateProjectionMatrix();
+    };
+    window.addEventListener('resize', onResize);
+
+    let raf = 0; const start = performance.now();
+    const tick = () => {
+      const t = (performance.now() - start) / 1000;
+      mx += (tx - mx) * 0.05; my += (ty - my) * 0.05;
+      if (!reduce) {
+        points.rotation.y = t * 0.03 + mx * 0.08;
+        points.rotation.x = my * 0.05;
+        const p = geo.attributes.position.array;
+        for (let i = 0; i < count; i++) p[i * 3 + 1] += Math.sin(t * 0.8 + seed[i]) * 0.004;
+        geo.attributes.position.needsUpdate = true;
+        ring.rotation.z = t * 0.25; ring.rotation.x = 1.1 + my * 0.15;
+        ring2.rotation.z = -t * 0.18; ring2.rotation.y = 0.3 + mx * 0.2;
+        glow.material.opacity = 0.14 + Math.sin(t * 1.2) * 0.04;
+      }
+      camera.position.x = mx * 1.5; camera.position.y = -my * 1;
+      camera.lookAt(0, 0, 0);
+      renderer.render(scene, camera);
+      raf = requestAnimationFrame(tick);
+    };
+    if (reduce) { renderer.render(scene, camera); } else { raf = requestAnimationFrame(tick); }
+
+    this._cleanup.push(() => {
+      cancelAnimationFrame(raf);
+      host.removeEventListener('mousemove', onMove);
+      window.removeEventListener('resize', onResize);
+      geo.dispose(); mat.dispose(); renderer.dispose();
+    });
+  }
+
+  // ---- GSAP: entrance choreography + scroll reveals ----
+  initMotion(reduce) {
+    const g = window.gsap;
+    const tiles = Array.from(document.querySelectorAll('.tile'));
+    if (!g || reduce) { tiles.forEach((t) => t.classList.add('is-in')); return; }
+
+    const copy = document.querySelectorAll('.js-hero-copy > *');
+    const tl = g.timeline({ defaults: { ease: 'power3.out' } });
+    tl.from(copy, { y: 28, opacity: 0, duration: 0.8, stagger: 0.09 }, 0.1)
+      .from('.js-cert-wrap', { y: 80, opacity: 0, rotateY: -35, scale: 0.92, duration: 1.3, ease: 'expo.out', transformOrigin: '50% 60%' }, 0.25)
+      .from('.js-seal', { scale: 0, opacity: 0, rotate: -60, duration: 0.7, ease: 'back.out(2.2)' }, 1.05)
+      .from('.js-proof', { y: 40, opacity: 0, duration: 0.8 }, 0.9)
+      .add(() => g.set(['.js-cert-wrap', '.js-seal', '.js-proof'], { clearProps: 'transform,opacity' }));
+
+    // reveal tiles as they enter the viewport (IntersectionObserver keeps it robust inside any scroller)
+    g.set(tiles, { y: 36, opacity: 0 });
+    const show = (el) => g.to(el, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', onComplete: () => { g.set(el, { clearProps: 'transform' }); el.classList.add('is-in'); } });
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((en, i) => { if (en.isIntersecting) { g.delayedCall(i * 0.08, () => show(en.target)); io.unobserve(en.target); } });
+      }, { threshold: 0.12 });
+      tiles.forEach((t) => io.observe(t));
+      // safety net: anything still hidden after 4s is shown (e.g. a non-scrolling preview frame)
+      const safety = g.delayedCall(4, () => tiles.forEach((t) => { if (!t.classList.contains('is-in')) show(t); }));
+      this._cleanup.push(() => { io.disconnect(); safety.kill(); });
+    } else {
+      tiles.forEach((t, i) => g.delayedCall(0.3 + i * 0.1, () => show(t)));
+    }
+    this._cleanup.push(() => tl.kill());
+  }
+  renderVals() {
+    const s = this.props.tiltStrength ?? 10;
+    const rx = this.state.live ? this.state.rx : 8;
+    const ry = this.state.live ? this.state.ry : -14;
+    return {
+      certTransform: 'rotateX(' + rx + 'deg) rotateY(' + ry + 'deg)',
+      reflectTransform: 'rotateX(' + (-rx) + 'deg) rotateY(' + ry + 'deg)',
+      tilt: (e) => {
+        const r = e.currentTarget.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        this.setState({ live: true, ry: px * s * 2 - 6, rx: 6 - py * s * 2 });
+      },
+      resetTilt: () => this.setState({ live: false })
+    };
+  }
+}
+</script>
+</body>
+</html>
