@@ -412,7 +412,7 @@
                <!-- Form: optional, sent as "NA" if left empty -->
               <span class="d-block">
                 <label class="form-label" for="form_linkedin">Community LinkedIn Page URL</label>
-                <input type="text" class="form-control" name="form_linkedin" id="form_linkedin" placeholder="LinkedIn Page URL">
+                <input type="text" class="form-control" name="form_linkedin" id="form_linkedin" placeholder="LinkedIn Page URL (optional)">
               </span>
               <!-- End Form -->
 
@@ -663,6 +663,44 @@
   </a>
   <!-- ========== END SECONDARY CONTENTS ========== -->
 
+  <!-- ========== FORM RESULT POPUP ========== -->
+  <style>
+    #formResultModal .modal-content { border-radius: 1rem; }
+    #formResultModal .result-icon {
+      width: 76px; height: 76px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+    #formResultModal .result-icon i { font-size: 2.4rem; line-height: 1; }
+    #formResultModal .result-icon.is-success { background: rgba(var(--bs-primary-rgb, 25, 135, 84), .12); color: var(--bs-primary, #198754); }
+    #formResultModal .result-icon.is-error { background: rgba(222, 68, 55, .12); color: #de4437; }
+    #formResultModal.show .result-icon { animation: resultPop .45s cubic-bezier(.34, 1.56, .64, 1); }
+    #formResultModal .result-note {
+      display: inline-block; padding: .35rem .8rem; border-radius: 999px;
+      background: rgba(var(--bs-primary-rgb, 25, 135, 84), .08); color: var(--bs-primary, #198754); font-weight: 500;
+    }
+    @keyframes resultPop { 0% { transform: scale(.3); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+  </style>
+
+  <div class="modal fade" id="formResultModal" tabindex="-1" aria-labelledby="formResultTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-body text-center p-5">
+          <div id="formResultIcon" class="result-icon is-success"><i class="bi-check-lg"></i></div>
+          <h3 id="formResultTitle" class="mb-2">Thank you!</h3>
+          <p id="formResultMessage" class="text-body mb-3"></p>
+          <p id="formResultNote" class="result-note small mb-2 d-none"><i class="bi-clock me-1"></i><span></span></p>
+          <p id="formResultSub" class="small text-muted mb-4"></p>
+          <div class="d-grid gap-2">
+            <button type="button" id="formResultButton" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+            <a id="formResultLink" class="btn btn-outline-primary d-none" href="#" target="_blank" rel="noopener"><i class="bi-linkedin me-2"></i><span></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ========== END FORM RESULT POPUP ========== -->
+
   <!-- JS Global Compulsory  -->
   <script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -813,6 +851,46 @@
       }, duration);
     }
 
+    // Styled success / error popup (replaces browser alert)
+    // message: a string, or an array of strings and { bold: 'text' } parts
+    function showResultModal({ type = 'success', title, message, note = '', sub = '', button = 'Done', link = null }) {
+      const isSuccess = type === 'success'
+      const icon = document.getElementById('formResultIcon')
+      icon.className = 'result-icon ' + (isSuccess ? 'is-success' : 'is-error')
+      icon.innerHTML = '<i class="' + (isSuccess ? 'bi-check-lg' : 'bi-exclamation-lg') + '"></i>'
+      document.getElementById('formResultTitle').textContent = title
+
+      const msgEl = document.getElementById('formResultMessage')
+      msgEl.textContent = ''
+      ;[].concat(message).forEach(part => {
+        if (part && typeof part === 'object') {
+          const strong = document.createElement('strong')
+          strong.textContent = part.bold
+          msgEl.appendChild(strong)
+        } else {
+          msgEl.appendChild(document.createTextNode(part))
+        }
+      })
+
+      const noteEl = document.getElementById('formResultNote')
+      noteEl.querySelector('span').textContent = note
+      noteEl.classList.toggle('d-none', !note)
+
+      document.getElementById('formResultSub').textContent = sub
+      document.getElementById('formResultButton').textContent = button
+
+      const linkEl = document.getElementById('formResultLink')
+      if (link) {
+        linkEl.href = link.href
+        linkEl.querySelector('span').textContent = link.text
+        linkEl.classList.remove('d-none')
+      } else {
+        linkEl.classList.add('d-none')
+      }
+
+      bootstrap.Modal.getOrCreateInstance(document.getElementById('formResultModal')).show()
+    }
+
     form.addEventListener('submit', e => {
       e.preventDefault()
 
@@ -834,6 +912,15 @@
         return
       }
 
+      // Phone check: digits, spaces, +, -, ( ) only, 7–15 digits
+      const phone = form.form_mobile.value.trim()
+      const phoneDigits = phone.replace(/\D/g, '')
+      if (!/^[\d\s+\-()]+$/.test(phone) || phoneDigits.length < 7 || phoneDigits.length > 15) {
+        showToast('Please enter a valid contact number.', 3000)
+        form.form_mobile.focus()
+        return
+      }
+
       // Check human verification (reCAPTCHA)
       if (!captchaDone || !grecaptcha.getResponse()) {
         showToast('Please complete the human verification (reCAPTCHA) first.', 3000)
@@ -847,6 +934,9 @@
         const value = form[name].value.trim()
         data.set(name, value === '' ? 'NA' : value)
       })
+      const firstName = form.form_name.value.trim()
+      const email = form.form_email.value.trim()
+      const community = form.form_community.value.trim()
 
       // Processing state
       isSubmitting = true
@@ -855,12 +945,25 @@
 
       fetch(scriptURL, { method: 'POST', body: data })
         .then(() => {
-          alert("Thanks for Contacting us..! We Will Contact You Soon...")
           form.reset()
+          showResultModal({
+            type: 'success',
+            title: 'Application submitted!',
+            message: ['Thanks, ' + firstName + '. We\u2019ve received the sponsorship application for ', { bold: community }, '. Our team will review it and contact you about next steps.'],
+            note: 'Applications are reviewed within 3\u20135 working days',
+            sub: 'Updates will be sent to ' + email,
+            button: 'Done',
+            link: { text: 'Follow us on LinkedIn', href: 'https://www.linkedin.com/company/givemycertificate' }
+          })
         })
         .catch(error => {
           console.error('Error!', error.message)
-          alert("An error occurred while submitting the form. Please try again.")
+          showResultModal({
+            type: 'error',
+            title: 'Couldn\u2019t submit your application',
+            message: 'Something went wrong on our side, and your details weren\u2019t saved. Please try again, or contact us on WhatsApp or at support@givemycertificate.com.',
+            button: 'Try again'
+          })
         })
         .finally(() => {
           // reCAPTCHA token is single-use, so ask for verification again
