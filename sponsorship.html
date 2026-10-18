@@ -280,7 +280,6 @@
   <main id="content" role="main">
     
     <!-- Hero -->
-    <!-- Hero -->
   <div class="d-flex bg-img-center" style="background-image: url(assets/img/1920x800/img2.jpg);">
   <div class="container d-flex justify-content-end flex-column min-vh-lg-75 content-space-1 content-space-lg-b-3">
     <div class="w-lg-65">
@@ -359,17 +358,17 @@
       <!-- Card -->
       <div class="card card-lg card-bordered shadow-none">
         <div class="card-body">
-          <form id="contact-form" method="post" name="google-sheet">
+          <form id="contact-form" method="post" name="google-sheet" novalidate>
             <div class="d-grid gap-4">
               <!-- Form -->
               <div class="row">
                 <div class="col-sm-6 mb-4 mb-sm-0">
-                  <label class="form-label" for="blogContactsFormFirstName">First Name *</label>
+                  <label class="form-label" for="form_name">First Name *</label>
                   <input type="text" class="form-control" name="form_name" id="form_name" placeholder="First name" required>
                 </div>
 
                 <div class="col-sm-6">
-                  <label class="form-label" for="blogContactsFormLasttName">Last Name *</label>
+                  <label class="form-label" for="form_lastname">Last Name *</label>
                   <input type="text" class="form-control" name="form_lastname" id="form_lastname" placeholder="Last name" required>
                 </div>
               </div>
@@ -378,13 +377,13 @@
               <!-- Form -->
               <div class="row">
                 <div class="col-sm-6 mb-4 mb-sm-0">
-                  <label class="form-label" for="blogContactsFormEmail">Email *</label>
+                  <label class="form-label" for="form_email">Email *</label>
                   <input type="email" class="form-control" name="form_email" id="form_email" placeholder="email@site.com" required>
                 </div>
 
                 <div class="col-sm-6">
-                  <label class="form-label" for="blogContactsFormLasttName">Contact Number *</label>
-                  <input type="text" class="form-control" name="form_mobile" id="form_mobile" placeholder="Contact number" required>
+                  <label class="form-label" for="form_mobile">Contact Number *</label>
+                  <input type="tel" class="form-control" name="form_mobile" id="form_mobile" placeholder="Contact number" required>
                 </div>
               </div>
               <!-- End Form -->
@@ -392,12 +391,12 @@
               <!-- Form -->
               <div class="row">
                 <div class="col-sm-6 mb-4 mb-sm-0">
-                  <label class="form-label" for="blogContactsFormEmail">Enter Your Community/Club Name *</label>
+                  <label class="form-label" for="form_community">Enter Your Community/Club Name *</label>
                 <input type="text" class="form-control" name="form_community" id="form_community" placeholder="Community name" required>
                 </div>
 
                 <div class="col-sm-6">
-                <label class="form-label" for="blogContactsFormEmail">Your Role in Community *</label>
+                <label class="form-label" for="form_role">Your Role in Community *</label>
                 <input type="text" class="form-control" name="form_role" id="form_role" placeholder="Your Role" required>
                 </div>
               </div>
@@ -405,28 +404,35 @@
 
                <!-- Form -->
               <span class="d-block">
-                <label class="form-label" for="blogContactsFormEmail">Community/Club Address *</label>
+                <label class="form-label" for="form_address">Community/Club Address *</label>
                 <input type="text" class="form-control" name="form_address" id="form_address" placeholder="Full Address" required>
               </span>
               <!-- End Form -->
 
-               <!-- Form -->
+               <!-- Form: optional, sent as "NA" if left empty -->
               <span class="d-block">
-                <label class="form-label" for="blogContactsFormEmail">Community LinkedIn Page URL</label>
-                <input type="text" class="form-control" name="form_linkedin" id="form_linkedin" placeholder="LinkedIn Page URL" value=".">
+                <label class="form-label" for="form_linkedin">Community LinkedIn Page URL</label>
+                <input type="text" class="form-control" name="form_linkedin" id="form_linkedin" placeholder="LinkedIn Page URL (optional)">
               </span>
               <!-- End Form -->
 
-              <!-- Form -->
+              <!-- Form: optional, sent as "NA" if left empty -->
               <span class="d-block">
-                <label class="form-label" for="blogContactsFormComment">Comment</label>
-                <textarea class="form-control" id="form_message" name="form_message" value="." placeholder="Leave your comment here..." rows="4" >Leave your comment here...</textarea>
+                <label class="form-label" for="form_message">Comment</label>
+                <textarea class="form-control" id="form_message" name="form_message" placeholder="Leave your comment here... (optional)" rows="4"></textarea>
               </span>
-              <div class="g-recaptcha" data-sitekey="6LfOX3gnAAAAAPTjMS1_DzUlBOa4JYthiG__76o9" required></div>
+
+              <!-- reCAPTCHA: Submit is enabled only after this is ticked -->
+              <div class="g-recaptcha"
+                   data-sitekey="6LfOX3gnAAAAAPTjMS1_DzUlBOa4JYthiG__76o9"
+                   data-callback="onCaptchaSuccess"
+                   data-expired-callback="onCaptchaExpired"
+                   data-error-callback="onCaptchaExpired"></div>
               <!-- End Form -->
 
               <div class="d-grid">
-                <button type="submit" name="submit" id="submit-button" class="btn btn-primary">Submit</button>
+                <button type="submit" name="submit" id="submit-button" class="btn btn-primary" disabled>Submit</button>
+                <small id="captcha-hint" class="text-muted text-center mt-2">Please complete the verification above to enable Submit.</small>
               </div>
             </div>
           </form>
@@ -500,7 +506,6 @@
             <!-- List -->
             <ul class="list-unstyled list-py-1 mb-5">
               <li><a class="link link-light link-light-75" href="contact.html">Contact Us</a></li>
-              </a></li>
               <li><a class="link link-light link-light-75">
                 <div class="d-flex">
                   <div class="flex-shrink-0">
@@ -718,7 +723,35 @@
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyMBm8FVkaNxgF6ddoSQvbqrdB53xS4oGlLrrkqOMNFr631w-gN_CDR9DbFO8HuPWtpTg/exec'
     const form = document.forms['google-sheet']
-  
+    const submitButton = document.getElementById('submit-button')
+    const captchaHint = document.getElementById('captcha-hint')
+    const originalButtonHTML = submitButton.innerHTML
+
+    let captchaDone = false
+    let isSubmitting = false
+
+    // Fields that must be filled
+    const requiredFields = ['form_name', 'form_lastname', 'form_email', 'form_mobile', 'form_community', 'form_role', 'form_address']
+    // Optional fields: sent as "NA" when left empty
+    const optionalFields = ['form_linkedin', 'form_message']
+
+    function updateSubmitState() {
+      submitButton.disabled = !captchaDone || isSubmitting
+      captchaHint.classList.toggle('d-none', captchaDone)
+    }
+
+    // Called by reCAPTCHA when the user ticks the box
+    function onCaptchaSuccess() {
+      captchaDone = true
+      updateSubmitState()
+    }
+
+    // Called by reCAPTCHA when the tick expires (~2 min) or errors
+    function onCaptchaExpired() {
+      captchaDone = false
+      updateSubmitState()
+    }
+
     function showToast(message, duration = 3000) {
       let container = document.getElementById('custom-toast-container');
       if (!container) {
@@ -756,20 +789,21 @@
         font-family: 'Inter', sans-serif;
       `;
       
-      toast.innerHTML = `
-        <i class="bi-exclamation-triangle-fill" style="font-size: 16px;"></i>
-        <span>${message}</span>
-      `;
+      const icon = document.createElement('i');
+      icon.className = 'bi-exclamation-triangle-fill';
+      icon.style.fontSize = '16px';
+      const text = document.createElement('span');
+      text.textContent = message;
+      toast.appendChild(icon);
+      toast.appendChild(text);
 
       container.appendChild(toast);
 
-      // Trigger animation
       requestAnimationFrame(() => {
         toast.style.opacity = '1';
         toast.style.transform = 'translateY(0)';
       });
 
-      // Auto remove
       setTimeout(() => {
         toast.style.opacity = '0';
         toast.style.transform = 'translateY(-20px)';
@@ -782,41 +816,60 @@
     form.addEventListener('submit', e => {
       e.preventDefault()
 
-        if(document.forms['google-sheet'].form_name.value === ""|| document.forms['google-sheet'].form_lastname.value === ""|| document.forms['google-sheet'].form_email.value === ""|| document.forms['google-sheet'].form_mobile.value === ""|| document.forms['google-sheet'].form_community.value === ""|| document.forms['google-sheet'].form_role.value === ""|| document.forms['google-sheet'].form_address.value === ""|| document.forms['google-sheet'].form_linkedin.value === ""|| document.forms['google-sheet'].form_message.value === ""){
-          alert('Please fill out all the required fields correctly.')
-          return;
-        }
+      // Block double / triple clicks while a request is in flight
+      if (isSubmitting) return
 
-        // Check human verification (reCAPTCHA)
-        const recaptchaResponse = grecaptcha.getResponse();
-        if (!recaptchaResponse) {
-          showToast("Please complete the human verification (reCAPTCHA) first.", 3000);
-          return;
-        }
+      // Check required fields
+      const missing = requiredFields.find(name => form[name].value.trim() === '')
+      if (missing) {
+        showToast('Please fill out all the required fields.', 3000)
+        form[missing].focus()
+        return
+      }
 
-        const submitButton = document.getElementById('submit-button');
-        const originalButtonHTML = submitButton.innerHTML;
-        
-        // Set processing state
-        submitButton.disabled = true;
-        submitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Processing...';
+      // Basic email check
+      if (!form.form_email.checkValidity()) {
+        showToast('Please enter a valid email address.', 3000)
+        form.form_email.focus()
+        return
+      }
 
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
+      // Check human verification (reCAPTCHA)
+      if (!captchaDone || !grecaptcha.getResponse()) {
+        showToast('Please complete the human verification (reCAPTCHA) first.', 3000)
+        return
+      }
+
+      // Build the data: trim everything, empty optional fields become "NA"
+      const data = new FormData(form)
+      requiredFields.forEach(name => data.set(name, form[name].value.trim()))
+      optionalFields.forEach(name => {
+        const value = form[name].value.trim()
+        data.set(name, value === '' ? 'NA' : value)
+      })
+
+      // Processing state
+      isSubmitting = true
+      updateSubmitState()
+      submitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Submitting...'
+
+      fetch(scriptURL, { method: 'POST', body: data })
+        .then(() => {
           alert("Thanks for Contacting us..! We Will Contact You Soon...")
-          form.reset();
-          grecaptcha.reset();
+          form.reset()
         })
         .catch(error => {
-          console.error('Error!', error.message);
-          alert("An error occurred while submitting the form. Please try again.");
+          console.error('Error!', error.message)
+          alert("An error occurred while submitting the form. Please try again.")
         })
         .finally(() => {
-          // Restore button state
-          submitButton.disabled = false;
-          submitButton.innerHTML = originalButtonHTML;
-        });
-        
+          // reCAPTCHA token is single-use, so ask for verification again
+          isSubmitting = false
+          captchaDone = false
+          grecaptcha.reset()
+          submitButton.innerHTML = originalButtonHTML
+          updateSubmitState()
+        })
     })
   </script>
 </body>
