@@ -48,6 +48,11 @@
 
   <!-- CSS Unify Template -->
   <link rel="stylesheet" href="./assets/css/theme.min.css">
+
+  <!-- Calendly (used by "Schedule a Demo" / "Request demo" buttons) -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 
@@ -298,7 +303,7 @@
                 <a class="btn btn-white" href="mailto:support@givemycertificate.com"><i class="bi-envelope-open me-2"></i> support@givemycertificate.com</a>
               </div>
 
-              <a class="btn btn-ghost-dark btn-sm" href="#"><i class="bi-telephone me-2"></i> (+91) 86867 30308</a>
+              <a class="btn btn-ghost-dark btn-sm" href="tel:+918686730308"><i class="bi-telephone me-2"></i> (+91) 86867 30308</a>
             </div>
           </div>
           <!-- End Card -->
@@ -327,7 +332,7 @@
 </a>
               </div>
 
-              <a class="btn btn-ghost-dark btn-sm" href="#"><i class="bi-telephone me-2"></i> (+91) 86867 30308</a>
+              <a class="btn btn-ghost-dark btn-sm" href="tel:+918686730308"><i class="bi-telephone me-2"></i> (+91) 86867 30308</a>
             </div>
           </div>
           <!-- End Card -->
@@ -355,7 +360,7 @@
                 <a class="btn btn-white" href="mailto:support@givemycertificate.com"><i class="bi-envelope-open me-2"></i> support@givemycertificate.com</a>
               </div>
 
-              <a class="btn btn-ghost-dark btn-sm" href="#"><i class="bi-telephone me-2"></i> (+91) 86867 30308</a>
+              <a class="btn btn-ghost-dark btn-sm" href="tel:+918686730308"><i class="bi-telephone me-2"></i> (+91) 86867 30308</a>
             </div>
           </div>
           <!-- End Card -->
@@ -397,12 +402,12 @@
                 <div class="card-body">
                   <h4 class="mb-4">We are here to resolve your query</h4>
 
-                  <form id="contact-form" method="post" name="google-sheet">
+                  <form id="contact-form" method="post" name="google-sheet" novalidate>
                     <div class="row">
                       <div class="col-sm-6 mb-4 mb-sm-0">
                         <!-- Form -->
                         <div class="mb-4">
-                          <label class="form-label" for="contactsFormFirstName">First Name</label>
+                          <label class="form-label" for="form_name">First Name</label>
                           <input type="text" class="form-control" name="form_name" id="form_name" placeholder="First Name" required>
                         </div>
                         <!-- End Form -->
@@ -412,7 +417,7 @@
                       <div class="col-sm-6">
                         <!-- Form -->
                         <div class="mb-4">
-                          <label class="form-label" for="contactsFormLastName">Last Name</label>
+                          <label class="form-label" for="form_lastname">Last Name</label>
                           <input type="text" class="form-control" name="form_lastname" id="form_lastname" placeholder="Last Name" required>
                         </div>
                         <!-- End Form -->
@@ -425,7 +430,7 @@
                       <div class="col-sm-6 mb-4 mb-sm-0">
                         <!-- Form -->
                         <div class="mb-4">
-                          <label class="form-label" for="contactsFormCompany">Organisation</label>
+                          <label class="form-label" for="form_organisation">Organisation</label>
                           <input type="text" class="form-control" name="form_organisation" id="form_organisation" placeholder="Organisation Name" required>
                         </div>
                         <!-- End Form -->
@@ -435,7 +440,7 @@
                       <div class="col-sm-6">
                         <!-- Form -->
                         <div class="mb-4">
-                          <label class="form-label" for="contactsFormCompanyWebsite">Organisation Website</label>
+                          <label class="form-label" for="form_website">Organisation Website</label>
                           <input type="text" class="form-control" name="form_website" id="form_website" placeholder="yourwebsite.com" required>
                         </div>
                         <!-- End Form -->
@@ -448,8 +453,8 @@
                       <div class="col-sm-6 mb-4 mb-sm-0">
                         <!-- Form -->
                         <div class="mb-4">
-                          <label class="form-label" for="contactsFormWorkEmail">Email</label>
-                          <input type="text" class="form-control" name="form_email" id="form_email" placeholder="email@site.com" required>
+                          <label class="form-label" for="form_email">Email</label>
+                          <input type="email" class="form-control" name="form_email" id="form_email" placeholder="email@site.com" required>
                         </div>
                         <!-- End Form -->
                       </div>
@@ -458,8 +463,8 @@
                       <div class="col-sm-6">
                         <!-- Form -->
                         <div class="mb-4">
-                          <label class="form-label" for="contactsFormWork">Phone</label>
-                          <input type="text" class="form-control" name="form_phone" id="fform_phone" placeholder="email@site.com" required>
+                          <label class="form-label" for="form_phone">Phone</label>
+                          <input type="tel" class="form-control" name="form_phone" id="form_phone" placeholder="Phone number" required>
                         </div>
                         <!-- End Form -->
                       </div>
@@ -469,14 +474,21 @@
 
                     <!-- Form -->
                     <div class="mb-4">
-                      <label class="form-label" for="contactsFormDetails">Message</label>
+                      <label class="form-label" for="form_message">Message</label>
                       <textarea class="form-control" name="form_message" id="form_message" placeholder="Your Message" rows="4" required></textarea>
                     </div>
                     <!-- End Form -->
-                    <div class="g-recaptcha" data-sitekey="6LfOX3gnAAAAAPTjMS1_DzUlBOa4JYthiG__76o9
-" required></div>
+
+                    <!-- reCAPTCHA: Send inquiry is enabled only after this is ticked -->
+                    <div class="g-recaptcha mb-4"
+                         data-sitekey="6LfOX3gnAAAAAPTjMS1_DzUlBOa4JYthiG__76o9"
+                         data-callback="onCaptchaSuccess"
+                         data-expired-callback="onCaptchaExpired"
+                         data-error-callback="onCaptchaExpired"></div>
+
                     <div class="d-grid">
-                      <button type="submit" name="submit" id="submit-button" class="btn btn-primary btn-lg">Send inquiry</button>
+                      <button type="submit" name="submit" id="submit-button" class="btn btn-primary btn-lg" disabled>Send inquiry</button>
+                      <small id="captcha-hint" class="text-muted text-center mt-2">Please complete the verification above to enable Send inquiry.</small>
                     </div>
                     
                     
@@ -565,8 +577,7 @@
             <!-- List -->
             <ul class="list-unstyled list-py-1 mb-5">
               <li><a class="link link-light link-light-75" href="contact.html">Contact Us</a></li>
-              </a></li>
-              <li><a class="link link-light link-light-75">
+              <li><a class="link link-light link-light-75" href="tel:+918686730308">
                 <div class="d-flex">
                   <div class="flex-shrink-0">
                     <i class="bi-telephone"></i>
@@ -673,7 +684,7 @@
           <ul class="list-inline list-px-2 mb-0">
             <li class="list-inline-item"><a class="link link-light link-light-75" href="https://givemycertificate.com/policy.html">Privacy Policy <i class="bi-box-arrow-up-right ms-1"></i></a></li>
 
-            <li class="list-inline-item"><a class="link link-light link-light-75"><i class="bi-envelope me-2"></i>support@givemycertificate.com</a></li>
+            <li class="list-inline-item"><a class="link link-light link-light-75" href="mailto:support@givemycertificate.com"><i class="bi-envelope me-2"></i>support@givemycertificate.com</a></li>
             <li class="list-inline-item">
               <!-- Button Group -->
               <div class="btn-group">
@@ -757,22 +768,146 @@
     })()
   </script>
 
-    <script>
+  <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwVmRJXASgl1aVc4VZ90Oxw_dX8QCPt8Uh_bwKdsNrquYQ0yn1wg81n2H2FKcYt0JDl/exec'
     const form = document.forms['google-sheet']
-  
+    const submitButton = document.getElementById('submit-button')
+    const captchaHint = document.getElementById('captcha-hint')
+    const originalButtonHTML = submitButton.innerHTML
+
+    let captchaDone = false
+    let isSubmitting = false
+
+    const requiredFields = ['form_name', 'form_lastname', 'form_organisation', 'form_website', 'form_email', 'form_phone', 'form_message']
+
+    function updateSubmitState() {
+      submitButton.disabled = !captchaDone || isSubmitting
+      captchaHint.classList.toggle('d-none', captchaDone)
+    }
+
+    // Called by reCAPTCHA when the user ticks the box
+    function onCaptchaSuccess() {
+      captchaDone = true
+      updateSubmitState()
+    }
+
+    // Called by reCAPTCHA when the tick expires (~2 min) or errors
+    function onCaptchaExpired() {
+      captchaDone = false
+      updateSubmitState()
+    }
+
+    function showToast(message, duration = 3000) {
+      let container = document.getElementById('custom-toast-container')
+      if (!container) {
+        container = document.createElement('div')
+        container.id = 'custom-toast-container'
+        container.style.cssText = `
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          z-index: 10000;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          pointer-events: none;
+        `
+        document.body.appendChild(container)
+      }
+
+      const toast = document.createElement('div')
+      toast.style.cssText = `
+        background-color: #de4437;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: auto;
+        font-family: 'Inter', sans-serif;
+      `
+
+      const icon = document.createElement('i')
+      icon.className = 'bi-exclamation-triangle-fill'
+      icon.style.fontSize = '16px'
+      const text = document.createElement('span')
+      text.textContent = message
+      toast.appendChild(icon)
+      toast.appendChild(text)
+      container.appendChild(toast)
+
+      requestAnimationFrame(() => {
+        toast.style.opacity = '1'
+        toast.style.transform = 'translateY(0)'
+      })
+
+      setTimeout(() => {
+        toast.style.opacity = '0'
+        toast.style.transform = 'translateY(-20px)'
+        setTimeout(() => toast.remove(), 300)
+      }, duration)
+    }
+
     form.addEventListener('submit', e => {
       e.preventDefault()
 
-        if(document.forms['google-sheet'].form_name.value === ""|| document.forms['google-sheet'].form_lastname.value === ""|| document.forms['google-sheet'].form_organisation.value === ""|| document.forms['google-sheet'].form_website.value === ""|| document.forms['google-sheet'].form_email.value === ""|| document.forms['google-sheet'].form_phone.value === ""|| document.forms['google-sheet'].form_message.value === ""){
-          console.log('Fill FOrm correctly')
+      // Block double / triple clicks while a request is in flight
+      if (isSubmitting) return
 
-        }else{
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
-        .catch(error => console.error('Error!', error.message))
-        }
-        
+      // Check required fields
+      const missing = requiredFields.find(name => form[name].value.trim() === '')
+      if (missing) {
+        showToast('Please fill out all the fields.', 3000)
+        form[missing].focus()
+        return
+      }
+
+      // Basic email check
+      if (!form.form_email.checkValidity()) {
+        showToast('Please enter a valid email address.', 3000)
+        form.form_email.focus()
+        return
+      }
+
+      // Check human verification (reCAPTCHA)
+      if (!captchaDone || !grecaptcha.getResponse()) {
+        showToast('Please complete the human verification (reCAPTCHA) first.', 3000)
+        return
+      }
+
+      // Build the data with trimmed values
+      const data = new FormData(form)
+      requiredFields.forEach(name => data.set(name, form[name].value.trim()))
+
+      // Processing state
+      isSubmitting = true
+      updateSubmitState()
+      submitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Sending...'
+
+      fetch(scriptURL, { method: 'POST', body: data })
+        .then(() => {
+          alert("Thanks for Contacting us..! We Will Contact You Soon...")
+          form.reset()
+        })
+        .catch(error => {
+          console.error('Error!', error.message)
+          alert("An error occurred while sending your inquiry. Please try again.")
+        })
+        .finally(() => {
+          // reCAPTCHA token is single-use, so ask for verification again
+          isSubmitting = false
+          captchaDone = false
+          grecaptcha.reset()
+          submitButton.innerHTML = originalButtonHTML
+          updateSubmitState()
+        })
     })
   </script>
 </body>
